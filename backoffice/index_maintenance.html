@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0027)http://manage.shanplay.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Backoffice Manager</title>
+<link href="http://manage.shanplay.com/static/css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+    var global_baseurl = "http://manage.shanplay.com/";
+</script>
+
+<script type="text/javascript">
+	var SITEURL = 'http://manage.shanplay.com/';
+	/*$(document).ready(function() {
+		$('.ask').jConfirmAction();
+	});*/
+</script>
+
+<style>
+.style1 {
+	color: #a2daff;
+	font-weight: bold;
+}
+
+.style2 {
+	color: #57bcff;
+	font-weight: bold;
+}
+</style>
+</head>
+<body cz-shortcut-listen="true">
+<script type="text/javascript">
+var xmlHttp
+//Ads Start
+function GetXmlHttpObject()
+{
+
+var objXMLHttp=null
+if (window.XMLHttpRequest)
+{
+objXMLHttp=new XMLHttpRequest()
+}
+else if (window.ActiveXObject)
+{
+objXMLHttp=new ActiveXObject("Microsoft.XMLHTTP")
+}
+return objXMLHttp
+}
+
+function Showusers()
+{
+    if(xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+    {
+            var result=xmlHttp.responseText;
+            var trecords=result.split("##");
+            document.getElementById("onlineusers").innerHTML='Online User:&nbsp;<span class="errormsg" style="color:#FF3300"><a style="cursor:pointer;"  onclick="javascript:document.getElementById(\'shogameusers\').style.display=\'\';document.getElementById(\'showonlineusers\').style.display=\'none\'">'+trecords[0]+'</a></span>';
+            document.getElementById("gameusers").innerHTML='Game User:&nbsp;<span class="errormsg" style="color:#FF3300"><a style="cursor:pointer;"  onclick="javascript:document.getElementById(\'showonlineusers\').style.display=\'\';document.getElementById(\'shogameusers\').style.display=\'none\'">'+trecords[1]+'</a></span>';
+            document.getElementById("showonlineusers").innerHTML=trecords[3];
+            document.getElementById("shogameusers").innerHTML=trecords[2];
+
+    }
+}
+function showgameuserlist(vid){
+    if(vid){
+        document.getElementById(vid).style.display='';
+    }
+}
+
+
+var currenttime = 'May 26, 2017 06:59:48'
+var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+var serverdate=new Date(currenttime)
+
+function padlength(what){
+var output=(what.toString().length==1)? "0"+what : what
+return output
+}
+
+function displaytime(){
+serverdate.setSeconds(serverdate.getSeconds()+1)
+//var datestring=montharray[serverdate.getMonth()]+" "+padlength(serverdate.getDate())+", "+serverdate.getFullYear()
+var timestring=padlength(serverdate.getHours())+":"+padlength(serverdate.getMinutes())+":"+padlength(serverdate.getSeconds())
+document.getElementById("servertime").innerHTML=timestring;
+}
+
+window.onload=function(){
+setInterval("displaytime()", 1000)
+}
+</script>
+
+<div id="container">
+  <div class="header">
+
+          <div class="logo" style="position:relative; top:-25px; left:5px;"><!-- BACKOFFICE MANAGER<br/> -->
+          <img src="http://manage.shanplay.com/static/images/logo.png" align="Logo" style="margin: 15px 0px 0px -3px;float: left;height: 83px;">
+          <!-- <h1>Agent</h1> -->
+      <!--<span class="logocaption">for amusement only</span>--></div>
+
+    </div>
+<style>
+body {
+    height: auto !important;
+}
+.LoginInWrap {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 100px;
+}
+</style>
+<form action="http://manage.shanplay.com/login/loginprocess" method="post" name="process">
+<div class="LoginWrap">
+
+<div class="LoginInWrap">
+      <img src="https://www.codeproject.com/KB/cs/400715/1.jpg">
+
+      </div>
+</div>
+</form>
+<!--<div style="width:67%;text-align:right;padding-right:30px;" class="UDeditR"><a href="http://manage.shanplay.com/" >Agent Login</a></div>-->
+</div>
+
+
+</body></html>

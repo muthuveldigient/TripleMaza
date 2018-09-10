@@ -1,4 +1,5 @@
 <?php
+
 session_start ();
 include_once("include/DbConnect.php");
 include_once("include/clsLotto.php");
@@ -3339,179 +3340,176 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
     </div>
   </div>
 
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.plugin.js"></script>
-    <script src="js/jquery.countdown.js"></script>
-    <script type="text/javascript">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.plugin.js"></script>
+<script src="js/jquery.countdown.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script type="text/javascript">
 
-        /*** date and time display start */
-        var currenttime = '<?php echo $dbTime; ?>';
-        // var currenttime1 = '<?=  date("Y-m-d H:i:s")?>';
-        var montharray = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
-        var serverdate = new Date(currenttime);
-        //console.log(currenttime1);
-        //console.log(serverdate);
-        function padlength(what) {
-            var output = (what.toString().length == 1) ? "0" + what : what
-            return output
-        }
+    /*** date and time display start */
+    var currenttime = '<?php echo $dbTime; ?>';
+    // var currenttime1 = '<?=  date("Y-m-d H:i:s")?>';
+    var montharray = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+    var serverdate = new Date(currenttime);
+    //console.log(currenttime1);
+    //console.log(serverdate);
+    function padlength(what) {
+        var output = (what.toString().length == 1) ? "0" + what : what
+        return output
+    }
 
-        function displaytime() {
-            var hours = serverdate.getHours();
-            var ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
+    function displaytime() {
+        var hours = serverdate.getHours();
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
 
-            serverdate.setSeconds(serverdate.getSeconds() + 1)
-            var timestring = hours + ":" + padlength(serverdate.getMinutes()) + ":" + padlength(serverdate.getSeconds())
-            document.getElementById("servertime").innerHTML = timestring + ' ' + ampm;
+        serverdate.setSeconds(serverdate.getSeconds() + 1)
+        var timestring = hours + ":" + padlength(serverdate.getMinutes()) + ":" + padlength(serverdate.getSeconds())
+        document.getElementById("servertime").innerHTML = timestring + ' ' + ampm;
 
-            /* serverdate.setSeconds(serverdate.getSeconds()+1)
-            var timestring=padlength(serverdate.getHours())+":"+padlength(serverdate.getMinutes())+":"+padlength(serverdate.getSeconds())
-            document.getElementById("servertime").innerHTML=timestring; */
-        }
+        /* serverdate.setSeconds(serverdate.getSeconds()+1)
+        var timestring=padlength(serverdate.getHours())+":"+padlength(serverdate.getMinutes())+":"+padlength(serverdate.getSeconds())
+        document.getElementById("servertime").innerHTML=timestring; */
+    }
 
-        window.onload = function () {
-            setInterval("displaytime()", 1000);
-        }
-        /*** date and time display end** countdown timer start  */
-        var preloadeOnResize = function (e) {
-            var elWidth = 1920;
-            var elHeight = 1080;
-            var scale;
-            var bodyWidth = window.innerWidth || document.documentElement.clientWidth ||
-                document.body.clientWidth || document.body.offsetWidth;
-            var bodyHeight = window.innerHeight || document.documentElement.clientHeight ||
-                document.body.clientHeight || document.body.offsetHeight;
-            scale = Math.min(
-                bodyWidth / elWidth,
-                bodyHeight / elHeight
-            );
-            document.getElementById("wrapper").style.transform = "translate(-50%, -50%) scale(" + scale + ")";
+    window.onload = function () {
+        setInterval("displaytime()", 1000);
+    }
+    /*** date and time display end** countdown timer start  */
+    var preloadeOnResize = function (e) {
+        var elWidth = 1920;
+        var elHeight = 1080;
+        var scale;
+        var bodyWidth = window.innerWidth || document.documentElement.clientWidth ||
+            document.body.clientWidth || document.body.offsetWidth;
+        var bodyHeight = window.innerHeight || document.documentElement.clientHeight ||
+            document.body.clientHeight || document.body.offsetHeight;
+        scale = Math.min(
+            bodyWidth / elWidth,
+            bodyHeight / elHeight
+        );
+        document.getElementById("wrapper").style.transform = "translate(-50%, -50%) scale(" + scale + ")";
 
-        };
-        preloadeOnResize(null);
-        window.addEventListener("resize", preloadeOnResize);
+    };
+    preloadeOnResize(null);
+    window.addEventListener("resize", preloadeOnResize);
 
 
-        $(function () {
-            $('#ndrawLeftTime').html('00:00:00');
-            var timeLeft = '';
-            <?php if (!empty($drawCountDownTime)) { ?>
-            timeLeft = new Date(<?php echo $drawCountDownTime;?>); //2016,0,06,11,56,01
-            //$('#ndrawLeftTime').countdown({until: timeLeft,serverSync: serverTime, format: 'HMS', padZeroes: true, compact: true,onExpiry: liftOff});
-            $('#ndrawLeftTime').countdown({
-                until: timeLeft,
-                serverSync: serverTime,
-                format: 'HMS',
-                padZeroes: true,
-                compact: true,
-                timezone: +5.5,
-                //onExpiry: liftOff,
-                onTick: function (periods) {
-                    var secs = $.countdown.periodsToSeconds(periods);
-                    if (secs < 60) {
-                        $('#ndrawLeftTime span').addClass('text_blink');
-                    }
+    $(function () {
+        $('#ndrawLeftTime').html('00:00:00');
+        var timeLeft = '';
+        <?php if (!empty($drawCountDownTime)) { ?>
+        timeLeft = new Date(<?php echo $drawCountDownTime;?>); //2016,0,06,11,56,01
+        //$('#ndrawLeftTime').countdown({until: timeLeft,serverSync: serverTime, format: 'HMS', padZeroes: true, compact: true,onExpiry: liftOff});
+        $('#ndrawLeftTime').countdown({
+            until: timeLeft,
+            serverSync: serverTime,
+            format: 'HMS',
+            padZeroes: true,
+            compact: true,
+            timezone: +5.5,
+            //onExpiry: liftOff,
+            onTick: function (periods) {
+                var secs = $.countdown.periodsToSeconds(periods);
+                if (secs < 60) {
+                    $('#ndrawLeftTime span').addClass('text_blink');
                 }
-            });
-            <?php }?>
-        });	
-    </script>
-
-
-    <script src="js/TweenMax.min.js"></script>
-    <script>
-         var container = $(".result_container"),
-            div1 = $(".div1"),
-            tweenForward, tweenBack;
-
-        TweenMax.set(container, {
-            transformStyle: 'preserve-3d'
-        });
-
-        $.each(div1, function(index, element) {
-            TweenMax.to(element, 0, {
-                rotationX: (36 * index),
-                transformOrigin: '100% 100% -500px'
-            });
-        });
-
-        var tweenComplete = function() {
-            createNumTween();
-        }
-
-        var createNumTween = function() {
-            TweenLite.to(container, 0.25, {
-                rotationX: '-=500',
-                transformOrigin: '100% 100% -500px',
-                //delay: 0.01,
-                //ease: Power3.easeInOut,
-                onComplete: tweenComplete
-            });
-        };
-
-        // start the whole thing
-        TweenLite.delayedCall(0.25, createNumTween);
-
-        $(document).ready(function () {
-            $('#load').hide();
-            /** triple betting **/
-            function navigate(origin, sens) {
-                var inputs = $('.centerElem').find('input:enabled');
-                var index = inputs.index(origin);
-                index += sens;
-                if (index < 0) {
-                    index = inputs.length - 1;
-                }
-                if (index > inputs.length - 1) {
-                    index = 0;
-                }
-                inputs.eq(index).focus();
             }
-
-            $('input').keydown(function (e) {
-                if (e.keyCode == 37) {
-                    navigate(e.target, -1);
-                } else if (e.keyCode == 39) {
-                    navigate(e.target, 1);
-                } else if (e.which == 40) { // down arrow
-                    $(this).closest('div.centerElem').next().find('div:eq(' + $(this).closest('div').index() + ')').find('input[type="text"]').focus();
-                } else if (e.which == 38) { // up arrow
-                    $(this).closest('div.centerElem').prev().find('div:eq(' + $(this).closest('div').index() + ')').find('input[type="text"]').focus();
-                }
-            });
-
-            /** single beting */
-            function navigate1(origin, sens) {
-                var inputs = $('.centerElem1').find('input:enabled');
-                var index = inputs.index(origin);
-                index += sens;
-                if (index < 0) {
-                    index = inputs.length - 1;
-                }
-                if (index > inputs.length - 1) {
-                    index = 0;
-                }
-                inputs.eq(index).focus();
-            }
-
-            $('#single_default input').keyup(function (e) {
-                if (e.keyCode == 37) {
-                    navigate1(e.target, -1);
-                } else if (e.keyCode == 39) {
-                    navigate1(e.target, 1);
-                } else if (e.which == 40) { // down arrow
-                    navigate1(e.target, 1);
-                    //$(this).closest('div.one_sec_1').next().find('div:eq(' + $(this).closest('div').index() + ')').find('input[type="text"]').focus();
-                } else if (e.which == 38) { // up arrow
-                    navigate1(e.target, -1);
-                    //$(this).closest('div.one_sec_2').prev().find('div:eq(' + $(this).closest('div').index() + ')').find('input[type="text"]').focus();
-                }
-            });
-            /** up, down,right and left key functionality end */
         });
-    </script>
+        <?php }?>
+    });	
+
+        var container = $(".result_container"),
+        div1 = $(".div1"),
+        tweenForward, tweenBack;
+
+    TweenMax.set(container, {
+        transformStyle: 'preserve-3d'
+    });
+
+    $.each(div1, function(index, element) {
+        TweenMax.to(element, 0, {
+            rotationX: (36 * index),
+            transformOrigin: '100% 100% -500px'
+        });
+    });
+
+    var tweenComplete = function() {
+        createNumTween();
+    }
+
+    var createNumTween = function() {
+        TweenLite.to(container, 0.25, {
+            rotationX: '-=500',
+            transformOrigin: '100% 100% -500px',
+            //delay: 0.01,
+            //ease: Power3.easeInOut,
+            onComplete: tweenComplete
+        });
+    };
+
+    // start the whole thing
+    TweenLite.delayedCall(0.25, createNumTween);
+
+    $(document).ready(function () {
+        $('#load').hide();
+        /** triple betting **/
+        function navigate(origin, sens) {
+            var inputs = $('.centerElem').find('input:enabled');
+            var index = inputs.index(origin);
+            index += sens;
+            if (index < 0) {
+                index = inputs.length - 1;
+            }
+            if (index > inputs.length - 1) {
+                index = 0;
+            }
+            inputs.eq(index).focus();
+        }
+
+        $('input').keydown(function (e) {
+            if (e.keyCode == 37) {
+                navigate(e.target, -1);
+            } else if (e.keyCode == 39) {
+                navigate(e.target, 1);
+            } else if (e.which == 40) { // down arrow
+                $(this).closest('div.centerElem').next().find('div:eq(' + $(this).closest('div').index() + ')').find('input[type="text"]').focus();
+            } else if (e.which == 38) { // up arrow
+                $(this).closest('div.centerElem').prev().find('div:eq(' + $(this).closest('div').index() + ')').find('input[type="text"]').focus();
+            }
+        });
+
+        /** single beting */
+        function navigate1(origin, sens) {
+            var inputs = $('.centerElem1').find('input:enabled');
+            var index = inputs.index(origin);
+            index += sens;
+            if (index < 0) {
+                index = inputs.length - 1;
+            }
+            if (index > inputs.length - 1) {
+                index = 0;
+            }
+            inputs.eq(index).focus();
+        }
+
+        $('#single_default input').keyup(function (e) {
+            if (e.keyCode == 37) {
+                navigate1(e.target, -1);
+            } else if (e.keyCode == 39) {
+                navigate1(e.target, 1);
+            } else if (e.which == 40) { // down arrow
+                navigate1(e.target, 1);
+                //$(this).closest('div.one_sec_1').next().find('div:eq(' + $(this).closest('div').index() + ')').find('input[type="text"]').focus();
+            } else if (e.which == 38) { // up arrow
+                navigate1(e.target, -1);
+                //$(this).closest('div.one_sec_2').prev().find('div:eq(' + $(this).closest('div').index() + ')').find('input[type="text"]').focus();
+            }
+        });
+        /** up, down,right and left key functionality end */
+    });
+</script>
 </body>
 <script src="js/dashboard.js?v=<?php echo $version ;?>"></script>
 <?php if ($_SESSION[SESSION_PRINTER_OPTION]==1){?>

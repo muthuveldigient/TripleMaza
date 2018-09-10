@@ -1,0 +1,132 @@
+		*{
+			margin:0;
+			padding:0;
+			list-style:none;
+			border:none;
+		}
+		
+		
+		div.domtab{ width:1022px; float: left; margin-bottom: 10px; 
+		}
+		ul.domtabs{
+			float:left;
+			width:100%;
+			margin:2em 0 0 0;				
+		}
+		ul.domtabs li{ float:left; padding-top: 0; padding-right: 0em; padding-bottom: 0; padding-left: 0.3em; line-height: normal; text-align: center; 
+		}
+		ul.domtabs a:link,
+		ul.domtabs a:visited,
+		ul.domtabs a:active,
+		ul.domtabs a:hover{ width:auto; display:block; color:#333333; height:auto; font-weight:bold; text-decoration:none; background-color: #666; background-image: url(../images/menubg-nor.png); background-repeat: repeat-x; border-top-width: 1px; border-right-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: #6acefc; border-right-color: #6acefc; border-left-color: #6acefc; line-height: 12px; padding-top: 3pt; padding-right: 10px; padding-bottom: 0px; padding-left: 10px; 
+		}
+		html>body ul.domtabs a:link,
+		html>body ul.domtabs a:visited,
+		html>body ul.domtabs a:active,
+		html>body ul.domtabs a:hover{ height:auto; min-height:30px; 
+		}
+		ul.domtabs a:hover{ background-color: #696; background-image: url(../images/menubg-over.png); background-repeat: repeat-x; 
+		}
+		div.domtab div{ clear:both; color:#006699; background-color: #d6f1fe; padding: 8px; 
+		}
+		ul.domtabs li.active a:link,
+		ul.domtabs li.active a:visited,
+		ul.domtabs li.active a:active,
+		ul.domtabs li.active a:hover{ background:#696; background-image: url(../images/menubg-over.png); background-repeat: repeat-x; color:#333333; 		}
+		#domtabprintview{
+			float:right;
+			padding-right:1em;
+			text-align:right;
+		}
+		#domtabprintview a:link,
+		#domtabprintview a:visited,
+		#domtabprintview a:active,
+		#domtabprintview a:hover{
+			color:#fff;
+		}
+		p{
+			margin:0 0 .5em 0;
+			line-height:1.3em;
+		}
+		h2{
+			font-size:1.3em;
+			color:#cfc;
+			text-transform:uppercase;
+			font-family:"Trebuchet MS",Arial,Sans-Serif;
+			padding:0 0 .7em .2em;
+		}
+		h1{
+			font-size:2em;
+			text-align:center;
+			font-weight:normal;
+			text-transform:uppercase;
+			font-family:"Trebuchet MS",Arial,Sans-Serif;
+			padding:.5em 0;
+			background:#000;
+			border-bottom:1px solid #666;
+		}
+		pre{
+			font-size:1.2em;
+			padding:1em;
+		}
+		div.domtab div a:link,
+		div.domtab div a:visited,
+		div.domtab div a:active
+		{ color:#006699; display:block; padding:1em .5em; font-weight:bold; 
+		}
+		div.domtab div h2 a,
+		div.domtab div h2 a:hover,
+		div.domtab div h2 a:active
+		{
+			color:#cfc;
+			display:inline;
+			padding:0;
+			font-weight:normal;
+			font-size:1em;
+		}
+		
+/* other scheme! */
+#other{
+	font-size:.8em;
+	margin-left:.3em;
+	width:60em;
+	margin-bottom:3em;
+	float:left;
+}
+div#other.domtab div{
+	clear:both;
+	width:54em;
+	background:#669;
+	color:#fff;
+	padding:1em 3em;
+}
+		
+#other ul.domtabs a:hover{
+	background:#669;
+}
+div#other ul.domtabs li.active a:link,
+div#other ul.domtabs li.active a:visited,
+div#other ul.domtabs li.active a:active,
+div#other ul.domtabs li.active a:hover{
+	background:#669;
+	color:#fff;
+}
+#other div{
+	float:left;
+}
+ul.prevnext{
+	float:left;
+	width:100%;
+}
+ul.prevnext li{
+	float:left;
+	width:49%;
+}
+ul.prevnext li.next{
+	float:right;
+	text-align:right;
+}
+
+.MenuSublink { float: left; width: 1000px; }
+
+.SubmenuLink { float: left; width: 200px; padding-right: 5px; padding-left: 5px; clear: both; white-space: nowrap; }

@@ -32,6 +32,7 @@ function onMessage(evt)  {
 			$.post("processlogin.php", json.userData, function (response) {
 				if (response == 1) {
 					//doSend(response.message);
+					$("#log_msg").hide();
 					window.location.href = "web/index.php";
 				} else {
 					$("#log_msg").show().html('Username or Password invalid');
@@ -116,11 +117,13 @@ function writeToScreen(message) {
 }
 
 function activeWS(){
-	var msg = {action: "AckRequest"};
+	var msg = {action: "AckRequest",serviceType: "tcmazzaservice"};
 	doSend(JSON.stringify(msg));
-	
 }
 
+setInterval(function () {
+	activeWS()
+}, 3000);
 var count = 10;
 
 function startCounting( ) {

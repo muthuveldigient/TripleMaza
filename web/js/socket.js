@@ -50,6 +50,9 @@ function onMessage(evt) {
 				$('.preDrawTime').html(drawTime);
 			}*/
 			var win_number = json.winNumber;
+			$('#preDrawTime').html(json.drawTime);
+			$('.preDrawTime').html(json.drawTime);
+			$('.preDrawNo').html(json.drawNumber);
 			if(win_number!=''){
 				var res = win_number.toString(10).split('');
 				$('#result_1').html('<img class="img-responsive" src="images/'+res[0]+'.png" />');
@@ -62,18 +65,7 @@ function onMessage(evt) {
 	if (json.action == "cancelresult") {
 		updateUserBalance();
 	}
-	if (json.action == "streaming_update") {
-		if (json.status == 1) {//streaming enabled
-			var streaming_status = $('#streamingOFF_status').val();
-			if (streaming_status == 1) {
-				//location.reload();
-				streamingON();
-			}
-		}
-		if (json.status == 0) {//streaming disabled
-			streamingOFF();
-		}
-	}
+	
 	if (json.action == "claimResponse") {
 		//console.log("claimResponse:"+json.balance);
 		$('#userBalance').html(json.balance);
@@ -344,10 +336,10 @@ function onMessage(evt) {
 							if (value.availabeTicket == 0) {
 								$('#rm_error1').css("color", '#f00').html('No coupon is available');
 							} else {
-								var msgtext = 'coupon is left';
-								if (value.availabeTicket > 1) {
-									msgtext = 'coupons are left';
-								}
+								// var msgtext = 'coupon is left';
+								// if (value.availabeTicket > 1) {
+								// 	msgtext = 'coupons are left';
+								// }
 								//$('#rm_error1').css("color",'#f00').html('Only '+value.availabeTicket+' '+msgtext);
 
 								if (val != '') {
@@ -372,10 +364,10 @@ function onMessage(evt) {
 							if (value.availabeTicket == 0) {
 								$('#rm_error2').css("color", '#f00').html('No coupon is available');
 							} else {
-								var msgtext = 'coupon is left';
-								if (value.availabeTicket > 1) {
-									msgtext = 'coupons are left';
-								}
+								// var msgtext = 'coupon is left';
+								// if (value.availabeTicket > 1) {
+								// 	msgtext = 'coupons are left';
+								// }
 								//$('#rm_error2').css("color",'#f00').html('Only '+value.availabeTicket+' '+msgtext);
 
 								if (val1 != '') {
@@ -399,10 +391,10 @@ function onMessage(evt) {
 							if (value.availabeTicket == 0) {
 								$('#rm_error3').css("color", '#f00').html('No coupon is available');
 							} else {
-								var msgtext = 'coupon is left';
-								if (value.availabeTicket > 1) {
-									msgtext = 'coupons are left';
-								}
+								// var msgtext = 'coupon is left';
+								// if (value.availabeTicket > 1) {
+								// 	msgtext = 'coupons are left';
+								// }
 								//$('#rm_error3').css("color",'#f00').html('Only '+value.availabeTicket+' '+msgtext);
 								if (val2 != '') {
 									$('#err3').html(errTitle);
@@ -545,7 +537,7 @@ if (drawStart != undefined && drawStart != "") {
 }
 
 function activeWS() {
-	var msg = { action: "AckRequest" };
+	var msg = {action: "AckRequest",serviceType: "tcmazzaservice"};
 	doSend(JSON.stringify(msg));
 
 }
@@ -578,7 +570,7 @@ function getDrawUpdatedInfo() {
 	doSend(JSON.stringify(msg));
 }
 function updateUserBalance() {
-	var drawID = $('#future').val();
+	//var drawID = $('#future').val();
 	//	 var siteUrl = $('#siteUrl').val();
 	$.ajax({
 		type: "GET",
@@ -595,19 +587,6 @@ function updateUserBalance() {
 				$('#result_top').html(res.RESULT);
 				$('#curdrawTime').html(res.CURR_DRAW_TIME);
 				$('#last_result_info').html(res.LAST_RESULT);
-				/* if(res.STREAMING==0) {//streaming disabled.
-					//streamingOFF();
-				}else if(res.STREAMING==1) {//streaming enabled.
-						var streaming_status = $('#streamingOFF_status').val();
-					if( streaming_status ==1){
-						location.reload();
-					}
-				} */
-				/* if(res.NXT_SEL==''){
-					$('#future').html('').hide();
-					}else{
-					$('#future').html(res.NXT_SEL);
-				} */
 			}
 		},
 		error: function (xhr, textStatus, errorThrown) {
@@ -626,8 +605,6 @@ function updateUserBalance() {
 				$("#msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
 				location.reload();
 			}
-
-
 		}
 	});
 

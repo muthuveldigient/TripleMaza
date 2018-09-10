@@ -1,0 +1,811 @@
+DROP QUERIES:-
+1. DROP TABLE 100_scratchcard_details,
+101_scratchcard_details,
+102_scratchcard_details,
+103_scratchcard_details,
+104_scratchcard_details,
+105_scratchcard_details,
+106_scratchcard_details,
+109_scratchcard_details,
+111_scratchcard_details,
+112_scratchcard_details,
+113_scratchcard_details,
+114_scratchcard_details,
+116_scratchcard_details,
+117_scratchcard_details,
+118_scratchcard_details,
+119_scratchcard_details,
+11_scratchcard_details,
+120_scratchcard_details,
+121_scratchcard_details,
+122_scratchcard_details,
+123_scratchcard_details,
+124_scratchcard_details,
+125_scratchcard_details,
+126_scratchcard_details,
+127_scratchcard_details,
+128_scratchcard_details,
+129_scratchcard_details,
+12_scratchcard_details,
+130_scratchcard_details,
+131_scratchcard_details,
+132_scratchcard_details,
+133_scratchcard_details,
+134_scratchcard_details,
+135_scratchcard_details,
+136_scratchcard_details,
+137_scratchcard_details,
+138_scratchcard_details,
+139_scratchcard_details,
+13_scratchcard_details,
+140_scratchcard_details,
+15_scratchcard_details,
+17_scratchcard_details,
+19_scratchcard_details,
+1_scratchcard_details,
+21_scratchcard_details,
+22_scratchcard_details,
+23_scratchcard_details,
+24_scratchcard_details,
+25_scratchcard_details,
+26_scratchcard_details,
+27_scratchcard_details,
+28_scratchcard_details,
+29_scratchcard_details,
+2_scratchcard_details,
+30_scratchcard_details,
+31_scratchcard_details,
+32_scratchcard_details,
+33_scratchcard_details,
+34_scratchcard_details,
+35_scratchcard_details,
+36_scratchcard_details,
+37_scratchcard_details,
+38_scratchcard_details,
+39_scratchcard_details,
+40_scratchcard_details,
+41_scratchcard_details,
+42_scratchcard_details,
+43_scratchcard_details,
+44_scratchcard_details,
+45_scratchcard_details,
+46_scratchcard_details,
+47_scratchcard_details,
+48_scratchcard_details,
+4_scratchcard_details,
+51_scratchcard_details,
+57_scratchcard_details,
+58_scratchcard_details,
+59_scratchcard_details,
+5_scratchcard_details,
+60_scratchcard_details,
+61_scratchcard_details,
+62_scratchcard_details,
+63_scratchcard_details,
+64_scratchcard_details,
+65_scratchcard_details,
+66_scratchcard_details,
+67_scratchcard_details,
+68_scratchcard_details,
+69_scratchcard_details,
+70_scratchcard_details,
+71_scratchcard_details,
+72_scratchcard_details,
+73_scratchcard_details,
+74_scratchcard_details,
+75_scratchcard_details,
+76_scratchcard_details,
+77_scratchcard_details,
+78_scratchcard_details,
+79_scratchcard_details,
+7_scratchcard_details,
+80_scratchcard_details,
+81_scratchcard_details,
+82_scratchcard_details,
+83_scratchcard_details,
+84_scratchcard_details,
+85_scratchcard_details,
+86_scratchcard_details,
+87_scratchcard_details,
+88_scratchcard_details,
+89_scratchcard_details,
+8_scratchcard_details,
+90_scratchcard_details,
+91_scratchcard_details,
+92_scratchcard_details,
+93_scratchcard_details,
+94_scratchcard_details,
+95_scratchcard_details,
+96_scratchcard_details,
+97_scratchcard_details,
+98_scratchcard_details,
+99_scratchcard_details,
+9_scratchcard_details,
+_scratchcard_details;
+
+DROP TABLE agent_game_revenueshare_old;
+DROP TABLE alert_config;
+DROP TABLE backup;
+
+DROP TABLE banner_manager;
+DROP TABLE banner_positions;
+
+DROP TABLE channel_replication;
+DROP TABLE coin_conversion;
+DROP TABLE coin_transaction;
+
+DROP TABLE current_payout_info;
+DROP TABLE current_payout_info_temp;
+DROP TABLE dcasino_configuration;
+
+DROP TABLE flowers;
+DROP TABLE friends;
+DROP TABLE game_aquadventure;
+DROP TABLE game_aquadventure_level10_pattern;
+DROP TABLE game_aquadventure_level1_pattern;
+DROP TABLE game_aquadventure_level2_pattern;
+DROP TABLE game_aquadventure_level3_pattern;
+DROP TABLE game_aquadventure_level4_pattern;
+DROP TABLE game_aquadventure_level5_pattern;
+DROP TABLE game_aquadventure_level6_pattern;
+DROP TABLE game_aquadventure_level7_pattern;
+DROP TABLE game_aquadventure_level8_pattern;
+DROP TABLE game_aquadventure_level9_pattern;
+DROP TABLE game_aquadventure_level_pattern;
+DROP TABLE game_aquadventure_pattern;
+DROP TABLE game_brain_train;
+DROP TABLE game_brain_train_level_data;
+DROP TABLE game_bubbleblaster;
+DROP TABLE game_bugslyf;
+DROP TABLE game_bugslyf_init_set;
+DROP TABLE game_bugslyf_level_set1;
+DROP TABLE game_bugslyf_level_set2;
+DROP TABLE game_bugslyf_level_set3;
+DROP TABLE game_bugslyf_level_set4;
+DROP TABLE game_bugslyf_lock_positions;
+DROP TABLE game_bugslyf_target_data;
+DROP TABLE game_carrom;
+DROP TABLE game_chat_texts;
+DROP TABLE game_chess;
+DROP TABLE game_chipmadness;
+DROP TABLE game_cyberpool;
+DROP TABLE game_dotsandbox;
+DROP TABLE game_find_bind;
+DROP TABLE game_find_bind_image;
+DROP TABLE game_findobjects;
+DROP TABLE game_fiveinarow;
+DROP TABLE game_hubble_bubble;
+DROP TABLE game_hubble_bubble_sets;
+DROP TABLE game_ironhoofderby;
+DROP TABLE game_level_transactions;
+DROP TABLE game_marble_maze;
+DROP TABLE game_matchmaker;
+DROP TABLE game_potshot;
+DROP TABLE game_pumpkinshatter;
+DROP TABLE game_sonicrush;
+DROP TABLE game_transaction;
+DROP TABLE game_transaction_history;
+DROP TABLE game_transactions;
+DROP TABLE game_yeti;
+DROP TABLE group_info;
+DROP TABLE group_main_menu_info;
+DROP TABLE group_mp_main_menu_info;
+DROP TABLE group_mp_sub_menu_info;
+DROP TABLE group_mp_sub_menu_option_info;
+DROP TABLE group_sub_menu_info;
+DROP TABLE group_sub_menu_option_info;
+DROP TABLE horserace_language_settings;
+
+DROP TABLE luckycard_cards;
+DROP TABLE luckycard_language_settings;
+DROP TABLE luckycard_play;
+DROP TABLE luckycard_settings;
+DROP TABLE main_menu_info;
+DROP TABLE map;
+DROP TABLE news;
+DROP TABLE newtable;
+DROP TABLE private_rooms;
+DROP TABLE product_creation;
+DROP TABLE product_transaction;
+DROP TABLE prohibited_name;
+DROP TABLE quest_master;
+DROP TABLE quest_task_master;
+DROP TABLE risk_management_system;
+DROP TABLE room;
+DROP TABLE room_items;
+DROP TABLE site_query_master;
+DROP TABLE skill4win_config;
+DROP TABLE skill_commentmeta;
+DROP TABLE skill_comments;
+DROP TABLE skill_contact_form_7;
+DROP TABLE skill_forum_captcha;
+DROP TABLE skill_forum_forums;
+DROP TABLE skill_forum_groups;
+DROP TABLE skill_forum_posts;
+DROP TABLE skill_forum_threads;
+DROP TABLE skill_games;
+DROP TABLE skill_links;
+DROP TABLE skill_options;
+DROP TABLE skill_postmeta;
+DROP TABLE skill_posts;
+DROP TABLE skill_sfdefpermissions;
+DROP TABLE skill_sfforums;
+DROP TABLE skill_sfgroups;
+DROP TABLE skill_sflinks;
+DROP TABLE skill_sflog;
+DROP TABLE skill_sfmembers;
+DROP TABLE skill_sfmemberships;
+DROP TABLE skill_sfmessages;
+DROP TABLE skill_sfmeta;
+DROP TABLE skill_sfnotice;
+DROP TABLE skill_sfoptions;
+DROP TABLE skill_sfpermissions;
+DROP TABLE skill_sfpostratings;
+DROP TABLE skill_sfposts;
+DROP TABLE skill_sfroles;
+DROP TABLE skill_sfsettings;
+DROP TABLE skill_sftagmeta;
+DROP TABLE skill_sftags;
+DROP TABLE skill_sftopics;
+DROP TABLE skill_sftrack;
+DROP TABLE skill_sfusergroups;
+DROP TABLE skill_sfwaiting;
+DROP TABLE skill_term_relationships;
+DROP TABLE skill_term_taxonomy;
+DROP TABLE skill_terms;
+DROP TABLE skill_usermeta;
+DROP TABLE skill_users;
+DROP TABLE skillcoin_type;
+DROP TABLE user_quest;
+DROP TABLE user_skill_points;
+DROP TABLE user_task_quest;
+DROP TABLE virtual_goods;
+DROP TABLE xp_points_mode;
+DROP TABLE xp_points_transaction;
+DROP TABLE yagent_game_turn_over_history;
+DROP TABLE ydistributor_game_turn_over_history;
+DROP TABLE ydistributor_report;
+DROP TABLE ymainagent_game_turn_over_history;
+DROP TABLE ysubdistributor_game_turn_over_history;
+DROP TABLE yuser_turnover_history;
+
+
+-------------------------------- NEW TABLES -------------------------------------------------------------
+
+CREATE TABLE  `game_transaction_turnover_report` (
+  `GAME_TURNOVER_REPORT_ID` bigint(50) NOT NULL AUTO_INCREMENT,
+  `SHAN_GAME_TRANSACTION_ID` bigint(50) NOT NULL DEFAULT '0',
+  `GAME_TRANSACTION_ID` bigint(50) NOT NULL DEFAULT '0',
+  `GAME_ID` varchar(64) CHARACTER SET utf8 NOT NULL,
+  `TOTAL_GAME_PLAYS` bigint(20) NOT NULL,
+  `TOTAL_STAKE` decimal(10,2) NOT NULL,
+  `TOTAL_WIN` decimal(10,2) DEFAULT NULL,
+  `RAKE_PERCENTAGE` decimal(10,2) DEFAULT '0.00',
+  `TOTAL_RAKE` decimal(10,2) DEFAULT '0.00',
+  `TOTAL_MARGIN` decimal(10,2) DEFAULT '0.00',
+  `TOTAL_NET` decimal(10,2) DEFAULT NULL,
+  `PARTNER_ID` bigint(20) NOT NULL,
+  `CREATED_DATE` datetime NOT NULL,
+  `UPDATED_DATE` date NOT NULL,
+  PRIMARY KEY (`GAME_TURNOVER_REPORT_ID`),
+  UNIQUE KEY `UNIQUE_INDEX_GAME_ID` (`GAME_ID`,`UPDATED_DATE`),
+  KEY `FK_game_transaction_turnover_report_1` (`PARTNER_ID`),
+  KEY `COMP_IND_CREATED_DATE_PARTNER_ID_` (`CREATED_DATE`,`PARTNER_ID`),
+  CONSTRAINT `FK_game_transaction_turnover_report_1` FOREIGN KEY (`PARTNER_ID`) REFERENCES `partner` (`PARTNER_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `hand_history` (
+  `HAND_HISTORY_ID` bigint(50) NOT NULL AUTO_INCREMENT,
+  `PLAY_ID` bigint(50) NOT NULL,
+  `USER_ID` bigint(50) NOT NULL,
+  `PLAY_GROUP_ID` bigint(50) NOT NULL,
+  `TOURNAMENT_ID` bigint(100) NOT NULL,
+  `TOURNAMENT_TABLE_ID` bigint(50) NOT NULL,
+  `INTERNAL_REFERENCE_NO` varchar(100) DEFAULT NULL,
+  `GAME_REFERENCE_NO` varchar(100) NOT NULL,
+  `STAKE` decimal(10,2) NOT NULL,
+  `WIN` decimal(10,2) DEFAULT '0.00',
+  `REVENUE` decimal(10,2) DEFAULT '0.00',
+  `RAKE` decimal(10,2) DEFAULT '0.00',
+  `POT_AMOUNT` decimal(10,2) DEFAULT '0.00',
+  `TABLE_CARD` varchar(100) NOT NULL,
+  `PLAYER_CARD` varchar(100) NOT NULL,
+  `PLAYER_INDEX` bigint(5) DEFAULT '0',
+  `WIN_TYPE` varchar(100) DEFAULT NULL,
+  `WIN_RESULT_TYPE` varchar(100) DEFAULT NULL,
+  `WIN_HANDS` varchar(200) DEFAULT NULL,
+  `USER_DETAILS` varchar(200) DEFAULT NULL,
+  `RANK_HOLDER` bigint(5) DEFAULT '0',
+  `USER_HAND` varchar(100) DEFAULT NULL,
+  `USER_ORDERS` varchar(100) DEFAULT NULL,
+  `WINNER_MAP` varchar(100) DEFAULT NULL,
+  `PRE_FLOP` varchar(1000) DEFAULT NULL,
+  `FLOP` varchar(1000) DEFAULT NULL,
+  `TURN` varchar(1000) DEFAULT NULL,
+  `RIVER` varchar(1000) DEFAULT NULL,
+  `CREATED_DATE` datetime DEFAULT NULL,
+  `CUSTOM1` varchar(100) DEFAULT NULL,
+  `CUSTOM2` bigint(20) DEFAULT NULL,
+  `CUSTOM3` varchar(100) DEFAULT NULL,
+  `CUSTOM4` bigint(20) DEFAULT NULL,
+  `CUSTOM5` varchar(100) DEFAULT NULL,
+  `CUSTOM6` bigint(20) DEFAULT NULL,
+  `CUSTOM7` varchar(100) DEFAULT NULL,
+  `CUSTOM8` varchar(100) DEFAULT NULL,
+  `CUSTOM9` datetime DEFAULT NULL,
+  `CUSTOM10` datetime DEFAULT NULL,
+  PRIMARY KEY (`HAND_HISTORY_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `role` (
+  `ROLE_ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ROLE_NAME` varchar(150) NOT NULL,
+  `FK_ROLE_ID` bigint(20) NOT NULL,
+  `ROLE_DESC` text NOT NULL,
+  `STATUS` int(1) NOT NULL,
+  `ONLINE_AGENT_STATUS` int(3) DEFAULT '0' COMMENT 'onlie 0,agent 1',
+  `MENU_ORDER` bigint(20) NOT NULL,
+  `LINK` varchar(200) NOT NULL,
+  `CREATED_BY` varchar(64) NOT NULL,
+  `CREATED_DATE` datetime NOT NULL,
+  `UPDATED_BY` varchar(64) NOT NULL,
+  `UPDATED_DATE` datetime NOT NULL,
+  PRIMARY KEY (`ROLE_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `role_to_admin` (
+  `ROLE_TO_ADMIN_ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  `FK_ROLE_ID` bigint(20) NOT NULL,
+  `FK_ADMIN_USER_ID` bigint(20) NOT NULL,
+  `CREATE_DATE` datetime NOT NULL,
+  `CREATE_BY` varchar(64) NOT NULL,
+  PRIMARY KEY (`ROLE_TO_ADMIN_ID`),
+  KEY `FK_role_to_admin_1` (`FK_ROLE_ID`),
+  KEY `FK_role_to_admin_2` (`FK_ADMIN_USER_ID`),
+  CONSTRAINT `FK_role_to_admin_1` FOREIGN KEY (`FK_ROLE_ID`) REFERENCES `role` (`ROLE_ID`),
+  CONSTRAINT `FK_role_to_admin_2` FOREIGN KEY (`FK_ADMIN_USER_ID`) REFERENCES `admin_user` (`ADMIN_USER_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `master_transaction_partner_history` (
+  `MASTER_TRANSACTTION_ID` bigint(50) NOT NULL AUTO_INCREMENT,
+  `FK_PARTNER_ID` bigint(50) NOT NULL,
+  `FK_BALANCE_TYPE_ID` int(3) NOT NULL,
+  `FK_TRANSACTION_STATUS_ID` int(3) NOT NULL,
+  `FK_TRANSACTION_TYPE_ID` int(3) NOT NULL,
+  `TRANSACTION_AMOUNT` decimal(10,2) NOT NULL,
+  `TRANSACTION_DATE` datetime NOT NULL,
+  `INTERNAL_REFERENCE_NO` varchar(32) NOT NULL,
+  `CURRENT_TOT_BALANCE` decimal(20,2) NOT NULL,
+  `CLOSING_TOT_BALANCE` decimal(20,2) NOT NULL,
+  PRIMARY KEY (`MASTER_TRANSACTTION_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `user_turnover_report_daily` (
+  `USER_TURNOVER_REPORT_ID` bigint(50) NOT NULL AUTO_INCREMENT,
+  `USER_ID` bigint(50) NOT NULL,
+  `GAME_TRANSACTION_ID` bigint(50) NOT NULL,
+  `PARTNER_ID` bigint(50) NOT NULL,
+  `GAME_ID` varchar(65) NOT NULL,
+  `TOTAL_BETS` decimal(10,2) NOT NULL,
+  `TOTAL_WINS` decimal(10,2) NOT NULL,
+  `NET` decimal(10,2) NOT NULL,
+  `REPORT_DATE` datetime NOT NULL,
+  `UPDATED_DATE` date NOT NULL,
+  PRIMARY KEY (`USER_TURNOVER_REPORT_ID`),
+  UNIQUE KEY `UNIQUE_KEY_USER_ID_DATE` (`USER_ID`,`GAME_ID`,`UPDATED_DATE`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE  `partner_turnover_report_daily` (
+  `TURNOVER_REPORT_ID` bigint(50) NOT NULL AUTO_INCREMENT,
+  `GAME_TRANSACTION_ID` bigint(50) NOT NULL,
+  `PARTNER_ID` bigint(50) NOT NULL,
+  `TOTAL_BETS` decimal(10,2) NOT NULL,
+  `TOTAL_WINS` decimal(10,2) NOT NULL,
+  `MARGIN` decimal(10,2) NOT NULL,
+  `NET` decimal(10,2) NOT NULL,
+  `REPORT_DATE` datetime NOT NULL,
+  `UPDATED_DATE` date NOT NULL,
+  PRIMARY KEY (`TURNOVER_REPORT_ID`),
+  UNIQUE KEY `UNIQUE_KEY_DATE` (`PARTNER_ID`,`UPDATED_DATE`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+
+******************************************** COMPARED TABLES *****************************************************
+
+admin_user
+ALTER TABLE admin_user ADD COLUMN TRANSACTION_PASSWORD VARCHAR(64) AFTER PASSWORD;
+ALTER TABLE admin_user ADD COLUMN FK_PARTNER_ID BIGINT(64) AFTER TRANSACTION_PASSWORD;
+ALTER TABLE admin_user ADD COLUMN SESSION_ID VARCHAR(64) AFTER FK_PARTNER_ID;
+ALTER TABLE admin_user DROP COLUMN CUSTOM1;
+ALTER TABLE admin_user DROP COLUMN CUSTOM2;
+ALTER TABLE admin_user ADD COLUMN ONLINE_AGENT_STATUS INT(5) AFTER MOBILE;
+ALTER TABLE `admin_user` MODIFY COLUMN `FK_PARTNER_ID` BIGINT(64) NOT NULL;
+ALTER TABLE `admin_user` MODIFY COLUMN `TRANSACTION_PASSWORD` VARCHAR(64) NOT NULL,MODIFY COLUMN `SESSION_ID` VARCHAR(64) NOT NULL;
+
+partner
+ALTER TABLE partner ADD COLUMN FK_PARTNER_TYPE_ID BIGINT(20) AFTER IS_SUBDISTRIBUTOR;
+ALTER TABLE partner ADD COLUMN ONLINE_AGENT_STATUS INT(5) AFTER FK_PARTNER_TYPE_ID;
+ALTER TABLE `partner` MODIFY COLUMN `FK_PARTNER_TYPE_ID` BIGINT(20) NOT NULL, MODIFY COLUMN `ONLINE_AGENT_STATUS` INT(5) DEFAULT 0;
+
+
+partner_adjustment_transaction
+ALTER TABLE `partner_adjustment_transaction` CHANGE COLUMN `PARTNER_ID` `FK_PARTNER_ID` BIGINT(20) DEFAULT NULL,
+ DROP INDEX `USER_ID`,
+ ADD INDEX USER_ID USING BTREE(`FK_PARTNER_ID`);
+
+ALTER TABLE `partner_adjustment_transaction` MODIFY COLUMN `FK_PARTNER_ID` BIGINT(20) NOT NULL;
+ALTER TABLE `partner_adjustment_transaction` CHANGE COLUMN `TRANSACTION_TYPE_ID` `FK_TRANSACTION_TYPE_ID` BIGINT(20) DEFAULT NULL,
+ DROP INDEX `FK_adjustment_transaction_2`,
+ ADD INDEX FK_adjustment_transaction_2 USING BTREE(`FK_TRANSACTION_TYPE_ID`);
+
+ALTER TABLE `partner_adjustment_transaction` MODIFY COLUMN `FK_TRANSACTION_TYPE_ID` BIGINT(20) NOT NULL;
+
+
+partners_type
+ALTER TABLE partners_type ADD COLUMN ONLINE_AGENT_STATUS INT(5) DEFAULT 0 AFTER PARTNER_TYPE_DESC;
+
+user
+ALTER TABLE user ADD COLUMN ADDRESS TEXT AFTER CITY;
+ALTER TABLE user ADD COLUMN CONTACT TEXT AFTER ADDRESS;
+ALTER TABLE `user` CHANGE COLUMN `PINCODE` `ZIPCODE` VARCHAR(64) DEFAULT NULL;
+ALTER TABLE user DROP COLUMN MOBILE_LOGIN_STATUS;
+
+ALTER TABLE `user` CHANGE COLUMN `LIVE_CASINO` `MOBILE_LOGIN_STATUS` BIGINT(20) NOT NULL DEFAULT 0;
+ALTER TABLE user ADD COLUMN MAC_ID VARCHAR(45) AFTER PARTNER_ID;
+ALTER TABLE user ADD COLUMN DEFAULT_POINTS DECIMAL(10,2) NOT NULL DEFAULT 0.00 AFTER MAC_ID;
+ALTER TABLE user ADD COLUMN CREATED_BY VARCHAR(50) NOT NULL DEFAULT '' AFTER DEFAULT_POINTS;
+ALTER TABLE user ADD COLUMN ONLINE_AGENT_STATUS INT(5) NULL DEFAULT 0 AFTER CREATED_BY;
+
+partner, admin_user, role, role_to_admin, partners_type
+
+INSERT INTO `partners_type` (`PARTNER_TYPE_ID`,`PARTNER_TYPE`,`PARTNER_TYPE_DESC`,`ONLINE_AGENT_STATUS`,`CREATED_TIMESTAMP`,`MODIFIED_TIMESTAMP`) VALUES 
+ (1,'Affiliate','Affiliate partner',0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),
+ (2,'Marketing','Marketing Partner',0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),
+ (3,'White Label','White label partner',0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),
+ (4,'Topup Dealer','Topup Delear Partner',0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),
+ (11,'Main Agent','Main Agent',1,'2014-09-08 11:49:17','2014-06-19 11:49:17'),
+ (12,'Distributor','Distributor',1,'2014-09-08 11:49:17','2014-06-19 11:49:17'),
+ (13,'Sub Distributor','Sub Distributor',1,'2014-09-08 11:49:17','2014-06-19 11:49:17'),
+ (14,'Agent','Agent',1,'2014-06-19 11:49:17','2014-09-08 11:49:17');
+
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (1,'Dashboard',0,'Dashboard',0,1,1,'general/dashboard','','2013-09-02 17:13:22','','0000-00-00 00:00:00'),
+ (2,'Players',0,'Players',0,1,3,'','','2013-09-02 17:14:24','','0000-00-00 00:00:00'),
+ (3,'Cashier',0,'Cashier',0,1,3,'','','2013-09-02 17:14:53','','0000-00-00 00:00:00'),
+ (4,'Reports',0,'Reports',0,1,5,'','','2013-09-02 17:15:13','','0000-00-00 00:00:00'),
+ (5,'Administration',0,'Administration',0,1,7,'','','2013-09-02 17:15:49','','0000-00-00 00:00:00'),
+ (6,'Helpdesk',0,'Helpdesk',0,1,2,'','','2013-09-02 17:16:27','','0000-00-00 00:00:00'),
+ (7,'Marketing',0,'Marketing',0,1,6,'','','2013-09-02 17:16:51','','0000-00-00 00:00:00'),
+ (8,'Games',0,'Games',1,0,4,'','','2013-09-02 17:17:23','','0000-00-00 00:00:00'),
+ (9,'CMS',0,'CMS',1,0,10,'cms/nucasino','','2013-09-02 17:17:42','','0000-00-00 00:00:00'),
+ (10,'Player Search',2,'Player Search',0,1,1,'user/account/search?rid=10&start=1','','2013-09-02 17:18:17','','0000-00-00 00:00:00');
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (11,'Register Player',2,'Register Player',1,1,2,'user/account/register?rid=11','','2013-09-02 17:18:44','','0000-00-00 00:00:00'),
+ (12,'Transfer Points',2,'Transfer Points',1,1,3,'user/account/transfer?rid=12','','2013-09-02 17:19:30','','0000-00-00 00:00:00'),
+ (13,'Adjust Points',2,'Adjust Points',1,1,4,'user/account/adjust?rid=13','','2013-09-02 17:19:57','','0000-00-00 00:00:00'),
+ (14,'Activity Summary',2,'Activity Summary',1,0,5,'','','2013-09-02 17:20:13','','0000-00-00 00:00:00'),
+ (15,'Payin',3,'Payin',1,0,1,'cashier/pay/in?rid=15','','2013-09-02 17:26:47','','0000-00-00 00:00:00'),
+ (16,'Payout',3,'Payout',1,0,2,'cashier/pay/out?rid=3','','2013-09-02 17:27:06','','0000-00-00 00:00:00'),
+ (17,'Ledger',4,'Ledger',1,1,5,'cashier/pay/ledger?rid=17','','2013-09-02 17:27:39','','0000-00-00 00:00:00'),
+ (18,'Payment Report',4,'Payment Report',1,0,1,'reports/payment/history?rid=18','','2013-09-02 17:29:02','','0000-00-00 00:00:00');
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (19,'Casino Turnover Report',4,'Casino Turnover Report',1,0,2,'reports/turnover/report?rid=19','','2013-09-02 17:29:35','','0000-00-00 00:00:00'),
+ (20,'Game T/O Report',4,'Game T/O Report',1,1,4,'reports/turnover/game?rid=20','','2013-09-02 17:31:07','','0000-00-00 00:00:00'),
+ (21,'Game History',4,'Game History Report',0,1,4,'reports/game/history?rid=21','','2013-09-02 17:31:34','','0000-00-00 00:00:00'),
+ (22,'Create Partner',5,'Create Partner',1,1,1,'partner/addpartner?rid=22','','2013-09-02 17:32:29','','0000-00-00 00:00:00'),
+ (23,'Search Partner',5,'Search Partner',1,1,2,'partner/index?rid=23','','2013-09-02 17:32:47','','0000-00-00 00:00:00'),
+ (24,'Create Admin',5,'Create Admin',1,0,3,'admin/addadmin?rid=24','','2013-09-02 17:33:26','','0000-00-00 00:00:00'),
+ (25,'Search Admin',5,'Search Admin',1,0,4,'admin/index?rid=25&start=1','','2013-09-02 17:33:52','','0000-00-00 00:00:00'),
+ (26,'Create Role',5,'Create Role',0,0,5,'','','2013-09-02 17:53:09','','0000-00-00 00:00:00');
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (27,'Search Role',5,'Search Role',0,0,6,'','','2013-09-02 17:53:34','','0000-00-00 00:00:00'),
+ (28,'Menus',5,'Menus',0,0,7,'','','2013-09-02 17:54:03','','0000-00-00 00:00:00'),
+ (29,'Master Transaction Search',6,'Master Transaction Search',1,0,1,'helpdesk/helpdesk/transactions?rid=29&start=1','','2013-09-16 14:30:25','','2013-09-16 14:30:28'),
+ (30,'Ticket Search',6,'Ticket Search',0,0,8,'','','2013-09-16 14:30:52','','2013-09-16 14:30:54'),
+ (31,'Open Ticket',6,'',0,0,3,'','','2013-09-16 14:31:18','','2013-09-16 14:31:21'),
+ (32,'ID Verification',6,'ID Verification',1,0,4,'user/account/verification?rid=32','','2013-09-16 14:31:44','','2013-09-16 14:31:47'),
+ (33,'Bank Verification',6,'Bank Verification\r\n',0,0,5,'','','2013-09-16 14:32:14','','2013-09-16 14:32:17'),
+ (34,'Player Logins',6,'Player Logins\r\n',1,1,6,'helpdesk/helpdesk/playlogins?rid=34','','2013-09-16 14:32:38','','2013-09-16 14:32:41'),
+ (35,'Blacklists',6,'Blacklists\r\n',1,1,7,'helpdesk/blacklist/searchip?rid=35','','2013-09-16 14:33:00','','2013-09-16 14:33:02');
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (36,'Create Campaign',7,'Create Campaign\r\n',1,0,1,'marketing/campaign/addcampaign?rid=36','','2013-09-16 14:33:26','','2013-09-16 14:33:29'),
+ (37,'Search Campaign',7,'Search Campaign',1,0,2,'marketing/campaign/index?rid=37','','2013-09-16 14:33:47','','2013-09-16 14:33:49'),
+ (38,'Send Campaign',7,'Send Campaign\r\n',0,0,3,'marketing/campaign/send?rid=38','','2013-09-16 14:34:13','','2013-09-16 14:34:16'),
+ (39,'Email Templates',7,'Email Templates\r\n',0,0,4,'','','2013-09-16 14:34:33','','2013-09-16 14:34:35'),
+ (40,'Create Game',8,'Create Game',1,0,4,'games/shan/game/add?rid=40','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),
+ (41,'Search Game',8,'Search Game',1,0,4,'games/shan/game/index?rid=41','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),
+ (42,'Edit Game',8,'Edit Game',1,0,4,'games/shan/game/editgame?rid=42','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),
+ (43,'Topup',0,'topup',1,0,3,'','','0000-00-00 00:00:00','','0000-00-00 00:00:00');
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (44,'Create Batch',43,'createbatch',1,0,1,'topup/batch/create?rid=44','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),
+ (45,'Search Batch',43,'searchbatch',1,0,2,'topup/batch/search?rid=45','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),
+ (46,'Dealer Applet',8,'dealetapplet',1,0,4,'games/shan/game/dealerapplet?rid=46','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),
+ (47,'Shan Game History',8,'Shan Game History',1,0,6,'helpdesk/helpdesk/shanwallet?rid=47&start=1','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),
+ (48,'Casino Game History',8,'Casino Game History',1,0,5,'games/shan/game/history?rid=48','','0000-00-00 00:00:00','','0000-00-00 00:00:00'),
+ (49,'Home',0,'',1,1,1,'','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (50,'User Management',0,'User Management',1,1,2,'','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (51,'Search Agents & Players',50,'Search Agents & Players',1,1,1,'partners/index?start=1&rid=51','','2014-06-19 11:02:19','','2014-06-19 11:02:19');
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (52,'Transfer points',50,'Transfer points',1,1,2,'partners/partners/transferPointsAll?rid=52','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (53,'Agent Management',0,'Agent Management',1,1,2,'','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (54,'Create Agent',53,'Create Agent',1,1,1,'partners/addpartner?rid=54','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (55,'Create User',53,'Create User',1,1,4,'partners/createUser?rid=55','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (56,'Change Password',53,'Change Password',1,1,5,'partners/partners/changePass?rid=56','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (57,'Reports',0,'Reports',1,1,3,'','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (58,'Ledger',57,'Ledger',1,1,1,'reports/agent_ledger/ledgerhistory?rid=58','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (59,'In Points',57,'In Points',1,1,2,'reports/agent_inpoints/inpointshistory?rid=59','','2014-06-19 11:02:19','','2014-06-19 11:02:19');
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (60,'Out Points',57,'Out Points',1,1,3,'reports/agent_outpoints/outpointshistory?rid=60','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (61,'Game History',57,'Game History',1,1,4,'games/game/history?rid=61','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (62,'Turn Over',57,'Turn Over',1,1,6,'reports/agent_turnover/report?rid=62','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (63,'Game Turn Over Report',0,'Game Turn Over Report',0,1,5,'','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (64,'Game TurnOver',57,'Game TurnOver',1,1,8,'reports/agent_game_turnover/report?rid=64','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (65,'Administration',0,'Administration',0,1,6,'','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (66,'Create Admin',65,'Create Admin',0,1,3,'admin/addadmin?rid=66','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (67,'Search Admin',65,'Search Admin',0,1,4,'admin/index?rid=67','','2014-06-19 11:02:19','','2014-06-19 11:02:19');
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (68,'Game History',0,'Game History',0,1,4,'games/game/history?rid=68','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (69,'Create Game',68,'Create Game',1,1,1,'games/shan/game/add?rid=69','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (70,'Search Game',68,'Search Game',0,1,2,'games/shan/game/index?rid=70','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (71,'Edit Game',68,'Edit Game',1,1,3,'games/shan/game/editgame?rid=71','','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (72,'Casino Game History',57,'Casino Game History',0,1,5,'games/shan/game/history?rid=72',' ','2014-06-19 11:02:19','','2014-06-19 11:02:19'),
+ (73,'Withdrawal Report',4,'Withdrawal Report',1,0,5,'reports/withdrawal/index?rid=73&start=1','','2014-08-07 00:00:00','','2014-08-07 00:00:00'),
+ (74,'Settings',0,'Settings',0,1,9,'','','2015-02-25 10:35:53','','2015-02-25 10:35:53'),
+ (75,'Default Settings',74,'Default Settings',1,1,1,'settings/payment/site?rid=75','admin','2015-02-25 10:35:55','admin','2015-02-25 10:35:55');
+INSERT INTO `role` (`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_BY`,`CREATED_DATE`,`UPDATED_BY`,`UPDATED_DATE`) VALUES 
+ (76,'Shan Turnover Report',4,'Shan Turnover Report',0,0,3,'reports/turnover/shanreport?rid=76','admin','2015-03-30 15:35:55','admin','2015-03-30 15:35:55'),
+ (77,'Shan Turnover Report',57,'Shan Turnover Report',0,1,7,'reports/agent_turnover/shanreport?rid=77','admin','2015-03-31 15:35:55','admin','2015-03-31 15:35:55');
+
+
+UPDATE role SET STATUS=0 WHERE ROLE_ID=5;
+UPDATE role SET STATUS=0 WHERE ROLE_ID=6;
+UPDATE role SET STATUS=0 WHERE ROLE_ID=10;
+UPDATE role SET STATUS=0 WHERE ROLE_ID=74;
+
+
+
+((((((((((((((((((((((((((((((((((((((( UPDATES ON THE DATA ))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+1. UPDATE user set ONLINE_AGENT_STATUS=1; ->this is to update the online status
+
+2. UPDATE partner SET FK_PARTNER_TYPE_ID=CASE WHEN IS_OWN_PARTNER=1 THEN 11 WHEN IS_DISTRIBUTOR=1 THEN 12
+WHEN IS_SUBDISTRIBUTOR=1 THEN 13 ELSE 14 END; ->this is to update, whether the partner is a dis or subdist or an agent using IS_DIST,IS_SUBDIST columns
+
+3. need to add all the data from partner to admin_user table
+INSERT INTO admin_user(USERNAME,FIRSTNAME,PASSWORD,FK_PARTNER_ID,EMAIL,ACCOUNT_STATUS,ONLINE_AGENT_STATUS)
+SELECT PARTNER_USERNAME,PARTNER_NAME,PARTNER_PASSWORD,PARTNER_ID,PARTNER_EMAIL,1,1 FROM partner WHERE PARTNER_ID=128;
+
+4. need to add data in role and role_to_admin table based on the user(agent,distributor or subdist)
+insert into role_to_admin(fk_role_id,fk_admin_user_id,create_date,create_by)
+select role_id,4,NOW(),'admin' from role where status=1; //it should be done to every user like magent, admin
+
+5. add agent revenue share to magent 
+ ###Insert into agent_game_revenueshare (PARTNER_ID,GAME_ID) select 125,MINIGAMES_NAME from minigames WHERE STATUS=1; //add agent revenue share to magent
+ ###Insert into agent_game_revenueshare (PARTNER_ID,GAME_ID) select 1,MINIGAMES_NAME from minigames WHERE STATUS=1;   //add agent revenue share to admin
+
+UPDATE role SET STATUS=1,ROLE_NAME='Game History',ROLE_DESC='Game History',LINK='games/game/history?rid=61' WHERE ROLE_ID=61;
+UPDATE role SET STATUS=0 WHERE ROLE_ID=68;
+UPDATE role SET STATUS=0 WHERE ROLE_ID=2;
+UPDATE role SET STATUS=0 WHERE ROLE_ID=4;
+
+6. need to add below tables
+   -yagent_game_turn_over_history
+   -ydistributor_game_turn_over_history
+   -ydistributor_report
+   -ymainagent_game_turn_over_history
+   -ysubdistributor_game_turn_over_history
+   -yuser_turnover_history
+  and need to add the stored procedures for the same
+
+
+
+-----------------TO DO's ****************************-----------------
+
+7. batch creation, balance adjustment option need to be brought as new menu
+
+8. live users,shan_mp string need to be changed as needed, http://dev.nucasino.com need to remove
+9. transfer points, could not test due to the service
+10. unit testing all the menus, flow
+11. megafx
+
+
+-----------------------------
+
+maindistributor - test123
+mainsdistributor- test123
+
+maindistsubagent- test123
+ -maindistuser  - test123 
+
+mainsubdistagent- test123
+ -mainsdistuser - test123
+
+
+)))))))))))))))))))))))))))))))))
+
+create scratch card, split based and without split ****************** and Total Tickets>1000, showpayout function
+
+game turn over issue from admin
+
+
+#### unit testing
+transfer points
+
+
+clear the data and create user account and test the turn over/game turn over
+
+E:\wamp\www\kjg_agentsystem\application\controllers\reports\ajax.php  
+E:\wamp\www\kjg_agentsystem\application\views\scratch\viewbatch.php 
+E:\wamp\www\kjg_agentsystem\application\views\scratch\createtemplate.php  
+E:\wamp\www\kjg_agentsystem\application\views\scratch\createbatch.php  
+E:\wamp\www\kjg_agentsystem\static\js\scratch.js  
+
+
+E:\wamp\www\kjg_agentsystem\application\controllers\reports\agent_turnover.php  
+E:\wamp\www\kjg_agentsystem\application\controllers\reports\ajax.php  
+
+E:\wamp\www\kjg_agentsystem\application\models\reports\agentreport_model.php  
+E:\wamp\www\kjg_agentsystem\application\models\reports\agentledger_model.php  
+
+E:\wamp\www\kjg_agentsystem\application\views\partners\ajax_menulist.php
+E:\wamp\www\kjg_agentsystem\application\views\reports\agent_distlogin_turnover.php  
+E:\wamp\www\kjg_agentsystem\application\views\reports\agent_turnover.php   
+E:\wamp\www\kjg_agentsystem\application\views\reports\agent_subdistlogin_turnover.php  
+E:\wamp\www\kjg_agentsystem\application\views\reports\agent_login_turnover.php  
+E:\wamp\www\kjg_agentsystem\application\views\reports\agent_magnt_turnover.php  
+E:\wamp\www\kjg_agentsystem\application\views\reports\agent_user_turnover.php  
+E:\wamp\www\kjg_agentsystem\application\views\reports\agent_dist_turnover.php  
+E:\wamp\www\kjg_agentsystem\application\views\scratch\details.php  
+
+E:\wamp\www\kjg_agentsystem\application\views\scratch\viewbatch.php 
+E:\wamp\www\kjg_agentsystem\application\views\scratch\createtemplate.php  
+E:\wamp\www\kjg_agentsystem\application\views\scratch\createbatch.php  
+ 
+
+E:\wamp\www\kjg_agentsystem\application\config\constants.php  
+E:\wamp\www\kjg_agentsystem\static\js\scratch.js 
+
+ALTER TABLE ysubdistributor_game_turn_over_history ADD COLUMN PARTNER_ID BIGINT(50) NOT NULL AFTER USER_ID;
+
+
+
+
+
+-------------------------------
+1. game total count is done for game turn over and it needs testing
+2. for admin, turn over and game turn over need to be worked out
+
+turn over report reopen, and look on the other bugs
+
+1. This Brand and Price is active state already. You cannot make it active now.
+(at a time only one batch can be in active mode, for a specific brand)
+
+
+truncate table partners_transaction_details;
+truncate table partner_adjustment_transaction;
+truncate table agent_game_revenueshare;
+truncate table partners_balance;
+truncate table adjustment_transaction;
+truncate table user_points;
+truncate table yagent_game_turn_over_history;
+truncate table ydistributor_game_turn_over_history;
+truncate table ymainagent_game_turn_over_history;
+truncate table ysubdistributor_game_turn_over_history;
+truncate table yuser_turnover_history;
+truncate table view_transaction_history;
+truncate table master_transaction_partner_history;
+delete from role_to_admin where fk_admin_user_id!=10001;
+truncate table game_transaction_history;
+truncate table yagent_game_turn_over_history;
+truncate table ydistributor_game_turn_over_history;
+truncate table ymainagent_game_turn_over_history;
+truncate table ysubdistributor_game_turn_over_history;
+truncate table yuser_turnover_history;
+
+delete from partner where partner_id!=10001;
+delete from admin_user where admin_user_id!=10001;
+truncate table user;
+truncate table master_transaction_history;
+
+ALTER TABLE `partner` AUTO_INCREMENT = 10002;
+ALTER TABLE `admin_user` AUTO_INCREMENT = 10002;
+
+ALTER TABLE `user` AUTO_INCREMENT = 10001;
+ALTER TABLE `agent_game_revenueshare` AUTO_INCREMENT = 10001;
+ALTER TABLE `game_transaction_history` AUTO_INCREMENT = 10001;
+ALTER TABLE `master_transaction_history` AUTO_INCREMENT = 10001;
+ALTER TABLE `master_transaction_partner_history` AUTO_INCREMENT = 10001;
+ALTER TABLE `partner_adjustment_transaction` AUTO_INCREMENT = 10001;
+ALTER TABLE `partners_balance` AUTO_INCREMENT = 10001;
+ALTER TABLE `partners_transaction_details` AUTO_INCREMENT = 10001;
+ALTER TABLE `view_transaction_history` AUTO_INCREMENT = 10001;
+
+ALTER TABLE `yagent_game_turn_over_history` AUTO_INCREMENT = 10001;
+ALTER TABLE `ydistributor_game_turn_over_history` AUTO_INCREMENT = 10001;
+ALTER TABLE `ymainagent_game_turn_over_history` AUTO_INCREMENT = 10001;
+ALTER TABLE `ysubdistributor_game_turn_over_history` AUTO_INCREMENT = 10001;
+ALTER TABLE `yuser_turnover_history` AUTO_INCREMENT = 10001;
+
+delete from role_to_admin where fk_role_id=55 and fk_admin_user_id=10001;
+
+
+
+---
+
+0. Live Users in Header
+   Balance Adjustment Menu
+   Batch Creation
+   Transfer Points JAVA service
+   Kick Off option
+
+1. User Management
+   1. Search Users
+	total users and points and the user results are not correct ->DONE
+	search result caption Balance to points ->DONE
+ 	distributor name in subdistributor search view, distributor and subdistributor name in agent search view ->DONE
+	view users label ->DONE
+	when there is no data, hyphens have to be placed  ->DONE
+
+   2. Balance Adjustments ->DONE
+   3. Transfer Points ->IP
+
+
+2. Aget Management
+   1. Create Distributor
+   2. Create Sub Distributor
+   3. Create Agent
+	create agent, assigned games must load based on the ajax selection for distributor and to subdist and agent ->DONE		
+
+   4. Create User
+   5. Change Password
+
+3. Reports
+   1. Point File
+	Caption should be start date and end date for all the menus under reports ->DONE	
+
+   2. In Points
+   3. Out Points
+	search result does not shown	->DONE
+
+   4. Game History
+	agent name is missing in the search criteria ->DONE
+	paging is not working, and the total search result count results are not correct->DONE	
+
+   5. Turn Over
+
+load affiliates and game types ->DONE
+and need to add subdist,agent and players count ->DONE
+need to add number of sub dist, agent and players ->DONE
+display all for default commission games, and for the rest of the games, display the game name itself ->DONE
+	Search based on ALL,Mobile and PC Games ->DONE
+	search result is not shown ->DONE
+	all partners must get loaded to search based on the partner - turn over ->DONE
+	game history, turn over and game turnover need to be tested ->DONE
+	loaded affiliates data are not the same with old kjg in all reports ->DONE
+
+4. Game TurnOver Report
+   1. Game TurnOver Report
+	affiliates and the game name must be there in the search criteria ->DONE
+	partners and the game name need to be added in the search section ->DONE
+	search result returns nothing ->DONE
+
+
+
+
+UPDATE coin_type SET NAME='REAL_CASH',VALUE=0,DESCRIPTION='Play With Real Cash' WHERE COIN_TYPE_ID=1;
+UPDATE coin_type SET STATUS=0 WHERE COIN_TYPE_ID IN(2,3);
+
+UPDATE user_points SET coin_type_id=1;
+
+INSERT INTO role(`ROLE_ID`,`ROLE_NAME`,`FK_ROLE_ID`,`ROLE_DESC`,`STATUS`,
+`ONLINE_AGENT_STATUS`,`MENU_ORDER`,`LINK`,`CREATED_DATE`)
+VALUES('','Balance Adjustment',50,'Balance Adjustment',1,1,3,'index.php/partners/partners/partneradjust?rid=83',NOW());
+
+UPDATE partner SET FK_PARTNER_ID=1 WHERE FK_PARTNER_TYPE_ID=11;
+ALTER TABLE adjustment_transaction ADD COLUMN COIN_TYPE_ID INTEGER DEFAULT 1 AFTER ADJUSTMENT_COMMENT;

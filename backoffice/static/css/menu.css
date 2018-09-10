@@ -1,0 +1,40 @@
+/*
+CSS3-only Horizontal Drop Line Tab Menu
+http://www.skyrocketlabs.com
+skyrocketlabs@gmail.com
+*/
+
+/* ARCHITECTURE */
+
+
+/* MENU STYLE - IGNORE EVERYTHING ABOVE THIS LINE IF YOU WISH */
+
+#menu { width: 1022px; height: 33px; clear: both; 
+}
+
+ul#nav { float: left; width: 1022px; margin: 0; padding: 0; list-style: none; }
+
+ul#nav li {
+  display: inline;
+}
+
+ul#nav li a { float: left; color: #333333; text-decoration: none; font-size: 11px; font-weight: bold; line-height: 10px; border-top-width: 1px; border-right-width: 1px; border-left-width: 1px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-left-style: solid; border-top-color: #6acefc; border-right-color: #6acefc; border-left-color: #6acefc; background-image: url(../images/menu-parent.png); background-repeat: repeat-x; margin-top: 0; margin-right: 2px; margin-bottom: 0; margin-left: 0; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; height: 23px; text-align: center; }
+
+/* APPLIES THE ACTIVE STATE */
+ul#nav .current a, ul#nav li:hover > a  { color: #333333; text-decoration: none;  background-image: url(../images/menu-child.png); background-repeat: repeat-x; }
+
+/* THE SUBMENU LIST HIDDEN BY DEFAULT */
+ul#nav  ul {
+  display: none;
+}
+
+/* WHEN THE FIRST LEVEL MENU ITEM IS HOVERED, THE CHILD MENU APPEARS */
+ul#nav li:hover > ul { position: absolute; display: block; height: 35px; margin-top: 30px; margin-right: 0; margin-bottom: 0; margin-left: 0; width: 1022px; }
+
+ul#nav li:hover > ul li a { color: #006699; text-decoration: none; background-image: url(../images/menu-child.png); background-repeat: repeat-x; font-size: 11px; font-weight: normal; text-align: center; height: 15px; padding-top: 7px; padding-right: 10px; padding-bottom: 5px; padding-left: 10; margin-top: 0; margin-right: 2px; margin-bottom: 0; margin-left: 0; float: left; }
+
+ul#nav li:hover > ul li a:hover {
+  color: #120000;
+  text-decoration: underline;
+  text-shadow: none;
+}

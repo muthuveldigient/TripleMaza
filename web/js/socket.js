@@ -461,6 +461,8 @@ function onMessage(evt) {
 		console.log('Logout=>', json);
 		if (json.errorCode == 100) {
 			window.location.href = "logout.php";
+		}else{
+			$("#msg").show().html(json.msg).removeClass('alert-success').addClass('alert-danger');
 		}
 	}
 
@@ -557,7 +559,7 @@ function startCounting() {
 function countDown() {
 	count = count - 1;
 	if (count <= 0) {
-		window.location.href = "home.php";
+		window.location.href = "index.php";
 		return;
 	}
 	$("#timer").html(count);
@@ -586,7 +588,7 @@ function updateUserBalance() {
 		success: function (res) {
 			if (res.SESSION == 0) {
 				location.reload();
-				//window.location.href = "home.php";
+				//window.location.href = "index.php";
 			} else {
 				$('#userBalance').html(res.USER_BAL);
 				$('#nxtdrawTime').html(res.nxtDrawTime);

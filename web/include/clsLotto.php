@@ -12,8 +12,8 @@ class clsLotto {
 
 	function clsLotto($conn1) {
 		//$this->dbconn       = $dbconn;
-		$this->lotto_draw   = "tc_lotto_draw"; 
-		$this->lotto_tickets= "tc_lotto_tickets";
+		$this->lotto_draw   = "tc_maza_draw"; 
+		$this->lotto_tickets= "tc_maza_tickets";
 		$this->lotto_user   = "user";
 		$this->partners_balance="partners_balance";
 		$this->master_transaction_history="master_transaction_history";
@@ -925,7 +925,7 @@ class clsLotto {
 						"`PARTNER_ID`)VALUES('".$lottoUserID."','$balanceTypeId','$transactionStatusId','$transactionTypeId','$userWinAmount',".
 						"NOW(),'".$getTicketInfo[0]->INTERNAL_REFERENCE_NO."','$newusertotbal','$newusertotclosebal','".$getTicketInfo[0]->PARTNER_ID."')");							  	 
  */
-				$rsResult  = $this->lotto_pdoObj->exec("UPDATE tc_lotto_tickets SET IS_PAID=1 WHERE INTERNAL_REFERENCE_NO='".$refNo."' AND TERMINAL_ID='".$lottoUserID."'");	
+				$rsResult  = $this->lotto_pdoObj->exec("UPDATE $this->lotto_tickets SET IS_PAID=1 WHERE INTERNAL_REFERENCE_NO='".$refNo."' AND TERMINAL_ID='".$lottoUserID."'");	
 
 				if($rsResult!='') {
 					 $this->lotto_pdoObj->commit();

@@ -14,20 +14,21 @@ if (!empty( $session)) { ?>
 
 /** If this partner have assigned games then play the game else redirect to landing page */
 $partnerId = (!empty($_SESSION[SESSION_PARTNERID])?$_SESSION[SESSION_PARTNERID]:'');
-$wintc_lotto=0;
+$game=0;
 if(!empty($partnerId)){
 	$res=$objLotto->getPartnerGames($partnerId);
 	if(!empty($res)){
 		foreach($res as $list){
-			if($list->GAME_ID == 'wintc_lotto'){
-				$wintc_lotto=1;
+			if($list->GAME_ID == GAME_NAME){
+				$game=1;
 			}
 		}
 	}
 }
 
-if(empty($wintc_lotto)){
-	header('Location:'.LOGIN_LANDING_URL);
+if(empty($game)){
+    echo 'Please assign game';exit;
+	//header('Location:'.LOGIN_LANDING_URL);
 }
 /** assigned games end  */
 
@@ -3375,7 +3376,6 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
         }
         /*** date and time display end** countdown timer start  */
         var preloadeOnResize = function (e) {
-            //alert("dsfds");
             var elWidth = 1920;
             var elHeight = 1080;
             var scale;
@@ -3397,26 +3397,26 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
         $(function () {
             $('#ndrawLeftTime').html('00:00:00');
             var timeLeft = '';
-				<?php if (!empty($drawCountDownTime)) { ?>
-                timeLeft = new Date(<?php echo $drawCountDownTime;?>); //2016,0,06,11,56,01
-        //$('#ndrawLeftTime').countdown({until: timeLeft,serverSync: serverTime, format: 'HMS', padZeroes: true, compact: true,onExpiry: liftOff});
-        $('#ndrawLeftTime').countdown({
-            until: timeLeft,
-            serverSync: serverTime,
-            format: 'HMS',
-            padZeroes: true,
-            compact: true,
-            timezone: +5.5,
-            //onExpiry: liftOff,
-            onTick: function (periods) {
-                var secs = $.countdown.periodsToSeconds(periods);
-                if (secs < 60) {
-                    $('#ndrawLeftTime span').addClass('text_blink');
+            <?php if (!empty($drawCountDownTime)) { ?>
+            timeLeft = new Date(<?php echo $drawCountDownTime;?>); //2016,0,06,11,56,01
+            //$('#ndrawLeftTime').countdown({until: timeLeft,serverSync: serverTime, format: 'HMS', padZeroes: true, compact: true,onExpiry: liftOff});
+            $('#ndrawLeftTime').countdown({
+                until: timeLeft,
+                serverSync: serverTime,
+                format: 'HMS',
+                padZeroes: true,
+                compact: true,
+                timezone: +5.5,
+                //onExpiry: liftOff,
+                onTick: function (periods) {
+                    var secs = $.countdown.periodsToSeconds(periods);
+                    if (secs < 60) {
+                        $('#ndrawLeftTime span').addClass('text_blink');
+                    }
                 }
-            }
-        });
-				<?php }?>
-		});	
+            });
+            <?php }?>
+        });	
     </script>
 
 
@@ -3516,8 +3516,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
 <script src="js/dashboard.js?v=<?php echo $version ;?>"></script>
 <?php if ($_SESSION[SESSION_PRINTER_OPTION]==1){?>
 <script src="js/terminalvalidation.js?v=<?php echo $version ;?>" type="text/javascript"></script>
-<?php }?>
-<?php if ( $_SESSION[SESSION_PRINTER_OPTION]==0){?>
+<?php } else {?>
 <script src="js/uservalidation.js??v=<?php echo $version ;?>" type="text/javascript"></script>
 <?php }?>
 <script src="js/socket.js?v=<?php echo $version ;?>"></script>

@@ -7,7 +7,7 @@
 	$sessionOut=1;
 	if (!empty( $session)) {
 		$sessionOut=0;
-		//header('Location: home.php');
+		//header('Location: index.php');
 	}
 	/* $status = $objLotto->streamingStatus();
 	$streaming=0;

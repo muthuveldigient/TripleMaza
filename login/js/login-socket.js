@@ -33,7 +33,7 @@ function onMessage(evt)  {
 			$.post("processlogin.php", json.userData, function (response) {
 				if (response == 1) {
 					//doSend(response.message);
-					window.location.href = "home.php";
+					window.location.href = "web/index.php";
 				} else {
 					$("#log_msg").show().html('Username or Password invalid');
 					$("#log_loader").hide();

@@ -1,29 +1,11 @@
 <?PHP 
 
-// Master
-/* $username = 'rajaraniqa';
-$password = 'rajaraniqa';		
-$dbhost = '54.254.155.69';		
-$database = 'rajaraniqa_master';  */
-
-
-//DEV
-/*$username = 'mab';
-$password = 'mab';		
-$dbhost = '35.154.86.183';		
-$database = 'khelqa';  */
-
 //QA
 $username = 'kheloqa';
 $password = 'kheloqa';		
 $dbhost = '54.254.155.69';		
-$database = 'khelqa';
+$database = 'triplemaza_mstr_qa';
 
-//LIVE
-// $username = 'rajarani';
-// $password = 'rajarani';		
-// $dbhost = '54.169.204.137';		
-// $database = 'rajranawsdb_master';
 
 
 $conn1 = new PDO("mysql:host=".$dbhost.";dbname=".$database."",$username,$password);

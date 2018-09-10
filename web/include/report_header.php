@@ -35,7 +35,7 @@ $version = 0.1;// for cache clear
 	<!--<div class="myacc_sec_header"> 
 	<div class="myacc_logo"><img src="images/logo.png" class=""></div>
 	<div class="myacc_logout">
-	<div class="logout_sec"><a href="home.php"><div class="back_myacc">Back to game</div></a></div>
+	<div class="logout_sec"><a href="index.php"><div class="back_myacc">Back to game</div></a></div>
 	<div class="logout_sec"><a href="logout.php"><div class="logout_myacc">Logout</div></a></div>
 	</div>
 	

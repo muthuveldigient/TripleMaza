@@ -2,7 +2,7 @@
 	session_start();
 	include("include/functions.php");
 	/* if (isset($_SESSION[SESSION_USERNAME]) && !empty($_SESSION[SESSION_USERNAME]) ){
-		header('Location: home.php');
+		header('Location: index.php');
 	} */
 
 	$username=addslashes(strtolower($_REQUEST['username']));

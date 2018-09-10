@@ -40,7 +40,7 @@ function sendDataToFlash(){
 					var inputResponse =jQuery.parseJSON(JSON.stringify(res.response));
 					inputSent(JSON.stringify(inputResponse));
 				}else if(res.msg=="expired") {
-					window.location.href = "home.php";
+					window.location.href = "index.php";
 				}else if(res.msg=="STREAMING_DISABLED") {//streaming disabled.
 					/* $("#loading").removeClass('overlay');
 					$("#buy").addClass('disabled').prop('disabled', true);

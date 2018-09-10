@@ -8,14 +8,14 @@
 	$session = $objLotto->userAuthendication();
 	
 	if (!empty( $session)) {
-	 	header('Location: home.php');
+	 	header('Location: index.php');
 	}
 	$msgText ='';
 	if(isset($_POST["old_password"]) && isset($_POST["password_confirm"])) {
 		$msgText="Please enter valid new and old password";
 		if(!empty($_POST["old_password"]) && !empty($_POST["password_confirm"])) {
 			$arrChangePassword["PASSWORD"]    =md5($_POST["old_password"]);
-			$arrChangePassword["USER_ID"]     =$_SESSION['lucky_userid'];
+			$arrChangePassword["USER_ID"]     =$_SESSION[SESSION_USERID];
 			$arrChangePassword["NEW_PASSWORD"]=md5($_POST["new_password"]);
 			$chkOldPassword=$objLotto->chkUserOldPassword($arrChangePassword);		
 			if(!empty($chkOldPassword)) {

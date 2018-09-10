@@ -1,9 +1,10 @@
 <?php
 /* session_start();
   if ( isset( $_SESSION[SESSION_USERID])){
-  header('Location: home.php');
+  header('Location: web/index.php');
   }
   error_reporting(0); */
+  include_once("include/DbConnect.php");
 ?>
 <head>
     <title>Triplemaza</title>
@@ -46,175 +47,128 @@
 <script src="login/js/bootstrap.min.js"></script>
 <script src="login/js/jquery.validate.min.js"></script>
 <script src="login/js/md5.js"></script>
+<script src="login/js/TweenMax.min.js"></script>
 <script type="text/javascript">
-        var preloadeOnResize = function(e) {
-            //alert("dsfds");
-            var elWidth = 1920;
-            var elHeight = 1080;
-            var scale;
-            var bodyWidth = window.innerWidth || document.documentElement.clientWidth ||
-                document.body.clientWidth || document.body.offsetWidth;
-            var bodyHeight = window.innerHeight || document.documentElement.clientHeight ||
-                document.body.clientHeight || document.body.offsetHeight;
-            scale = Math.min(
-                bodyWidth / elWidth,
-                bodyHeight / elHeight
-            );
-            document.getElementById("wrapper").style.transform = "translate(-50%, -50%) scale(" + scale + ")";
+var WEB_SOCKET_URL = '<?= TM_WEB_SOCKET_URL;?>';
+var preloadeOnResize = function(e) {
+	//alert("dsfds");
+	var elWidth = 1920;
+	var elHeight = 1080;
+	var scale;
+	var bodyWidth = window.innerWidth || document.documentElement.clientWidth ||
+		document.body.clientWidth || document.body.offsetWidth;
+	var bodyHeight = window.innerHeight || document.documentElement.clientHeight ||
+		document.body.clientHeight || document.body.offsetHeight;
+	scale = Math.min(
+		bodyWidth / elWidth,
+		bodyHeight / elHeight
+	);
+	document.getElementById("wrapper").style.transform = "translate(-50%, -50%) scale(" + scale + ")";
 
-        };
-        preloadeOnResize(null);
-        window.addEventListener("resize", preloadeOnResize);
-        // $(document).ready(function(){
+};
+preloadeOnResize(null);
+window.addEventListener("resize", preloadeOnResize);
+/** container */
+var container = $(".result_container"),
+	div1 = $(".div1"),
+	tweenForward, tweenBack;
 
-        //$(".ticket").hover(function(){
-        //$('.ticket_points').css({'height':'100%'});
-        // $('.ticket_points').slideToggle();
-        //});
+TweenMax.set(container, {
+	transformStyle: 'preserve-3d'
+});
 
-        //});
-    </script>
+$.each(div1, function(index, element) {
+	TweenMax.to(element, 0, {
+		rotationX: (36 * index),
+		transformOrigin: '100% 100% -500px'
+	});
+});
 
-    <script src="login/js/TweenMax.min.js"></script>
-    <script>
-        var container = $(".result_container"),
-            div1 = $(".div1"),
-            tweenForward, tweenBack;
+var tweenComplete = function() {
+	createNumTween();
+}
 
-        TweenMax.set(container, {
-            transformStyle: 'preserve-3d'
-        });
+var createNumTween = function() {
+	TweenLite.to(container, 0.25, {
+		rotationX: '-=500',
+		transformOrigin: '100% 100% -500px',
+		//delay: 0.01,
+		//ease: Power3.easeInOut,
+		onComplete: tweenComplete
+	});
+};
 
-        $.each(div1, function(index, element) {
-            TweenMax.to(element, 0, {
-                rotationX: (36 * index),
-                transformOrigin: '100% 100% -500px'
-            });
-        });
+// start the whole thing
+TweenLite.delayedCall(0.25, createNumTween);
 
-        var tweenComplete = function() {
-            createNumTween();
-        }
+$(document).ready(function () {
+	/**  inspect and right click not working */
+	document.addEventListener('contextmenu', event => event.preventDefault());
+	$(document).keydown(function (event) {
+		var keycode = (event.keyCode ? event.keyCode : event.which);
+		//$("#keydownCode").val(keycode);
+		if (keycode == 32 || (keycode >= 112 && keycode <= 123)) {
+			event.preventDefault();
+		}
 
-        var createNumTween = function() {
-            TweenLite.to(container, 0.25, {
-                rotationX: '-=500',
-                transformOrigin: '100% 100% -500px',
-                //delay: 0.01,
-                //ease: Power3.easeInOut,
-                onComplete: tweenComplete
-            });
-        };
-
-        // start the whole thing
-        TweenLite.delayedCall(0.25, createNumTween);
-   
-        $(document).ready(function () {
-            /**  inspect and right click not working */
-            document.addEventListener('contextmenu', event => event.preventDefault());
-            $(document).keydown(function (event) {
-                var keycode = (event.keyCode ? event.keyCode : event.which);
-                //$("#keydownCode").val(keycode);
-                //alert(keycode);
-                if (keycode == 32 || (keycode >= 112 && keycode <= 123)) {
-                    event.preventDefault();
-                }
-
-                if (keycode == 123) { //F12 Result
-                    return false;
-                }
-            });
+		if (keycode == 123) { //F12 Result
+			return false;
+		}
+	});
 
 
-            $('#frmLogin').validate({
-                rules: {
-                    username: {
-                        required: true,
-                    },
-                    password: {
-                        required: true,
-                    }
-                },
-                messages: {
-                    username: {
-                        required: "Please enter your username",
-                    },
-                    password: {
-                        required: "Please enter your password"
-                                //minlength : "Your password must be at least 7 characters long"
-                    }
-                },
-                submitHandler: function (form) {
-                    $("#log_msg").html('');
-                    $("#submit_btn").hide();
-                    $("#log_loader").show();
-                    $.post("processlogin.php", $("#frmLogin").serialize(), function (response) {
-                        if (response == 1) {
-                            window.location.href = "web/index.php";
-                        } else if (response == 2) {
-                            $("#log_msg").show().html('Invalid Login.Please try again.');
-                            $("#log_loader").hide();
-                            $("#submit_btn").show();
-                            clear_form();
-                        } else if (response == 3) {
-                            $("#log_msg").show().html('UnAuthenticated User.Please try again.');
-                            $("#log_loader").hide();
-                            $("#submit_btn").show();
-                            clear_form();
-                        } else if (response == 4) {
-                            $("#log_msg").show().html('Invalid Captcha Please try again.');
-                            $("#log_loader").hide();
-                            $("#submit_btn").show();
-                            clear_form();
-                        } else {
-                            $("#log_msg").show().html('Username or Password invalid');
-                            $("#log_loader").hide();
-                            $("#submit_btn").show();
-                            clear_form();
-                        }
-                        //$(".imgcaptcha").attr("src","captcha.php?_="+((new Date()).getTime()));
-                        setTimeout(function () {
-                            $("#log_msg").hide();
-                        }, 4000);
+	$('#frmLogin').validate({
+		rules: {
+			username: {
+				required: true,
+			},
+			password: {
+				required: true,
+			}
+		},
+		messages: {
+			username: {
+				required: "Please enter your username",
+			},
+			password: {
+				required: "Please enter your password"
+			}
+		},
+		submitHandler: function (form) {
+			$("#log_msg").html('');
+			$("#submit_btn").hide();
+			$("#log_loader").show();
+			$("#log_msg").html('');
+			$("#submit_btn").hide();
+			$("#log_loader").show();
+			var username = $('#username').val();
+			var password = md5($('#password').val());
+			var loginResponse = '{"action": "LoginRequest","serviceType": "wintcService","username":"'+username+'" ,"password":"'+password+'"}';
+			console.log(loginResponse);
+			doSend(loginResponse);
+		}
+	});
+	clear_form();
+});
+function clear_form() {
+	$("#username").val('');
+	$("#password").val('');
+	$('#username').attr("autocomplete", "off");
+	$('#Password').attr("autocomplete", "off");
 
-                    }).fail(function(xhr, status, error) {
-							$("#log_msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
-							location.reload();
-						if (xhr.readyState == 4) {
-							// HTTP error (can be checked by XMLHttpRequest.status and XMLHttpRequest.statusText)
-							//$("#msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
-						} else if (xhr.readyState == 0) {
-							// Network error (i.e. connection refused, access denied due to CORS, etc.)
-							$("#log_msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
-							location.reload();
+}
 
-						}
-						// error handling
-					});
-                    return false;
-                    // form.submit();
-                }
-            });
-            clear_form();
-        });
-        function clear_form() {
-            $("#username").val('');
-            $("#password").val('');
-            $('#username').attr("autocomplete", "off");
-            $('#Password').attr("autocomplete", "off");
+/* function onshow(){
+ document.name.username.focus();
+ } */
 
-        }
+function txtBlur(id) {
+	document.getElementById(id).innerHTML = '';
+}
 
-        /* function onshow(){
-         document.name.username.focus();
-         } */
-
-        function txtBlur(id) {
-            document.getElementById(id).innerHTML = '';
-        }
-
-        $("#username").focus();
-        clear_form();
+$("#username").focus();
+clear_form();
 </script>
+<script src="login/js/login-socket.js"></script>
 </body>
 </html>

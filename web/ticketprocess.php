@@ -22,7 +22,7 @@ if(!empty($_POST)) {
 	
 		/** validate inputs and set value in bettype based */
 		$result= checkInputs($_POST);
-		$response =  array("userId"=>$_SESSION[SESSION_USERID],"serviceType"=>"wintcService","action"=>"BetRequest","gameName"=>GAME_NAME,"drawId"=>$_POST["drawID"],"sessionId"=>$_SESSION[SESSIONID],"bets"=>$result);
+		$response =  array("userId"=>$_SESSION[SESSION_USERID],"serviceType"=>"tcmazzaservice","action"=>"BetRequest","gameName"=>GAME_NAME,"drawId"=>$_POST["drawID"],"sessionId"=>$_SESSION[SESSIONID],"bets"=>$result);
 		$res= array('msg'=>'valid','response'=>$response);
 		/** Here set insertion format for lotto_tickets table*/
 		

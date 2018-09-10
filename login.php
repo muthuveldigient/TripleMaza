@@ -113,7 +113,8 @@ $(document).ready(function () {
 
 		if (keycode == 123) { //F12 Result
 			return false;
-		}
+        }
+        
 	});
 
 
@@ -143,7 +144,7 @@ $(document).ready(function () {
 			$("#log_loader").show();
 			var username = $('#username').val();
 			var password = md5($('#password').val());
-			var loginResponse = '{"action": "LoginRequest","serviceType": "wintcService","username":"'+username+'" ,"password":"'+password+'"}';
+			var loginResponse = '{"action": "LoginRequest","serviceType": "tcmazzaservice","username":"'+username+'" ,"password":"'+password+'"}';
 			console.log(loginResponse);
 			doSend(loginResponse);
 		}

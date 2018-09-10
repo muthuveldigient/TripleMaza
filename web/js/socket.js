@@ -574,7 +574,7 @@ function networkConnection() {
 	}
 }
 function getDrawUpdatedInfo() {
-	var msg = { action: "drawUpdateRequest", serviceType: "wintcService", userId: userID };
+	var msg = { action: "drawUpdateRequest", serviceType: "tcmazzaservice", userId: userID };
 	doSend(JSON.stringify(msg));
 }
 function updateUserBalance() {
@@ -634,7 +634,7 @@ function updateUserBalance() {
 }
 
 function logout(user_id, session_id) {
-	var logout = '{"action": "LogoutRequest","serviceType": "wintcService","userId":"' + user_id + '","sessionId":"' + session_id + '"}';
+	var logout = '{"action": "LogoutRequest","serviceType": "tcmazzaservice","userId":"' + user_id + '","sessionId":"' + session_id + '"}';
 	doSend(logout)
 }
 

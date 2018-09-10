@@ -211,7 +211,7 @@ function sendDataToFlash(){
 		function updateTicketPAYStatus(ticketID) {
 				$("#payButton").hide();
 				$("#loader_claim").show();
-				var claimRequest={"serviceType":"wintcService","action":"claimRequest","ticketId":ticketID};
+				var claimRequest={"serviceType":"tcmazzaservice","action":"claimRequest","ticketId":ticketID};
 				inputSent(JSON.stringify(claimRequest));				
 				/*
 				var xhttpPay = new XMLHttpRequest();

@@ -1,9 +1,8 @@
 var wsUri = WEB_SOCKET_URL;
 var output;
-window.addEventListener("load", init, false);
-function init()  {
+//function init()  {
 	connectWebSocket();
-}
+//}
 
 function connectWebSocket()  {
 	websocket = new WebSocket(wsUri);
@@ -61,24 +60,21 @@ function onMessage(evt)  {
 			});
 			return false;
 			//success
-		}
-		if(json.errorCode ==101){
+		}else if(json.errorCode ==101){
 			//error
 			$("#log_msg").show().html('User already logged in');
 			$("#log_loader").hide();
 			$("#submit_btn").show();
 			clear_form();
 			return false;
-		}
-		if(json.errorCode ==102){
+		}else if(json.errorCode ==102){
 			//error
 			$("#log_msg").show().html('Invalid Login');
 			$("#log_loader").hide();
 			$("#submit_btn").show();
 			clear_form();
 			return false;
-		}
-		if(json.errorCode ==103){
+		}else if(json.errorCode ==103){
 			//error
 			$("#log_msg").show().html('Invalid Request');
 			$("#log_loader").hide();
@@ -151,7 +147,7 @@ function networkConnection(){
 
 
 function logout(user_id,session_id){
-	var logout = '{"action": "LogoutRequest","serviceType": "wintcService","userId":"'+user_id+'","sessionId":"'+session_id+'"}';
+	var logout = '{"action": "LogoutRequest","serviceType": "tcmazzaservice","userId":"'+user_id+'","sessionId":"'+session_id+'"}';
 	doSend(logout)
 }
 

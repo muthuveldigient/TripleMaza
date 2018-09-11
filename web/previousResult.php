@@ -3,7 +3,6 @@ include("include/DbConnect.php");
 include_once("include/clsLotto.php");
 $objLotto =  new clsLotto();
 $today = $objLotto->getDrawResultsLastOneWeek($arrGameIDs[0]);
-$data = '	<div class="popup_head">Previous Result</div>';
 if (!empty( $today )) {
 	$data .= '<div class="chart_1">
 		<div class="chart_head_1">

@@ -1,9 +1,9 @@
 var wsUri = WEB_SOCKET_URL;
 var output;
 
-function init() {
+//function init() {
 	connectWebSocket();
-}
+//}
 
 function connectWebSocket() {
 	websocket = new WebSocket(wsUri);
@@ -528,16 +528,21 @@ function writeToScreen(message) {
 }
 
 
-var drawStart = $('#drawName').val();
-if (drawStart != undefined && drawStart != "") {
-	window.addEventListener("load", init, false);
-	setInterval(function () {
-		activeWS()
-	}, 3000);
-}
+// var drawStart = $('#drawName').val();
+// if (drawStart != undefined && drawStart != "") {
+// 	window.addEventListener("load", init, false);
+// 	setInterval(function () {
+// 		activeWS()
+// 	}, 3000);
+// }
+
+//window.addEventListener("load", init, false);
+setInterval(function () {
+	activeWS()
+}, 3000);
 
 function activeWS() {
-	var msg = {action: "AckRequest",serviceType: "tcmazzaservice"};
+	var msg = {action: "AckRequest",serviceType: "tcmazzaservice",userId:userID};
 	doSend(JSON.stringify(msg));
 
 }

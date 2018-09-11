@@ -126,7 +126,7 @@ $remainingSingleQty =$remainingDoubleQty =$remainingTripleQty =0;
 $vTime = strtotime(date('Y-m-d H:i:s'));
 $row=recordSet("SELECT NOW()");
 $dbTime = (!empty($row[0])?date("F d, Y H:i:s", strtotime($row[0])):date("F d, Y H:i:s", time()));
-$version = 0.1  ;// for cache clear
+$version = 0.3  ;// for cache clear
 $singleLength =strlen((string)SINGLE_BET_QTY_LIMIT);
 $doubleLength =strlen((string)DOUBLE_BET_QTY_LIMIT);
 $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
@@ -245,6 +245,8 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
         </div>
     </div>
     <div class="wrapper" id="wrapper">
+   
+
         <!-- loading content -->
         <!--<div class="loading" id="load">
 			<div class="load">
@@ -258,9 +260,9 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
 		</div>-->
         <!-- loading content -->
         <!-- success and error msg -->
-        <div class='col-lg-4 notification_success alert alert-danger' style="display: none;" id="msg"></div>
-        <div class='col-lg-4 notification_success alert alert-success' style="display: none;" id="success-msg"></div>
-        <!-- success and error msg -->
+        <div class='notification_success alert alert-danger' style="display: none;" id="msg"></div>
+        <div class='notification_success alert alert-success' style="display: none;" id="success-msg"></div>
+<!-- success and error msg -->
 
         <div class="header">
             <div class="username">
@@ -346,7 +348,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                       if(!empty($getExtDrawResults[$l]->DRAW_WINNUMBER) && $getExtDrawResults[$l]->IS_ACTIVE==1){
                         echo '<div class="time_result_p '.$bg.'"><p class="'.$p.'">'.(!empty($getExtDrawResults[$l]->DRAW_STARTTIME)?date("h:i A",strtotime($getExtDrawResults[$l]->DRAW_STARTTIME)):'--').'</p><p class="time_result_text">'.(!empty($getExtDrawResults[$l]->DRAW_WINNUMBER)?$getExtDrawResults[$l]->DRAW_WINNUMBER:'--').'</p></div>';
                       }else if($getExtDrawResults[$l]->IS_ACTIVE==0 || $getExtDrawResults[$l]->DRAW_STATUS==6 || $getExtDrawResults[$l]->DRAW_STATUS==7){
-                        echo '<div class="time_result_p '.$bg.'"><p class="'.$p.'">'.(!empty($getExtDrawResults[$l]->DRAW_STARTTIME)?date("h:i A",strtotime($getExtDrawResults[$l]->DRAW_STARTTIME)):'--').'</p><p class="time_result_text">CANCELLED</p></div>';
+                        echo '<div class="time_result_p '.$bg.'"><p class="'.$p.'">'.(!empty($getExtDrawResults[$l]->DRAW_STARTTIME)?date("h:i A",strtotime($getExtDrawResults[$l]->DRAW_STARTTIME)):'--').'</p><p class="time_result_text draw_cancelled">CANCELLED</p></div>';
                       }else{
                         echo '<div class="time_result_p '.$bg.'"><p class="'.$p.'">---</p><p class="time_result_text">---</p></div>';
                       }
@@ -383,6 +385,19 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
         <input type="hidden" id="activeClass" value="sangam_cont">
         <input type="hidden" id="siteUrl" value="<?= TM_SITE_URL?>" />
         <div class="wrapper-grid">
+        <div class="opacity-wrapper" id="loading" style="display:none;">
+    <div class="small-loading">
+        <div class="load">
+        <div class="loader animation-5">
+				<div class="shape shape1"></div>
+				<div class="shape shape2"></div>
+				<div class="shape shape3"></div>
+				<div class="shape shape4"></div>
+			  </div>
+        </div>
+    </div>
+    
+</div>
             <form method="post" id="ticketForm" class="form" action="ticketprocess.php">
                 <input type="hidden" name="drawID" id="drawID" value="<?php echo $upcomingDraw[0]->DRAW_ID;?>" />
                 <input type="hidden" name="drawName" id="drawName" value="<?php echo $upcomingDraw[0]->DRAW_NUMBER;?>" />
@@ -463,6 +478,51 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                 <li class="nav-item">
                                     <a class="nav-link" id="triple-tab" data-toggle="tab" href="#triple_default" role="tab" aria-controls="triple" aria-selected="false">triple</a>
                                 </li>
+                                <p class="qty">
+                                <span class="qty-text">qty:</span> 
+                                <span> 
+                                <label class="container_checkbox"><span class="checkbox-number">2</span>
+                                <input type="checkbox" >
+                                <span class="checkmark">
+                                </span>
+                                </label>
+                                </span>
+                                <span> 
+                                <label class="container_checkbox"><span class="checkbox-number">4</span>
+                                <input type="checkbox" >
+                                <span class="checkmark">
+                                </span>
+                                </label>
+                                </span>
+                                <span> 
+                                <label class="container_checkbox"><span class="checkbox-number">5</span>
+                                <input type="checkbox">
+                                <span class="checkmark">
+                                </span>
+                                </label>
+                                </span>
+                                <span> 
+                                <label class="container_checkbox"><span class="checkbox-number">10</span>
+                                <input type="checkbox" >
+                                <span class="checkmark">
+                                </span>
+                                </label>
+                                </span>
+                                <span> 
+                                <label class="container_checkbox"><span class="checkbox-number">20</span>
+                                <input type="checkbox" >
+                                <span class="checkmark">
+                                </span>
+                                </label>
+                                </span>
+                                <span> 
+                                <label class="container_checkbox"><span class="checkbox-number">50</span>
+                                <input type="checkbox" >
+                                <span class="checkmark">
+                                </span>
+                                </label>
+                                </span>
+                            </p>
                             </ul>
                             <div class="tab-content myTabContent" id="myTabContent">
                                 <div class="tab-pane fade show active" id="double" role="tabpanel" aria-labelledby="double-tab">
@@ -2727,18 +2787,11 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                 </div>
                             </div>
                         </div>
-
-
-
-
                     </div>
                     <div class="footer">
                         <?php if( $_SESSION[SESSION_PRINTER_OPTION]==0) {?>
-                        <div class="footer_div" id="clear">
-                            <p class="footer_win">
-                              CLEAR ALL
-                            </p>
-                        </div>
+                            <div class="footer_left">
+                        
                         <div class="footer_div">
                             <p class="footer_win" id="report">
                                 <a id='report_modal' class="" data-toggle="modal">
@@ -2747,31 +2800,27 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                             </p>
                         </div>
                         <div class="footer_div">
-                            <p class="footer_win" id="resultchat">
+                            <p class="footer_win" id="resultchat" class="" data-toggle="modal">
                             RESULT CHART
                             </p>
                         </div>
-                        <div class="footer_div" id="repeat">
+                        </div>
+                        <div class="footer_right">
+                        <div class="footer_div replay" id="clear">
+                            <p class="footer_win">
+                              CLEAR ALL
+                            </p>
+                        </div>
+                        <div class="footer_div replay" id="repeat">
                             <p class="footer_win">REPEAT
                             </p>
                             <img style="display: none;text-align: center;height: 26px;margin: 0 auto;" id="repeat_loader" src="images/loader.gif">
                         </div>
-                        <div class="footer_div" id="double_up">
+                        <div class="footer_div replay" id="double_up">
                             <p class="footer_win">double up</p>
                         </div>
-                        <div id="myModal" data-backdrop="static" class="modal fade">
-                            <div class="modal-dialog modal-dialog1">
-                                <div class="modal-content">
-                                    <div class="modal-header popup_head">
-                                        <button type="button" class="close close_btn mfp-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        Report
-                                    </div>
-                                    <div class="modal-body">
-                                        <iframe id="cartoonVideo" width="100%" height="75%" src="<?php echo TM_SITE_URL; ?>gamehistory.php" frameborder="0" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
+                                                
                         <script type="text/javascript">
                             $(document).ready(function () {
                                 $('#report_modal').click(function () {
@@ -2789,10 +2838,14 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                         }
                                     });
                                 });
+                                function reload() {
+                                    document.getElementById('cartoonVideo').src += '';
+                                } report.onclick = reload;
                             });
                         </script>
 
                         <?php }elseif( $_SESSION[SESSION_PRINTER_OPTION]==1){ ?>
+                            <div class="footer_left">
                         <div class="footer_div" id="frmReprintTicket">
                             <p class="footer_win">
                                 Reprint(F9)
@@ -2803,11 +2856,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                 Cancel(F8)
                             </p>
                         </div>
-                        <div class="footer_div" id="frmClear">
-                            <p class="footer_win">
-                                Clear All(F5)
-                            </p>
-                        </div>
+                       
                         <div class="footer_div" id="frmWinResults">
                             <p class="footer_win">
                                 Result(F12)
@@ -2818,67 +2867,40 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                 Claim(F10)
                             </p>
                         </div>
-                        <div class="footer_div"id="repeat">
+                        </div>
+                        <div class="footer_right">
+                        <div class="footer_div replay" id="frmClear">
+                            <p class="footer_win">
+                                Clear All(F5)
+                            </p>
+                        </div>
+                        <div class="footer_div replay"id="repeat">
                             <p class="footer_win">
                                 Repeat(F7)
                             </p>
                             <img style="display: none;text-align: center;height: 26px;margin: 0 auto;" id="repeat_loader" src="images/loader.gif">
                         </div>
-                        <div class="footer_div" id="double_up">
+                        <div class="footer_div replay" id="double_up">
                             <p class="footer_win">double up</p>
                         </div>
-
-                        <div id="fp-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">
-                            <div class="popup_head">TERMINAL PASSWORD</div>
-                            <div class="create_form">
-                                <div class="alert alert-danger" style="display: none" id="tp-msg"></div>
-                                <form action="#" id="tp_pwd">
-                                    <div style="position: relative;">
-                                        <input type="password" name="userTranspass" id="userTranspass" placeholder="password" required tabindex="6">
-                                        <input type="hidden" name="action" value="reprint">
-                                    </div>
-                                    <div>
-                                        <input type="button" value="SUBMIT" id="tp_btn" class="createacc" onClick="updateTicketREPRINTStatus()">
-                                        <img style="display: none; text-align: center; height: 26px" id="loader" src="images/loader.gif" />
-                                    </div>
-                                </form>
-                            </div>
                         </div>
-
-                        <div id="fp-dialog1" class="mfp-hide w3ls_small_dialog wthree_pop">
-                            <div class="popup_head">TERMINAL PASSWORD</div>
-                            <div class="create_form">
-                                <div class="alert alert-danger" style="display: none" id="tp-msg1"></div>
-                                <form action="#" id="tp_pwd1">
-                                    <div style="position: relative;">
-                                        <input type="password" name="userTranspassCancel" id="userTranspassCancel" placeholder="password" class="InputDrawPopup"
-                                            value="" required>
-                                        <input type="hidden" name="action" value="cancel">
-                                    </div>
-                                    <div>
-                                        <input type="button" value="SUBMIT" id="tp_btn1" class="createacc" onClick="updateTicketCANCELStatus()">
-                                        <img style="display: none; text-align: center; height: 26px" id="loader" src="images/loader.gif" />
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
                         <?php } ?>
                     </div>
                 </div>
             </form>
             <div class="triple_maza">
+            <div class="triple_maza_innerdiv">
                 <ul class="nav nav-tabs triple_maza_li" id="myTab2" role="tablist">
+                   <!-- <li class="nav-item">
+                        <a class="nav-link " id="triple-tab-maza" data-toggle="tab" href="#multiple" role="tab" aria-controls="multiple" aria-selected="true">multiple</a>
+                    </li>-->
                     <li class="nav-item">
-                        <a class="nav-link active" id="triple-tab-maza" data-toggle="tab" href="#multiple" role="tab" aria-controls="multiple" aria-selected="true">multiple</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="tripletabcoupon-tab" data-toggle="tab" href="#tripletabcoupon" role="tab" aria-controls="tripletabcoupon"
+                        <a class="nav-link active" id="tripletabcoupon-tab" data-toggle="tab" href="#tripletabcoupon" role="tab" aria-controls="tripletabcoupon"
                             aria-selected="false">coupon</a>
                     </li>
                 </ul>
                 <div class="tab-content myTabContent" id="myTabContent2">
-                    <div class="tab-pane fade show active" id="multiple" role="tabpanel" aria-labelledby="triple-tab-maza">
+                    <div class="tab-pane fade show " id="multiple" role="tabpanel" aria-labelledby="triple-tab-maza">
 
                         <div class="triple_maza_content">
                             <div class="triple_maza_div">
@@ -3138,7 +3160,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                         <?php } ?>
                         </div>
                     </div>
-                    <div class="tab-pane fade show" id="tripletabcoupon" role="tabpanel" aria-labelledby="tripletabcoupon-tab">
+                    <div class="tab-pane fade show active" id="tripletabcoupon" role="tabpanel" aria-labelledby="tripletabcoupon-tab">
                         <div class="ticket_points">
                             <div class="ticket_points_inner_div">
                                 <div class="summary_points">
@@ -3260,20 +3282,27 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                     <p class="total-points-btn-value" id="overall_total"></p>
                                 </div>
                             </div>
-                            <div class="buy_btn">
-                                <p class="buy_btn_confirm">Confirm</p>
+                            <?php if( $_SESSION[SESSION_PRINTER_OPTION]==1){ ?>  
+                            <div class="buy_btn" id="buy" onClick="sendDataToFlash()">
+                                <p class="buy_btn_confirm">Print(F6)</p>
                             </div>
+                        <?php }else { ?>
+                            <div class="buy_btn" id="buy" onclick="submitData()">
+                                <p class="buy_btn_confirm">buy</p>
+                            </div>
+                        <?php } ?>
                         </div>
                     </div>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
-    </div>
+    
+    
 
     <div id="rm_alert_popup" data-backdrop="static" class="modal fade">
         <div class="rm_popup">
-            <div class="modal-dialog modal-md balance_popup">
+            <div class="modal-dialog2 modal-md balance_popup">
                 <div class="modal-content">
                     <div class="modal-header popup_head">
                         <button type="button" class="close close_btn mfp-close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -3321,25 +3350,55 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
 
     
 <!-- Modal -->
-<div class="modal fade" id="small-dialog3" role="dialog" style="display:none">
-    <div class="modal-dialog">
-      <!-- Modal content-->
+<div class="modal fade" id="small-dialog3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- Modal content-->
+     <div class="modal-dialog1">
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Previous Result</h4>
+        <div class="modal-header popup_head">
+        <button type="button" class="close close_btn mfp-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          Previous Result
         </div>
-        <div class="modal-body" id="modal_body">
+        <div class="modal-body previous_body" id="modal_body">
           
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
       
     </div>
   </div>
-
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog1" role="document">
+            <div class="modal-content">
+                <div class="modal-header popup_head">
+                    <button type="button" class="close close_btn mfp-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    Report
+                </div>
+                <div class="modal-body">
+                    <iframe id="cartoonVideo" width="100%" height="75%" src="<?php echo TM_SITE_URL; ?>gamehistory.php" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+            </div>
+        </div>
+        </div>-->
+</div>
+</div>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery.plugin.js"></script>
 <script src="js/jquery.countdown.js"></script>

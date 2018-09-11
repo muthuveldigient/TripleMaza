@@ -105,7 +105,7 @@
 					if(!empty($getExtDrawResults[$l]->DRAW_WINNUMBER) && $getExtDrawResults[$l]->IS_ACTIVE==1){
 						$result .= '<div class="time_result_p '.$bg.'"><p class="'.$p.'">'.(!empty($getExtDrawResults[$l]->DRAW_STARTTIME)?date("h:i A",strtotime($getExtDrawResults[$l]->DRAW_STARTTIME)):'--').'</p><p class="time_result_text">'.(!empty($getExtDrawResults[$l]->DRAW_WINNUMBER)?$getExtDrawResults[$l]->DRAW_WINNUMBER:'--').'</p></div>';
 					}else if($getExtDrawResults[$l]->IS_ACTIVE==0 || $getExtDrawResults[$l]->DRAW_STATUS==6 || $getExtDrawResults[$l]->DRAW_STATUS==7){
-						$result .= '<div class="time_result_p '.$bg.'"><p class="'.$p.'">'.(!empty($getExtDrawResults[$l]->DRAW_STARTTIME)?date("h:i A",strtotime($getExtDrawResults[$l]->DRAW_STARTTIME)):'--').'</p><p class="time_result_text">CANCELLED</p></div>';
+						$result .= '<div class="time_result_p '.$bg.'"><p class="'.$p.'">'.(!empty($getExtDrawResults[$l]->DRAW_STARTTIME)?date("h:i A",strtotime($getExtDrawResults[$l]->DRAW_STARTTIME)):'--').'</p><p class="time_result_text draw_cancelled">CANCELLED</p></div>';
 					}else{
 						$result .= '<div class="time_result_p '.$bg.'"><p class="'.$p.'">---</p><p class="time_result_text">---</p></div>';
 					}

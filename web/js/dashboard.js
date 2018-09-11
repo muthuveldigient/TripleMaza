@@ -737,6 +737,19 @@ function ticketQty() {
     }
 }
 
+function ticket_qty_info() {
+    var tktQty = Number($('input[name=qty]:checked').val());
+    console.log(tktQty);
+    if (tktQty == '' || tktQty == 0 || isNaN(tktQty)) {
+		var msg= "Please select quantity";
+        $('#msg').html(msg).fadeIn();
+        setTimeout(function() {
+            $("#msg").fadeOut();
+        }, 2000);
+        return 0;
+    }
+}
+
 function addData() {
     var data = $("#HiddenData").val();
     var inputData = $("#inputData").val();
@@ -767,11 +780,11 @@ function textLength(value,maxLength) {
 }
 
 function randomPick(value) {
-    if (ticketQty() == 0) {
+    if (ticket_qty_info() == 0) {
         return false;
     }
 
-    var tktQty = $('#tkt_qty').val();
+    var tktQty = Number($('input[name=qty]:checked').val());
     var activeId = $('#activeClass').val();
     var id = activeId.split("_");
     if (value == '' || value == 0 || !textLength(value,2)) {
@@ -805,10 +818,10 @@ function randomPick(value) {
 
 function randomPickNumber(value, thisIs) {
     $('#random_number').val('');
-    if (ticketQty() == 0) {
+    if (ticket_qty_info() == 0) {
         return false;
     }
-    var tktQty = $('#tkt_qty').val();
+    var tktQty = Number($('input[name=qty]:checked').val());
 
     /*class active */
     $('.random_num').removeClass('active');
@@ -846,14 +859,15 @@ function randomPickNumber(value, thisIs) {
     }
 }
 
-function randomPickEndedNumber(value, type) {
-    if (type == 'add') {
-        if (ticketQty() == 0) {
+function randomPickEndedNumber(value, checkbox) {
+    if ($(checkbox).is(":checked")==true) {
+        if (ticket_qty_info() == 0) {
+            $(checkbox).prop('checked', false);
             return false;
         }
 
         $('#random_number').val('');
-        var tktQty = $('#tkt_qty').val();
+        var tktQty = Number($('input[name=qty]:checked').val());
         var activeId = $('#activeClass').val();
 
         $("#" + activeId + " input").removeClass('random_sel_blink');
@@ -868,8 +882,8 @@ function randomPickEndedNumber(value, type) {
             }
             updateDoubleRowTotalQty(id[0]);
         }
-    } else if (type == 'clear') {
-        $('#random_number').val('');
+    } else if ($(checkbox).is(":checked")==false) {
+        //$('#random_number').val('');
         var activeId = $('#activeClass').val();
         //		$("#"+activeId+" input").val('').removeClass('random_sel_blink');
         var id = activeId.split("_");
@@ -925,14 +939,14 @@ function tab_active( tab_value ) {
      $('#activeClass').val(tab_value);
 }
 
-function randomPickRowNumber(start, end, type) {
+function randomPickRowNumber(start, end, checkbox) {
     //$('#tkt_qty').val('');
-    if (type == 'add') {
-        $('#random_number').val('');
-        if (ticketQty() == 0) {
+    if ($(checkbox).is(":checked")==true) {
+        if (ticket_qty_info() == 0) {
+            $(checkbox).prop('checked', false);
             return false;
         }
-        var tktQty = $('#tkt_qty').val();
+        var tktQty = Number($('input[name=qty]:checked').val());
         var activeId = $('#activeClass').val();
         var id = activeId.split("_");
 
@@ -944,7 +958,7 @@ function randomPickRowNumber(start, end, type) {
             }
             updateDoubleRowTotalQty(id[0]);
         }
-    } else if (type == 'clear') {
+    } else if ($(checkbox).is(":checked")==false) {
         var activeId = $('#activeClass').val();
         var id = activeId.split("_");
         if (id[0] != "") {
@@ -976,11 +990,11 @@ function ticketQtySingle() {
 }
 
 function randomPickSingle(value) {
-    if (ticketQtySingle() == 0) {
+    if (ticket_qty_info() == 0) {
         return false;
     }
 
-    var tktQty = $('#tkt_qty1').val();
+    var tktQty = Number($('input[name=qty]:checked').val());
     if (value == '' || value == 0 || !textLength(value,1)) {
         $('#msg').html('Please enter random number 1 to 9').fadeIn();
         setTimeout(function() {
@@ -1014,10 +1028,10 @@ function randomPickSingle(value) {
 
 function randomPickNumberSingle(value, inputId) {
     $('#random_number1').val('');
-    if (ticketQtySingle() == 0) {
+    if (ticket_qty_info() == 0) {
         return false;
     }
-    var tktQty = $('#tkt_qty1').val();
+    var tktQty = Number($('input[name=qty]:checked').val());
 
     /*class active */
     $('.random_num').removeClass('active');
@@ -1054,12 +1068,12 @@ function randomPickNumberSingle(value, inputId) {
 }
 
 function randomPickEndedNumberSingle(value, inputId) {
-    if (ticketQtySingle() == 0) {
+    if (ticket_qty_info() == 0) {
         return false;
     }
 
     $('#random_number1').val('');
-    var tktQty = $('#tkt_qty1').val();
+    var tktQty = Number($('input[name=qty]:checked').val());
     /*class active */
     $('.random_num').removeClass('active');
     $("#" + inputId).addClass('active');
@@ -1112,11 +1126,11 @@ function ticketQtyTwo() {
 }
 
 function randomPickTwo(value) {
-    if (ticketQtyTwo() == 0) {
+    if (ticket_qty_info() == 0) {
         return false;
     }
 
-    var tktQty = $('#tkt_qty2').val();
+    var tktQty = Number($('input[name=qty]:checked').val());
     if (value == '' || value == 0 || !textLength(value,2)) {
         $('#msg').html('Please enter random number 1 to 99').fadeIn();
         setTimeout(function() {
@@ -1157,10 +1171,10 @@ function randomPickTwo(value) {
 
 function randomPickNumberTwo(value, inputId) {
     $('#random_number2').val('');
-    if (ticketQtyTwo() == 0) {
+    if (ticket_qty_info() == 0) {
         return false;
     }
-    var tktQty = $('#tkt_qty2').val();
+    var tktQty = Number($('input[name=qty]:checked').val());
 
     /*class active */
     $('.random_num').removeClass('active');
@@ -1217,11 +1231,12 @@ function randomPickNumberTwo(value, inputId) {
 
 function randomPickEndedNumberTwo(value, checkbox) {
     if ($(checkbox).is(":checked")==true) {
-        // if (ticketQtyTwo() == 0) {
-        //     return false;
-        // }
+        if (ticket_qty_info() == 0) {
+            $(checkbox).prop('checked', false);
+            return false;
+        }
 
-        var tktQty = 2;//$('#tkt_qty2').val();
+        var tktQty = Number($('input[name=qty]:checked').val());
         $("#two_default :input").removeClass('random_sel_blink');
         //$("#two_1 input").removeClass('random_sel_blink');
         for (var i = 0; i < 100; i++) {
@@ -1275,10 +1290,10 @@ function randomPickRowNumberTwo(start, end, checkbox) {
 
     if ($(checkbox).is(":checked")==true) {
         // $('#random_number').val('');
-        // if (ticketQtyTwo() == 0) {
-        //     return false;
-        // }
-        var tktQty = 2;//$('#tkt_qty2').val();
+         if (ticket_qty_info() == 0) {
+             return false;
+        }
+        var tktQty = Number($('input[name=qty]:checked').val());
         //$("#two_default :input").removeClass('random_sel_blink');
 		if(start==0 && end==9){
 			for (var i = start; i <= end; i++) {

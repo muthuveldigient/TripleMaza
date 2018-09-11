@@ -433,7 +433,7 @@ function onMessage(evt) {
 
 	//	{"drawTime":{"minute":54,"second":19,"month":5,"year":2018,"hour":6,"date":9},"serverTime":"May 09,2018 18:54:19 +0530","action":"DateTimeAction"}
 	if (json.action == 'DateTimeAction') {
-		//console.log('DateTimeAction => '+JSON.stringify(json));
+		console.log('DateTimeAction => '+JSON.stringify(json));
 		servetDateTime = json.serverTime;
 
 		var shortly1 = new Date();
@@ -662,6 +662,7 @@ function frame_change(){
 		$('#timer_frame').attr('src','images/Frame_3.png');
 	}else if (frameTime == 1) {
 		$('#timer_frame').attr('src','images/Frame_4.png');
+	}else{
 		clearInterval(interval1);
 		startTimeCounting(); 
 	}

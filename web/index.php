@@ -374,7 +374,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                         <p>
                             <?PHP echo date("d-m-Y"); ?>
                         </p>
-                        <p id="servertime">02:25 pm</p>
+                        <p id="servertime"></p>
                     </div>
                 </div>
             </div>
@@ -385,19 +385,18 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
         <input type="hidden" id="activeClass" value="sangam_cont">
         <input type="hidden" id="siteUrl" value="<?= TM_SITE_URL?>" />
         <div class="wrapper-grid">
-        <div class="opacity-wrapper" id="loading" style="display:none;">
-    <div class="small-loading">
-        <div class="load">
-        <div class="loader animation-5">
-				<div class="shape shape1"></div>
-				<div class="shape shape2"></div>
-				<div class="shape shape3"></div>
-				<div class="shape shape4"></div>
-			  </div>
+        <div class="opacity-wrapper" id="loading-img" style="display:none;">
+            <div class="small-loading">
+                <div class="load">
+                <div class="loader animation-5">
+                        <div class="shape shape1"></div>
+                        <div class="shape shape2"></div>
+                        <div class="shape shape3"></div>
+                        <div class="shape shape4"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    
-</div>
             <form method="post" id="ticketForm" class="form" action="ticketprocess.php">
                 <input type="hidden" name="drawID" id="drawID" value="<?php echo $upcomingDraw[0]->DRAW_ID;?>" />
                 <input type="hidden" name="drawName" id="drawName" value="<?php echo $upcomingDraw[0]->DRAW_NUMBER;?>" />
@@ -482,42 +481,42 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                 <span class="qty-text">qty:</span> 
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">2</span>
-                                <input type="checkbox" >
+                                <input type="radio" name="qty" value="2" checked="checked">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">4</span>
-                                <input type="checkbox" >
+                                <input type="radio" name="qty" value="4">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">5</span>
-                                <input type="checkbox">
+                                <input type="radio" name="qty" value="5">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">10</span>
-                                <input type="checkbox" >
+                                <input type="radio"  name="qty" value="10">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">20</span>
-                                <input type="checkbox" >
+                                <input type="radio" name="qty" value="20">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">50</span>
-                                <input type="checkbox" >
+                                <input type="radio" name="qty" value="50" >
                                 <span class="checkmark">
                                 </span>
                                 </label>
@@ -773,88 +772,88 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                     </div>
                                     <div class="tab-content myTabContent triple_checkbox_line" id="myTabContent1">
                                         <div class="tab-pane fade show active" id="triple1" role="tabpanel" aria-labelledby="triple1-tab">
-                                            <div class="double_checkbox_left">
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <div class="double_checkbox">
-                                                    <div class="double_checkbox_input_left">
-                                                        <label class="container_checkbox">
-                                                            <input type="checkbox">
-                                                            <span class="checkmark"></span>
-                                                        </label>
-                                                    </div>
+                                        <div class="double_checkbox_left">
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
                                                 </div>
                                             </div>
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="double_checkbox">
+                                                <div class="double_checkbox_input_left">
+                                                    <label class="container_checkbox">
+                                                        <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
                                             <div class="double_sub_li_div_main_triple" id="sangam_cont">
                                                 <div class="double_sub_li centerElem">
                                                     <?php 
@@ -894,7 +893,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -902,7 +901,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -910,7 +909,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -918,7 +917,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -926,7 +925,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -934,7 +933,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -942,7 +941,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -950,7 +949,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -958,7 +957,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -966,7 +965,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -978,7 +977,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -986,7 +985,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -994,7 +993,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1002,7 +1001,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1010,7 +1009,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1018,7 +1017,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1026,7 +1025,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1034,7 +1033,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1042,7 +1041,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1050,7 +1049,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1095,7 +1094,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1103,7 +1102,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1111,7 +1110,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1119,7 +1118,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1127,7 +1126,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1135,7 +1134,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1143,7 +1142,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1151,7 +1150,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1159,7 +1158,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1167,7 +1166,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1179,7 +1178,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1187,7 +1186,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1195,7 +1194,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1203,7 +1202,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1211,7 +1210,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1219,7 +1218,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1227,7 +1226,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1235,7 +1234,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1243,7 +1242,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1251,7 +1250,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1296,7 +1295,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1304,7 +1303,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1312,7 +1311,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1320,7 +1319,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1328,7 +1327,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1336,7 +1335,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1344,7 +1343,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1352,7 +1351,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1360,7 +1359,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1368,7 +1367,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1380,7 +1379,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1388,7 +1387,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1396,7 +1395,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1404,7 +1403,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1412,7 +1411,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1420,7 +1419,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1428,7 +1427,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1436,7 +1435,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1444,7 +1443,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1452,7 +1451,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1497,7 +1496,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1505,7 +1504,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1513,7 +1512,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1521,7 +1520,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1529,7 +1528,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1537,7 +1536,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1545,7 +1544,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1553,7 +1552,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1561,7 +1560,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1569,7 +1568,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1581,7 +1580,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1589,7 +1588,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1597,7 +1596,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1605,7 +1604,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1613,7 +1612,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1621,7 +1620,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1629,7 +1628,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1637,7 +1636,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1645,7 +1644,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1653,7 +1652,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1698,7 +1697,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1706,7 +1705,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1714,7 +1713,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1722,7 +1721,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1730,7 +1729,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1738,7 +1737,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1746,7 +1745,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1754,7 +1753,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1762,7 +1761,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1770,7 +1769,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1782,7 +1781,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1790,7 +1789,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1798,7 +1797,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1806,7 +1805,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1814,7 +1813,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1822,7 +1821,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1830,7 +1829,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1838,7 +1837,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1846,7 +1845,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1854,7 +1853,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1899,7 +1898,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1907,7 +1906,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1915,7 +1914,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1923,7 +1922,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1931,7 +1930,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1939,7 +1938,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1947,7 +1946,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1955,7 +1954,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1963,7 +1962,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1971,7 +1970,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1983,7 +1982,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1991,7 +1990,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -1999,7 +1998,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2007,7 +2006,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2015,7 +2014,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2023,7 +2022,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2031,7 +2030,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2039,7 +2038,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2047,7 +2046,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2055,7 +2054,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2100,7 +2099,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2108,7 +2107,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2116,7 +2115,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2124,7 +2123,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2132,7 +2131,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2140,7 +2139,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2148,7 +2147,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2156,7 +2155,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2164,7 +2163,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2172,7 +2171,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2184,7 +2183,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2192,7 +2191,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2200,7 +2199,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2208,7 +2207,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2216,7 +2215,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2224,7 +2223,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2232,7 +2231,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2240,7 +2239,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2248,7 +2247,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2256,7 +2255,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2301,7 +2300,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2309,7 +2308,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2317,7 +2316,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2325,7 +2324,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2333,7 +2332,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2341,7 +2340,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2349,7 +2348,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2357,7 +2356,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2365,7 +2364,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2373,7 +2372,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2385,7 +2384,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2393,7 +2392,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2401,7 +2400,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2409,7 +2408,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2417,7 +2416,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2425,7 +2424,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2433,7 +2432,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2441,7 +2440,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2449,7 +2448,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2457,7 +2456,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2503,7 +2502,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2511,7 +2510,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2519,7 +2518,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2527,7 +2526,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2535,7 +2534,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2543,7 +2542,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2551,7 +2550,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2559,7 +2558,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2567,7 +2566,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2575,7 +2574,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2587,7 +2586,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(0,9,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2595,7 +2594,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(10,19,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2603,7 +2602,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(20,29,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2611,7 +2610,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(30,39,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2619,7 +2618,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(40,49,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2627,7 +2626,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(50,59,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2635,7 +2634,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(60,69,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2643,7 +2642,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(70,79,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2651,7 +2650,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(80,89,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2659,7 +2658,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input_left">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickRowNumber(90,99,this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2704,7 +2703,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('00',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2712,7 +2711,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('01',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2720,7 +2719,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('02',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2728,7 +2727,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('03',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2736,7 +2735,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('04',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2744,7 +2743,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('05',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2752,7 +2751,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('06',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2760,7 +2759,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('07',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2768,7 +2767,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('08',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -2776,7 +2775,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                 <div class="double_checkbox">
                                                     <div class="double_checkbox_input">
                                                         <label class="container_checkbox">
-                                                            <input type="checkbox">
+                                                            <input type="checkbox" onclick="randomPickEndedNumber('09',this)">
                                                             <span class="checkmark"></span>
                                                         </label>
                                                     </div>
@@ -3350,21 +3349,6 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
 
     
 <!-- Modal -->
-<div class="modal fade" id="small-dialog3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <!-- Modal content-->
-     <div class="modal-dialog1">
-      <div class="modal-content">
-        <div class="modal-header popup_head">
-        <button type="button" class="close close_btn mfp-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          Previous Result
-        </div>
-        <div class="modal-body previous_body" id="modal_body">
-          
-        </div>
-      </div>
-      
-    </div>
-  </div>
     <div class="modal" id="myModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog1" role="document">
             <div class="modal-content">
@@ -3378,25 +3362,21 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
             </div>
         </div>
     </div>
-    <!--<div class="modal" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog" role="document">
+    <div class="modal" tabindex="-1" role="dialog" id="small-dialog3">
+        <div class="modal-dialog modal-dialog1" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div class="modal-header popup_head">
+                <h5 class="modal-title">Previous Result</h5>
+                <button type="button" class="close close_btn mfp-close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="modal-body previous_body" id="modal_body">
+          
             </div>
             </div>
         </div>
-        </div>-->
+        </div>
 </div>
 </div>
 <script src="js/bootstrap.min.js"></script>

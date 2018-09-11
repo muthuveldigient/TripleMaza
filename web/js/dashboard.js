@@ -1215,13 +1215,13 @@ function randomPickNumberTwo(value, inputId) {
 
 }
 
-function randomPickEndedNumberTwo(value, type) {
-    if (type == 'add') {
-        if (ticketQtyTwo() == 0) {
-            return false;
-        }
+function randomPickEndedNumberTwo(value, checkbox) {
+    if ($(checkbox).is(":checked")==true) {
+        // if (ticketQtyTwo() == 0) {
+        //     return false;
+        // }
 
-        var tktQty = $('#tkt_qty2').val();
+        var tktQty = 2;//$('#tkt_qty2').val();
         $("#two_default :input").removeClass('random_sel_blink');
         //$("#two_1 input").removeClass('random_sel_blink');
         for (var i = 0; i < 100; i++) {
@@ -1236,7 +1236,7 @@ function randomPickEndedNumberTwo(value, type) {
 				}
             }
         }
-    } else if (type == 'clear') {
+    } else if ($(checkbox).is(":checked")==false) {
         for (var i = 0; i < 100; i++) {
             var isEndsWithZero = i % 10;
             if (isEndsWithZero == value) {
@@ -1256,7 +1256,7 @@ function randomPickEndedNumberTwo(value, type) {
 function updateTwoRowTotalQty() {
     var sum = 0;
     //Sum up
-    $("#two_default :input").each(function() {
+    $(".two-chance").each(function() {
         var val = Number($(this).val());
         if (val == 0) {
             $(this).val('');
@@ -1271,15 +1271,15 @@ function updateTwoRowTotalQty() {
     totalTwo();
 }
 
-function randomPickRowNumberTwo(start, end, type) {
+function randomPickRowNumberTwo(start, end, checkbox) {
 
-    if (type == 'add') {
-        $('#random_number').val('');
-        if (ticketQtyTwo() == 0) {
-            return false;
-        }
-        var tktQty = $('#tkt_qty2').val();
-        $("#two_default :input").removeClass('random_sel_blink');
+    if ($(checkbox).is(":checked")==true) {
+        // $('#random_number').val('');
+        // if (ticketQtyTwo() == 0) {
+        //     return false;
+        // }
+        var tktQty = 2;//$('#tkt_qty2').val();
+        //$("#two_default :input").removeClass('random_sel_blink');
 		if(start==0 && end==9){
 			for (var i = start; i <= end; i++) {
             $("#two_row_0" + i).addClass('random_sel_blink').val(tktQty);
@@ -1289,7 +1289,7 @@ function randomPickRowNumberTwo(start, end, type) {
 				$("#two_row_" + i).addClass('random_sel_blink').val(tktQty);
 			}
 		}
-    } else if (type == 'clear') {
+    } else if ($(checkbox).is(":checked")==false) {
 		if(start==0 && end==9){
 			for (var i = start; i <= end; i++) {
 				$("#two_row_0" + i).removeClass('random_sel_blink').val('');

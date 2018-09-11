@@ -50,9 +50,9 @@ function onMessage(evt) {
 				$('.preDrawTime').html(drawTime);
 			}*/
 			var win_number = json.winNumber;
-			$('#preDrawTime').html(json.drawTime);
-			$('.preDrawTime').html(json.drawTime);
-			$('.preDrawNo').html(json.drawNumber);
+			//$('#preDrawTime').html(json.drawTime);
+			//$('.preDrawTime').html(json.drawTime);
+			//$('.preDrawNo').html(json.drawNumber);
 			if(win_number!=''){
 				var res = win_number.toString(10).split('');
 				$('#result_1').html('<img class="img-responsive" src="images/'+res[0]+'.png" />');
@@ -617,7 +617,9 @@ function logout(user_id, session_id) {
 
 
 var countTime =10;
+var frameTime =6;
 var  interval;
+var  interval1;
 function startTimeCounting( ) {
 	$('#timer1').hide();
 	$('#timer2').show();
@@ -641,5 +643,21 @@ function startInterval(){
 	$('#result_timer').show();
 	$('#timer1').show();
 	$('#timer2').hide();
-	setTimeout(function(){ startTimeCounting(); }, 3000);
+	interval1=	setInterval("frame_change()", 1000);
+	// setTimeout(function(){ 
+	// 	startTimeCounting(); 
+	// }, 3000);
+}
+
+function frame_change(){
+	frameTime=frameTime-1;
+	if (frameTime == 5) {
+		$('#timer_frame').attr('src','images/Frame_2.png');
+	}else if (frameTime == 3) {
+		$('#timer_frame').attr('src','images/Frame_3.png');
+	}else if (frameTime == 1) {
+		$('#timer_frame').attr('src','images/Frame_4.png');
+		clearInterval(interval1);
+		startTimeCounting(); 
+	}
 }

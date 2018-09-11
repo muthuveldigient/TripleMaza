@@ -26,12 +26,12 @@
             <div class="logo-img">
                 <img class="img-responsive" src="login/images/Logo.png" />
             </div>
-            <div class='notification alert alert-danger' style="display: none" id="log_msg"></div>
+            <div class='notification alert' style="display: none" id="log_msg"></div>
             <div class="form-group">
-                <input name="username" type="text" class="form-control" placeholder="username" id="username" size="60"  maxlength="30" autofocus tabindex="1" /> <br />
+                <input name="username" type="text" class="form-control" placeholder="Username" id="username" size="60"  maxlength="30" autofocus tabindex="1" />
             </div>
             <div class="form-group">
-                <input name="password" type="password" class="form-control" placeholder="password" id="password" size="60" maxlength="30" tabindex="2" autocomplete='new-password'/><br />
+                <input name="password" type="password" class="form-control" placeholder="Password" id="password" size="60" maxlength="30" tabindex="2" autocomplete='new-password'/>
             </div>
             <div class="form-group">
                 <button class="login-btn" id="submit_btn" name="submit">&nbsp;</button>

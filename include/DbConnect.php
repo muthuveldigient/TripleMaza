@@ -42,7 +42,7 @@ if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='10.0.0.65'){
 define('LOGIN_URL', $url.'/login.php');
 //define('LOGIN_LANDING_URL', $url.'/home.php');
 define('TM_SITE_URL', $url.'/web/');
-define('TM_WEB_SOCKET_URL', "ws://192.168.0.164:5862/?encoding=text");//Local Vinoth
+define('TM_WEB_SOCKET_URL', "ws://35.154.86.183:5862/?encoding=text");//Local Vinoth
 //define('TM_WEB_SOCKET_URL', "ws://54.254.155.69:8899/?encoding=text");
 
 ?>

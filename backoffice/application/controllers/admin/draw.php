@@ -65,26 +65,12 @@ class Draw extends CI_Controller {
             $data["SEARCH_LIMIT"] = $this->input->post('SEARCH_LIMIT');
             $data["GAME_TYPE"] = $this->input->post('GAME_TYPE');
 
-            if ($data["GAME_TYPE"] == 'winbigboss') {
-                $noOfRecords = $this->draw_model->getDrawcount($data);
-            } elseif ($data["GAME_TYPE"] == 'wintc_lotto') {
-                $noOfRecords = $this->draw_model->getTcDrawcount($data);
-            }
-
+	     $noOfRecords = $this->draw_model->getDrawcount($data);
             $this->session->set_userdata(array('drawSearchData' => $data));
         } else if ($this->session->userdata('drawSearchData')) {
             $data = $this->session->userdata('drawSearchData');
-            if ($data["GAME_TYPE"] == 'winbigboss') {
-                $noOfRecords = $this->draw_model->getDrawcount($data);
-            } elseif ($data["GAME_TYPE"] == 'wintc_lotto') {
-                $noOfRecords = $this->draw_model->getTcDrawcount($data);
-            }
-        } /* else {
-          $data["START_DATE_TIME"]= date('Y-m-d').' 00:00:00';
-          $data["END_DATE_TIME"]	= date('Y-m-d').' 23:59:59';
-          $this->session->set_userdata(array('drawSearchData'=>$data));
-          $noOfRecords  = $this->draw_model->getDrawcount($data);
-          } */
+	     $noOfRecords = $this->draw_model->getDrawcount($data);
+        }
 
         /* Set the config parameters */
         $config['base_url'] = base_url() . "admin/draw/index";
@@ -96,18 +82,10 @@ class Draw extends CI_Controller {
         $config['sort_order'] = "asc";
 
         if ($this->input->post('keyword', TRUE) == "Search") {
-            if ($data["GAME_TYPE"] == 'winbigboss') {
-                $data["results"] = $this->draw_model->getDrawInfo($config, $data);
-            } elseif ($data["GAME_TYPE"] == 'wintc_lotto') {
-                $data["results"] = $this->draw_model->getTcDrawInfo($config, $data);
-            }
+	     $data["results"] = $this->draw_model->getDrawInfo($config, $data);
         } else if ($this->session->userdata('drawSearchData')) {
             $data = $this->session->userdata('drawSearchData');
-            if ($data["GAME_TYPE"] == 'winbigboss') {
-                $data["results"] = $this->draw_model->getDrawInfo($config, $data);
-            } elseif ($data["GAME_TYPE"] == 'wintc_lotto') {
-                $data["results"] = $this->draw_model->getTcDrawInfo($config, $data);
-            }
+	     $data["results"] = $this->draw_model->getDrawInfo($config, $data);
 
             //$data["results"] = $this->draw_model->getDrawInfo($config,$this->session->userdata('drawSearchData'));
         } /* else {

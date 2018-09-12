@@ -197,7 +197,7 @@ if($results[0]->DRAW_ID!=""){
 	if(isset($results)){ 
 		if(count($results)>0 && is_array($results)){
 			foreach($results as $res ){
-				$resvalue['DRAW_NAME'] 		= 'RajaRani';		
+				$resvalue['DRAW_NAME'] 		= 'TRIPLE MAZA';		
 				$resvalue['DRAW_ID'] 		= (!empty($res->DRAW_ID)?$res->DRAW_ID:'--');		
 				$resvalue['DRAW_DESCRIPTION'] 		= (!empty($res->DRAW_DESCRIPTION)?$res->DRAW_DESCRIPTION:'--');
 				$resvalue['DRAW_PRICE'] 	= (!empty($res->DRAW_PRICE)?$res->DRAW_PRICE:'--');

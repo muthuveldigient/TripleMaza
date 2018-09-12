@@ -350,6 +350,18 @@ $info = "(၁)passwordကို စာလံုး ၈လံုးမွ ၁၂ 
                             echo form_submit('frmSubmit', 'Save')."&nbsp;";                           
                         ?></span>
                         <span id="show"><?PHP echo "**********"; ?><a href="javascript:;" onclick="javascript:show()"><img height="16" width="16" src="<?PHP echo base_url();?>static/images/edit-img.png" title="Edit"></a></span>                  </td>
+                        <td width="33%" id="newUserName" class="control-group"><span class="TextFieldHdr style15"> <?php echo form_label('Printer:');?> </span>
+                    <?php										
+                                        switch($userDetails[0]->PRINTER){
+                                          case 1:
+                                            echo "Yes";
+                                            break;
+                                          case 0:
+                                            echo "No";
+                                            break;                                            
+                                        }		
+                                    ?>
+                    </td>
                   <td width="33%" class="control-group"></td>
                 </tr>
                 <tr>

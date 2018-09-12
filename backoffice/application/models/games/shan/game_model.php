@@ -1647,4 +1647,35 @@ FROM shan_wallet_transaction s,transaction_type t,shan_tournament_tables st  whe
 		return $gameInfo;	
 	} 
   
+	public function getTripleMazaSumDetails($handId, $gameId){
+		$this->load->database();
+		$this->db2->select("sum(t.TOTAL_BET) as TOTALBET, sum(t.TOTAL_WIN) as TOTALWIN, s.USERNAME ");
+		$this->db2->join("tc_maza_draw as d"," t.DRAW_ID=d.DRAW_ID","left");
+		$this->db2->join("user as s"," s.user_id=t.TERMINAL_ID","left");
+		$this->db2->where("d.DRAW_GAME_ID",$gameId);
+		if(!empty($handId)){
+			$this->db2->where("t.INTERNAL_REFERENCE_NO",$handId);
+		}
+		$this->db2->group_by("t.INTERNAL_REFERENCE_NO");
+		$browseSQL = $this->db2->get("tc_maza_tickets as t");
+		$gameInfo  =  $browseSQL->row_object();
+		//echo $this->db2->last_query();exit;
+		return $gameInfo;		
+	}
+
+	public function getTripleMazaPlayDetails($handId, $gameId){
+		$this->load->database();
+		$this->db2->select("t.TICKET_ID,t.BET_TYPE,t.GAME_TYPE_ID,t.INTERNAL_REFERENCE_NO,t.PARTNER_ID,t.BET_NUMBER,t.BET_AMOUNT_VALUE,t.CREATED_DATE,t.UPDATED_DATE,t.STATUS,t.WIN_NUMBER,t.TOTAL_BET,t.TOTAL_WIN");
+		$this->db2->join("tc_maza_draw as d"," t.DRAW_ID=d.DRAW_ID","left");
+		$this->db2->where("d.DRAW_GAME_ID",$gameId);
+		if(!empty($handId)){
+			$this->db2->where("t.INTERNAL_REFERENCE_NO",$handId);
+		}
+		$this->db2->order_by("t.TICKET_ID","DESC");
+		$browseSQL = $this->db2->get("tc_maza_tickets as t");
+		$gameInfo  =  $browseSQL->result();
+		return $gameInfo;	
+	}
+
+
 }

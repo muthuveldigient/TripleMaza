@@ -46,6 +46,7 @@ class Gamedetails extends CI_Controller{
 	 }
 	 
 	public function view(){
+		
 		$handId = $this->uri->segment(5, 0);
 		$result=$this->game_model->getGameDetails($handId);
 		$data['handId'] = $handId;
@@ -53,7 +54,7 @@ class Gamedetails extends CI_Controller{
 		$data['gameName'] = $gameName;
 		$data['dispName'] = (!empty($result[0]->DESCRIPTION)?$result[0]->DESCRIPTION:'');
 		$data['gameId'] = (!empty($result[0]->MINIGAMES_ID)?$result[0]->MINIGAMES_ID:'');
-			
+
 		switch ($gameName) {
     		case 'singlewheel':
         		$this->load->view("reports/games/singlewheel_details",$data);
@@ -234,7 +235,10 @@ class Gamedetails extends CI_Controller{
         		break;
 			case 'mobwinbigboss':
 			  	$this->load->view("reports/games/winbigboss_details",$data);
-        		break;
+				break;
+			case 'triplemaza':
+				$this->load->view("reports/games/triplemaza_details",$data);
+			  	break;				
 		}		
 	}
 	 

@@ -464,7 +464,8 @@ $(document).ready(function() {
 				        $sql_udist=$this->db2->query("select FK_PARTNER_ID from partner where PARTNER_ID='".$this->session->userdata('partnerid')."'");
 				        $row_udist=$sql_udist->result(); 
 				    ?>
-                  <input type="hidden" name="PARTNER_DISTRIBUTOR" id="PARTNER_DISTRIBUTOR" value="<?php echo ltrim($row_udist[0]->FK_PARTNER_ID,'0');?>">
+                  <input type="hidden" name="PARTNER_DISTRIBUTOR" id="PARTNER_DISTRIBUTOR" value="<?php echo 
+                  ltrim($row_udist[0]->FK_PARTNER_ID,'0');?>">
                   <input type="hidden" name="USERPARTNER_ID" id="USERPARTNER_ID" value="<?php echo $this->session->userdata('partnerid');?>">
                   <?php } ?>
                   </td>
@@ -520,6 +521,14 @@ $(document).ready(function() {
                                         echo form_input($Pincode);			
                                     ?>
                   </td>
+
+                  <td width="33%"><span class="TextFieldHdr"> <?php echo form_label('Printer:', 'Printer');?> </span>
+                    <input type="radio" name="printer" value="1" >Yes
+
+                    <input type="radio" name="printer" value="0" >No
+
+                  </td>
+
                 </tr>
               </table></td>
           </tr>

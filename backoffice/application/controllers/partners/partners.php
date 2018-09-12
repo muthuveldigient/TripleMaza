@@ -1009,7 +1009,7 @@ class Partners extends CI_Controller {
 
 				$session_id=$this->session->userdata('session_id');
 				$request1='{"action":"balanceSessionAction","sessionid":"'.$session_id.'"}';
-				$URL = "http://".BALANCE_UPDATE_API."/Digient_casino_API/servlet/GameApiServlet?xmlString=$request1";
+				$URL = BALANCE_UPDATE_API."?xmlString=$request1";
 				$ch1 = curl_init($URL);
 				curl_setopt($ch1, CURLOPT_MUTE, 1);
 				curl_setopt($ch1, CURLOPT_SSL_VERIFYHOST, 0);
@@ -1047,7 +1047,7 @@ class Partners extends CI_Controller {
 					  }
 //echo '{"action":"balupdatereqconf","sessionid":"'.$session_id.'","transactionid":"'.$transactionid.'","userid":"'.$userid.'","amount":'.$_POST['p_amount'].',"type":"subtract","username":"'.$_POST['p_name'].'","transactionstatusId":"'.$transactionStatusId.'","transactiontypeid":"'.$transactionTypeId.'","balancetypeid":"'.$balanceTypeId.'","ireferno":"'.$ireference.'","partnerid":"'.$pid.'","partnerusername":"'.$this->session->userdata['partnerusername'].'","ptranStatusId":"'.$partnertransactionStatusId.'","ptranTypeId":"'.$partnertransactionTypeId.'","logParId":"'.$this->session->userdata['partnerid'].'","comment":"'.$comments.'","cointypeid":"'.$cointypeid.'"}'; die;
 
-						 $URL2 = "http://".BALANCE_UPDATE_API."/Digient_casino_API/servlet/GameApiServlet?xmlString=$request2";
+						 $URL2 = BALANCE_UPDATE_API."?xmlString=$request2";
 						 $ch2 = curl_init($URL2);
 						 curl_setopt($ch2, CURLOPT_MUTE, 1);
 						 curl_setopt($ch2, CURLOPT_SSL_VERIFYHOST, 0);
@@ -1384,7 +1384,7 @@ class Partners extends CI_Controller {
 
 					$session_id=$this->session->userdata('session_id');
 					$request1='{"action":"balanceSessionAction","sessionid":"'.$session_id.'"}';
-					$URL = "http://".BALANCE_UPDATE_API."/Digient_casino_API/servlet/GameApiServlet?xmlString=$request1";
+					$URL = BALANCE_UPDATE_API."?xmlString=$request1";
 					$ch1 = curl_init($URL);
 					curl_setopt($ch1, CURLOPT_MUTE, 1);
 					curl_setopt($ch1, CURLOPT_SSL_VERIFYHOST, 0);
@@ -1411,7 +1411,7 @@ class Partners extends CI_Controller {
 
 							 $request2=urlencode('{"action":"balupdatereqconf","sessionid":"'.$session_id.'","transactionid":"'.$transactionid.'","userid":"'.$userid.'","amount":'.$_POST['p_amount'].',"type":"add","username":"'.$_POST['p_name'].'","transactionstatusId":"'.$transactionStatusId.'","transactiontypeid":"'.$transactionTypeId.'","balancetypeid":"'.$balanceTypeId.'","ireferno":"'.$ireference.'","partnerid":"'.$pid.'","partnerusername":"'.$this->session->userdata['partnerusername'].'","ptranStatusId":"'.$partnertransactionStatusId.'","ptranTypeId":"'.$partnertransactionTypeId.'","logParId":"'.$this->session->userdata['partnerid'].'","comment":"","cointypeid":"'.$cointypeid.'"}');
 
-							 $URL2 = "http://".BALANCE_UPDATE_API."/Digient_casino_API/servlet/GameApiServlet?xmlString=$request2";
+							 $URL2 = BALANCE_UPDATE_API."?xmlString=$request2";
 							 $ch2 = curl_init($URL2);
 							 curl_setopt($ch2, CURLOPT_MUTE, 1);
 							 curl_setopt($ch2, CURLOPT_SSL_VERIFYHOST, 0);
@@ -1546,7 +1546,7 @@ class Partners extends CI_Controller {
 				{
 					$session_id=$this->session->userdata('session_id');
 					$request1='{"action":"balanceSessionAction","sessionid":"'.$session_id.'"}';
-					$URL = "http://".BALANCE_UPDATE_API."/Digient_casino_API/servlet/GameApiServlet?xmlString=$request1";
+					$URL = BALANCE_UPDATE_API."?xmlString=$request1";
 
 					$ch1 = curl_init($URL);
 					curl_setopt($ch1, CURLOPT_MUTE, 1);
@@ -1575,7 +1575,7 @@ class Partners extends CI_Controller {
 
 							 $request2=urlencode('{"action":"balupdatereqconf","sessionid":"'.$session_id.'","transactionid":"'.$transactionid.'","userid":"'.$userid.'","amount":'.$_POST['p_amount'].',"type":"add","username":"'.$_POST['p_name'].'","transactionstatusId":"'.$transactionStatusId.'","transactiontypeid":"'.$transactionTypeId.'","balancetypeid":"'.$balanceTypeId.'","ireferno":"'.$ireference.'","partnerid":"'.$pid.'","partnerusername":"'.$this->session->userdata['partnerusername'].'","ptranStatusId":"'.$partnertransactionStatusId.'","ptranTypeId":"'.$partnertransactionTypeId.'","logParId":"'.$this->session->userdata['partnerid'].'","comment":"","cointypeid":"'.$cointypeid.'"}');
 
-							 $URL2 = "http://".BALANCE_UPDATE_API."/Digient_casino_API/servlet/GameApiServlet?xmlString=$request2";
+							 $URL2 = BALANCE_UPDATE_API."?xmlString=$request2";
 							 $ch2 = curl_init($URL2);
 							 curl_setopt($ch2, CURLOPT_MUTE, 1);
 							 curl_setopt($ch2, CURLOPT_SSL_VERIFYHOST, 0);
@@ -1704,6 +1704,7 @@ class Partners extends CI_Controller {
     }
 
 	public function createUser() {
+
 		$this->load->library('encrypt');
 		$key = 'secret-key-in-config';
 		//echo '<pre>';print_r($_POST);exit;
@@ -1722,7 +1723,7 @@ class Partners extends CI_Controller {
 			
 			$pnum = $this->partner_model->usernameAlreadyExist($this->input->post('username'));
 			//$num = $this->partner_model->emailAlreadyExist($this->input->post('email'));
-
+			
 			if($pnum>0){
 				$arrTraking["CUSTOM1"]      =json_encode(array('formData'=>$_REQUEST,'message'=>'Username already exists'));
 				$this->db->insert("tracking",$arrTraking);
@@ -1738,6 +1739,7 @@ class Partners extends CI_Controller {
 				$this->session->set_flashdata('message', 'Emailid already exists!');
 				redirect("partners/partners/createUser?rid=55");
 			} */
+			
 
 			if($this->input->post('amount')!=''){
 				$cashcheck="/^[0-9]*$/";
@@ -1763,6 +1765,7 @@ class Partners extends CI_Controller {
 			$data["STATE"]  	= addslashes(trim($this->input->post('PARTNER_STATE')));
 			$data["CITY"]       = addslashes(trim($this->input->post('city')));
 			$data["STREET"]     = addslashes(trim($this->input->post('area')));
+			$data["PRINTER"]    = addslashes(trim($this->input->post('printer')));
 			$data["REGISTRATION_TIMESTAMP"]  = date('Y-m-d h:i:s');
 			$data["ACCOUNT_STATUS"]  	= 1;
 			$data["ONLINE_AGENT_STATUS"] = 1;

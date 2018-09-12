@@ -10,7 +10,9 @@ $(document).ready(function () {
 $("#partnertype").change(function()	{
 		
 		var id=$(this).val();
-		
+		$('#commission_type').hide();
+		$("#com_type1").hide();
+		$("#empty_string").show();
 		if(id > 11) {
 			//tdMasteragent tdDistributor tdSubdistributor
 			if(id == 12) {
@@ -105,7 +107,9 @@ function selSupDist() {
 	$('#subdistributor').empty();
 	var ptype=$("#partnertype").val();
 	var id=$("#masteragent").val();
-
+	$('#commission_type').hide();
+	$("#com_type1").hide();
+	$("#empty_string").show();
 	if(ptype == 15) {
 		selMinigames(id);
 		return false;
@@ -136,6 +140,9 @@ function selDist() {
 	var ptype=$("#partnertype").val();
 	var id=$("#superdistributor").val();
 	$('#subdistributor').empty();
+	$('#commission_type').hide();
+	$("#com_type1").hide();
+	$("#empty_string").show();
 	if(id == '') {
 		$('#distributor').empty();
 		return false;
@@ -159,6 +166,9 @@ function selSubDist() {
 
 	var ptype=$("#partnertype").val();
 	var id=$("#distributor").val();
+	$('#commission_type').hide();
+	$("#com_type1").hide();
+	$("#empty_string").show();
 	if(id == '') {
 		$('#subdistributor').empty();
 		return false;
@@ -182,7 +192,9 @@ function selMinigames(pid) {
 	$('#commission_type').hide();
 	$('#percentage').val('');
 	$('#part_Id').val(pid); //user for percentage caluculation
-	
+	$('#commission_type').hide();
+	$("#com_type1").hide();
+	$("#empty_string").show();
 	var ptype=$("#partnertype").val();
 	var dataString = {'ptype': ptype, 'pid': pid};
 	$.ajax
@@ -388,12 +400,14 @@ $(document).ready(function(){
 				return false;
 			}else{
 				$('#commission_type').show();
+				$("#empty_string").hide();
 				//$("#com_type").html(ret);
 				if(ret =='success'){
-					$("#com_type").show();
+					//$("#com_type").show();
 					$("#com_type1").hide();
 				}else{
-					$("#com_type").hide();
+					$('#commission_type').hide();
+					//$("#com_type").hide();
 					$("#com_type1").show().html(ret);
 				}
 				return true;
@@ -733,7 +747,24 @@ $(document).ready(function() {
                                             );		
                                         echo form_input($Percentage);			
                                     ?>                   	
-                                </td>                                                                       
+                                </td> 
+								<td>
+                                     <span class="TextFieldHdr">
+                                        <?php echo form_label('Commission Type<span class="mandatory">*</span> :', 'CommissionType');?>
+                                    </span>
+                                    <span class="control-group" style="display:none;" id="commission_type">
+										<?php
+											$optionsCT[''] = '-- Select --'; 
+											foreach($commissionTypes as $commissionType) {
+												$optionsCT[$commissionType->AGENT_COMMISSION_TYPE_ID] = $commissionType->AGENT_COMMISSION_TYPE;
+											}
+											echo form_dropdown('commissiontype', $optionsCT,'','id="commissiontype" class="cmbTextField" required');
+										?>   
+                                    </span>
+									<span class="control-group" id="empty_string">--</span>
+									<span class="control-group" id="com_type1">
+									</span>  
+									</td>                                                                       
                             </tr>
                             <input type="hidden" name="lc_commissiontype" id="lc_commissiontype" value="" />
                             <input type="hidden" name="lc_percentage" id="lc_percentage" value="" />
@@ -823,23 +854,6 @@ $(document).ready(function() {
                                         echo form_input($lc_percentage);			
                                     ?>
                                     </span>
-                                    </div>
-                                    
-                                    <div style="float:left; width:250px;display:none;" id="commission_type">
-                                     <span class="TextFieldHdr">
-                                        <?php echo form_label('Commission Type<span class="mandatory">*</span> :', 'CommissionType');?>
-                                    </span>
-                                    <span class="control-group" id="com_type">
-                                    <?php
-										$optionsCT[''] = '-- Select --'; 
-										foreach($commissionTypes as $commissionType) {
-											 $optionsCT[$commissionType->AGENT_COMMISSION_TYPE_ID] = $commissionType->AGENT_COMMISSION_TYPE;
-										}
-										echo form_dropdown('commissiontype', $optionsCT,'','id="commissiontype" class="cmbTextField" required');
-									?>   
-                                    </span>
-									<span class="control-group" id="com_type1">
-									</span>
                                     </div>
                                 </td>
                             </tr>

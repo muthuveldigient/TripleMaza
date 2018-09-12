@@ -17,7 +17,8 @@ define('FILE_READ_MODE', 0644);
 define('FILE_WRITE_MODE', 0666);
 define('DIR_READ_MODE', 0755);
 define('DIR_WRITE_MODE', 0777);
-define('BALANCE_UPDATE_API','54.254.155.69:8090');
+// define('BALANCE_UPDATE_API','54.254.155.69:8090');
+define('BALANCE_UPDATE_API','http://54.254.155.69:8090/Digient_casino_API_Mazza/servlet/GameApiServlet');
 
 /*
 |--------------------------------------------------------------------------

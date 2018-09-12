@@ -435,7 +435,7 @@ class Partner_model extends CI_Model {
 	}
 
 	public function viewUserInfo($userID) {
-		$this->db2->select('t1.USER_ID,t1.USERNAME,t1.PARTNER_ID,t1.ACCOUNT_STATUS,t1.PASSWORD,t1.REGISTRATION_TIMESTAMP,t2.USER_TOT_BALANCE')->from('user t1');
+		$this->db2->select('t1.USER_ID,t1.USERNAME,t1.PARTNER_ID,t1.ACCOUNT_STATUS,t1.PASSWORD,t1.REGISTRATION_TIMESTAMP,t1.PRINTER,t2.USER_TOT_BALANCE')->from('user t1');
 		$this->db2->join('user_points t2', 't2.USER_ID = t1.USER_ID', 'left');
 		$this->db2->where('t1.USER_ID =',$userID);
         $browseSQL = $this->db2->get();

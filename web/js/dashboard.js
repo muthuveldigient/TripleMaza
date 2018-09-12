@@ -68,9 +68,9 @@ $(document).ready(function() {
             if (value > 0) {
                 var inputVal = value*2;
 				if(inputVal > SINGLE_BET_QTY_LIMIT){
-					$('#msg').html("Maximum of only "+SINGLE_BET_QTY_LIMIT+" per coupon is allowed to buy").fadeIn();
+					$('#msg').html("Maximum of only "+SINGLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
 					setTimeout( function() {
-						$('#msg').fadeOut();
+						$('#msg').css({ 'display': "none" });
 					}, 3000 );
 					return false;
                 }else{
@@ -88,9 +88,9 @@ $(document).ready(function() {
             if (value > 0) {
                 var inputVal = value*2;
 				if(inputVal > DOUBLE_BET_QTY_LIMIT){
-					$('#msg').html("Maximum of only "+DOUBLE_BET_QTY_LIMIT+" per coupon is allowed to buy").fadeIn();
+					$('#msg').html("Maximum of only "+DOUBLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
 					setTimeout( function() {
-						$('#msg').fadeOut();
+						$('#msg').css({ 'display': "none" });
 					}, 3000 );
 					return false;
                 }else{
@@ -109,9 +109,9 @@ $(document).ready(function() {
             if (value > 0) {
                 var inputVal = value*2;
 				if(inputVal > TRIPLE_BET_QTY_LIMIT){
-					$('#msg').html("Maximum of only "+TRIPLE_BET_QTY_LIMIT+" per coupon is allowed to buy").fadeIn();
+					$('#msg').html("Maximum of only "+TRIPLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
 					setTimeout( function() {
-						$('#msg').fadeOut();
+						$('#msg').css({ 'display': "none" });
 					}, 3000 );
 					return false;
                 }else{
@@ -156,10 +156,10 @@ $(document).ready(function() {
 		var value = Number($(this).val());
         if (value > 0) {
 			if(value > SINGLE_BET_QTY_LIMIT){
-				$('#msg').html("Maximum of only "+SINGLE_BET_QTY_LIMIT+" per coupon is allowed to buy").fadeIn();
+				$('#msg').html("Maximum of only "+SINGLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
 				$(this).val('');
 				setTimeout( function() {
-					$('#msg').fadeOut();
+					$('#msg').css({ 'display': "none" });
 				}, 3000 );
 				return false;
 			}
@@ -170,10 +170,10 @@ $(document).ready(function() {
        var value1 = Number($(this).val());
         if (value1 > 0) {
 			if(value1 > DOUBLE_BET_QTY_LIMIT){
-				$('#msg').html("Maximum of only "+DOUBLE_BET_QTY_LIMIT+" per coupon is allowed to buy").fadeIn();
+				$('#msg').html("Maximum of only "+DOUBLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
 				$(this).val('');
 				setTimeout( function() {
-					$('#msg').fadeOut();
+					$('#msg').css({ 'display': "none" });
 				}, 3000 );
 				
 				return false;
@@ -185,10 +185,10 @@ $(document).ready(function() {
        var value2 = Number($(this).val());
         if (value2 > 0) {
 			if(value2 > TRIPLE_BET_QTY_LIMIT){
-				$('#msg').html("Maximum of only "+TRIPLE_BET_QTY_LIMIT+" per coupon is allowed to buy").fadeIn();
+				$('#msg').html("Maximum of only "+TRIPLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
 				$(this).val('');
 				setTimeout( function() {
-					$('#msg').fadeOut();
+					$('#msg').css({ 'display': "none" });
 				}, 3000 );
 				return false;
 			}
@@ -232,9 +232,9 @@ $(document).ready(function() {
 			if (value > 0) {
 				if(value > SINGLE_BET_QTY_LIMIT){
 					$(this).val('');
-					$('#msg').html("Maximum of only "+SINGLE_BET_QTY_LIMIT+" per coupon is allowed to buy").fadeIn();
+					$('#msg').html("Maximum of only "+SINGLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
 					setTimeout( function() {
-						$('#msg').fadeOut();
+						$('#msg').css({ 'display': "none" });
 					}, 3000 );
 					return false;
 				}
@@ -262,9 +262,9 @@ $(document).ready(function() {
 			if (value > 0) {
 				if(value > DOUBLE_BET_QTY_LIMIT){
 					$(this).val('');
-					$('#msg').html("Maximum of only "+DOUBLE_BET_QTY_LIMIT+" per coupon is allowed to buy").fadeIn();
+					$('#msg').html("Maximum of only "+DOUBLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
 					setTimeout( function() {
-						$('#msg').fadeOut();
+						$('#msg').css({ 'display': "none" });
 					}, 3000 );
 					return false;
 				}
@@ -291,9 +291,9 @@ $(document).ready(function() {
 			if (value > 0) {
 				if(value > TRIPLE_BET_QTY_LIMIT){
 					$(this).val('');
-					$('#msg').html("Maximum of only "+TRIPLE_BET_QTY_LIMIT+" per coupon is allowed to buy").fadeIn();
+					$('#msg').html("Maximum of only "+TRIPLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
 					setTimeout( function() {
-						$('#msg').fadeOut();
+						$('#msg').css({ 'display': "none" });
 					}, 3000 );
 					return false;
 				}
@@ -331,11 +331,11 @@ $(document).ready(function() {
 		$("#repeat_loader").show();
 		
 		if(lastTicket==''){
-			$('#msg').html('No coupon available').fadeIn();
+			$('#msg').html('No coupon available').css({ 'display': "block" });
 			setTimeout( function() {
 				$("#loading").removeClass('overlay');
 				$("#loading-img").hide();
-				$('#msg').fadeOut();
+				$('#msg').css({ 'display': "none" });;
 				$("#repeat").show();
 				$("#repeat_loader").hide();
 			}, 3000 );
@@ -736,10 +736,10 @@ function ticketQty() {
         $('.random_num').removeClass('active');
         //$("#" + activeId + " input").val('').removeClass('random_sel_blink');
         $("#" + activeId + " input").removeClass('random_sel_blink');
-        $('#msg').html(msg).fadeIn();
+        $('#msg').html(msg).css({ 'display': "block" });
         updateDoubleRowTotalQty(id[0]);
         setTimeout(function() {
-            $("#msg").fadeOut();
+            $("#msg").css({ 'display': "none" });
         }, 2000);
         return 0;
     }
@@ -750,9 +750,9 @@ function ticket_qty_info() {
     console.log(tktQty);
     if (tktQty == '' || tktQty == 0 || isNaN(tktQty)) {
 		var msg= "Please select quantity";
-        $('#msg').html(msg).fadeIn();
+        $('#msg').html(msg).css({ 'display': "block" });
         setTimeout(function() {
-            $("#msg").fadeOut();
+            $("#msg").css({ 'display': "none" });
         }, 2000);
         return 0;
     }
@@ -796,9 +796,9 @@ function randomPick(value) {
     var activeId = $('#activeClass').val();
     var id = activeId.split("_");
     if (value == '' || value == 0 || !textLength(value,2)) {
-        $('#msg').html('Please enter random number  1 to 99').fadeIn();
+        $('#msg').html('Please enter random number  1 to 99').css({ 'display': "block" });
         setTimeout(function() {
-            $("#msg").fadeOut();
+            $("#msg").css({ 'display': "none" });;
         }, 2000);
         $('#random_number').val('');
         $("#" + activeId + " input").val('').removeClass('random_sel_blink');
@@ -886,6 +886,7 @@ function randomPickEndedNumber(value, checkbox) {
                 if (isEndsWithZero == value) {
                     $("#" + id[0] + "_" + i).val(tktQty);
                     $("#" + id[0] + "_" + i).addClass('random_sel_blink');
+					$("#" + id[0] + "_" + i).parents('.double_sub_li_div').addClass('selected');
                 }
             }
             updateDoubleRowTotalQty(id[0]);
@@ -901,6 +902,7 @@ function randomPickEndedNumber(value, checkbox) {
                 if (isEndsWithZero == value) {
                     $("#" + id[0] + "_" + i).val('');
                     $("#" + id[0] + "_" + i).removeClass('random_sel_blink');
+					$("#" + id[0] + "_" + i).parents('.double_sub_li_div').removeClass('selected');
                 }
             }
             updateDoubleRowTotalQty(id[0]);
@@ -963,6 +965,7 @@ function randomPickRowNumber(start, end, checkbox) {
         if (id[0] != "") {
             for (var i = start; i <= end; i++) {
                 $("#" + id[0] + "_" + i).addClass('random_sel_blink').val(tktQty);
+				$("#" + id[0] + "_" + i).parents('.double_sub_li_div').addClass('selected');
             }
             updateDoubleRowTotalQty(id[0]);
         }
@@ -972,6 +975,7 @@ function randomPickRowNumber(start, end, checkbox) {
         if (id[0] != "") {
             for (var i = start; i <= end; i++) {
                 $("#" + id[0] + "_" + i).removeClass('random_sel_blink').val('');
+				$("#" + id[0] + "_" + i).parents('.double_sub_li_div').removeClass('selected');
             }
             updateDoubleRowTotalQty(id[0]);
         }
@@ -988,10 +992,10 @@ function ticketQtySingle() {
         $('.random_num').removeClass('active');
         //$("#single_1 :input").val('').removeClass('random_sel_blink');
         $("#single_1 :input").removeClass('random_sel_blink');
-        $('#msg').html(msg).fadeIn();
+        $('#msg').html(msg).css({ 'display': "block" });
         updateSingleRowTotalQty();
         setTimeout(function() {
-            $("#msg").fadeOut();
+            $("#msg").css({ 'display': "none" });
         }, 2000);
         return 0;
     }
@@ -1004,9 +1008,9 @@ function randomPickSingle(value) {
 
     var tktQty = Number($('input[name=qty]:checked').val());
     if (value == '' || value == 0 || !textLength(value,1)) {
-        $('#msg').html('Please enter random number 1 to 9').fadeIn();
+        $('#msg').html('Please enter random number 1 to 9').css({ 'display': "block" });
         setTimeout(function() {
-            $("#msg").fadeOut();
+            $("#msg").css({ 'display': "none" });
         }, 2000);
         $('#random_number1').val('');
         $(".tab_one_1 :input").val('').removeClass('random_sel_blink');
@@ -1124,10 +1128,10 @@ function ticketQtyTwo() {
         $('.random_num').removeClass('active');
         //$("#two_default :input").val('').removeClass('random_sel_blink');
         $("#two_default :input").removeClass('random_sel_blink');
-        $('#msg').html(msg).fadeIn();
+        $('#msg').html(msg).css({ 'display': "block" });
         updateTwoRowTotalQty();
         setTimeout(function() {
-            $("#msg").fadeOut();
+            $("#msg").css({ 'display': "none" });
         }, 2000);
         return 0;
     }
@@ -1140,9 +1144,9 @@ function randomPickTwo(value) {
 
     var tktQty = Number($('input[name=qty]:checked').val());
     if (value == '' || value == 0 || !textLength(value,2)) {
-        $('#msg').html('Please enter random number 1 to 99').fadeIn();
+        $('#msg').html('Please enter random number 1 to 99').css({ 'display': "block" });
         setTimeout(function() {
-            $("#msg").fadeOut();
+            $("#msg").css({ 'display': "none" });
         }, 2000);
         $('#random_number2').val('');
         $("#two_default :input").val('').removeClass('random_sel_blink');

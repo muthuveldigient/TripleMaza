@@ -649,7 +649,6 @@ function startInterval(){
 	$('#result_timer').show();
 	$('#timer1').show();
 	$('#timer2').hide();
-	//interval1=	setInterval("frame_change()", 1000);
 	 setTimeout(function(){ 
 	 	startTimeCounting(); 
 	 }, 2000);

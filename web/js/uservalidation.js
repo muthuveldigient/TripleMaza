@@ -10,9 +10,9 @@ function submitData(){
 				}
 		    })
 		    if(flag==0){
-		    	$('#msg').html('Please select coupon').fadeIn();
+		    	$('#msg').html('Please select coupon').css({ 'display': "block" });
 		    	setTimeout( function() {
-					$("#msg").fadeOut();
+					$("#msg").css({ 'display': "none" });
 				}, 2000 );
 		    	return false;
 		    }
@@ -48,10 +48,10 @@ function submitData(){
 						}else{
 							$("#buy").removeClass('disabled').prop('disabled', false);
 							clearInputValue();
-							$('#msg').html(res.msg).fadeIn();
+							$('#msg').html(res.msg).css({ 'display': "block" });
 							setTimeout( function() {
 								$("#loading").removeClass('overlay');
-								$("#msg").fadeOut();
+								$("#msg").css({ 'display': "none" });
 							}, 4000 );
 						}
 					}

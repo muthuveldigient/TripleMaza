@@ -253,17 +253,17 @@ function onMessage(evt) {
 						$('#triple_result').css('display', 'none');
 					}
 					$('#rm_alert_popup').modal('show');
-					$("#loading-img").hide();
+					$("#loading-img").css({ 'display': "none" });
 					$("#loading").removeClass('overlay');
 					setTimeout(function () {
 						$('#rm_alert_popup').modal('hide');
 					}, 20000);
 				} else {
-					$('#success-msg').html('Coupon(s) bought successfully').fadeIn();
+					$('#success-msg').html('Coupon(s) bought successfully').css({ 'display': "block" });
 					setTimeout(function () {
 						$("#loading").removeClass('overlay');
-						$("#loading-img").hide();
-						$('#success-msg').fadeOut();
+						$("#loading-img").css({ 'display': "none" });
+						$('#success-msg').css({ 'display': "none" });
 					}, 3000);
 				}
 			}
@@ -297,11 +297,11 @@ function onMessage(evt) {
 				} else if (error == 105) {
 					msg = 'Invalid coupon';//no bet type available
 				} else if (error == 106) {
-					$('#msg').html('Session expired').fadeIn();
+					$('#msg').html('Session expired').css({ 'display': "block" });
 					setTimeout(function () {
 						//$("#loading").removeClass('overlay');
-						//$("#loading-img").hide();
-						$('#msg').fadeOut();
+						//$("#loading-img").css({ 'display': "none" });
+						$('#msg').css({ 'display': "none" });
 						location.reload();
 					}, 3000);
 					//return false;
@@ -309,15 +309,15 @@ function onMessage(evt) {
 					msg = 'The game is finished already';
 				}
 
-				$('#msg').html(msg).fadeIn();
+				$('#msg').html(msg).css({ 'display': "block" });
 				setTimeout(function () {
 					$("#loading").removeClass('overlay');
-					$("#loading-img").hide();
+					$("#loading-img").css({ 'display': "none" });
 					$('#msg').fadeOut();
 				}, 3000);
 			}
 			$("#loading").removeClass('overlay');
-			$("#loading-img").hide();
+			$("#loading-img").css({ 'display': "none" });
 			//return false;
 		} else {
 			console.log('json invalid else=> ' + JSON.stringify(json));
@@ -422,7 +422,7 @@ function onMessage(evt) {
 					$('#triple_result').css('display', 'none');
 				}
 				$('#rm_alert_popup').modal('show');
-				$("#loading-img").hide();
+				$("#loading-img").css({ 'display': "none" });
 				$("#loading").removeClass('overlay');
 				setTimeout(function () {
 					$('#rm_alert_popup').modal('hide');
@@ -626,7 +626,7 @@ var frameTime =6;
 var  interval;
 var  interval1;
 function startTimeCounting( ) {
-	$('#timer1').hide();
+	$('#timer1').css({ 'display': "none" });
 	$('#timer2').show();
 	updateUserBalance();
 	interval=	setInterval("stopCountDown()", 1000);
@@ -635,9 +635,9 @@ function startTimeCounting( ) {
 function stopCountDown( ) {
 	countTime=countTime-1;
 	if (countTime == 0) {
-		$('#result_timer').hide();
-		$('#timer1').hide();
-		$('#timer2').hide();
+		$('#result_timer').css({ 'display': "none" });
+		$('#timer1').css({ 'display': "none" });
+		$('#timer2').css({ 'display': "none" });
 		countTime =3;
 		clearInterval(interval);
 		return;
@@ -648,7 +648,7 @@ function startInterval(){
 	$('#timer_frame').attr('src','images/Frame_5.png');
 	$('#result_timer').show();
 	$('#timer1').show();
-	$('#timer2').hide();
+	$('#timer2').css({ 'display': "none" });
 	 setTimeout(function(){ 
 	 	startTimeCounting(); 
 	 }, 2000);

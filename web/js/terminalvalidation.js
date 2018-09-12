@@ -16,9 +16,9 @@ function sendDataToFlash(){
 			}
 		})
 		if(flag==0){
-			$('#msg').html('Please select coupon').fadeIn();
+			$('#msg').html('Please select coupon').css({ 'display': "block" });
 			setTimeout( function() {
-				$("#msg").fadeOut();
+				$("#msg").css({ 'display': "none" });
 			}, 2000 );
 			return false;
 		}
@@ -59,11 +59,11 @@ function sendDataToFlash(){
 					}else{
 						$("#buy").removeClass('disabled').prop('disabled', false);
 						clearInputValue();
-						$('#msg').html(res.msg).fadeIn();
+						$('#msg').html(res.msg).css({ 'display': "block" });
 						setTimeout( function() {
 						//	$("#loading").removeClass('overlay');
 							$("#loading-img").hide();
-							$("#msg").fadeOut();
+							$("#msg").css({ 'display': "none" });
 						}, 4000 );
 					}
 					
@@ -108,7 +108,7 @@ function sendDataToFlash(){
 					$("#frmCancelTicket").addClass("disabled");
 					$("#frmReprintTicket").addClass("disabled");
 					$('.disabled').prop('disabled', true);
-					//$('#tp-msg1').html("Coupon cancelled successfully").fadeIn();
+					//$('#tp-msg1').html("Coupon cancelled successfully").css({ 'display': "block" });
 					$("#tp-msg1").show().html("Coupon cancelled successfully").removeClass('alert-danger').addClass('alert-success');
 					$('#userTranspassCancel').val('');
 					$("#loader1").hide();
@@ -116,7 +116,7 @@ function sendDataToFlash(){
 					$("#userBalance").html(status.balance);
 					setTimeout(function() {
 						$('#fp-dialog1').modal('hide');
-						$("#tp-msg1").fadeOut();
+						$("#tp-msg1").css({ 'display': "none" });
 					}, 4000);
 					
 				}else{
@@ -124,9 +124,9 @@ function sendDataToFlash(){
 					$("#loader1").hide();
 					$("#tp_btn1").show();
 					$("#tp-msg1").show().html(status.msg).removeClass('alert-success').addClass('alert-danger');
-					//$('#tp-msg1').html(status.msg).fadeIn();
+					//$('#tp-msg1').html(status.msg).css({ 'display': "block" });
 					setTimeout( function() {
-						$("#tp-msg1").fadeOut();
+						$("#tp-msg1").css({ 'display': "none" });
 					}, 4000 );
 					return false;
 
@@ -179,9 +179,9 @@ function sendDataToFlash(){
 					$("#loader").hide();
 					$("#tp_btn").show();
 					
-					$('#tp-msg').html(status.msg).fadeIn();
+					$('#tp-msg').html(status.msg).css({ 'display': "block" });
 					setTimeout( function() {
-						$("#tp-msg").fadeOut();
+						$("#tp-msg").css({ 'display': "none" });
 					}, 4000 );
 					return false;
 

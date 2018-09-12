@@ -169,84 +169,98 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
 </script>
 
 <body>
-<div class="opacity" id="result_timer" style="display:none;">
-        <div class="result">
-            <div class="result-animation-frame">
-                <div class="result-img-animation" style="display:none;" id="timer1"><img  id="timer_frame" class="img-responsive" src="images/Frame_1.png" />
-                    <div id="main-wrapper_result">
-                        <div class="result_container">
-                            <div class="div1"><img class="img-responsive" src="images/0.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/1.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/2.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/3.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/4.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/5.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/6.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/7.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/8.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/9.png" /></div>
-                        </div>
+    
+    <div class="wrapper" id="wrapper">
+        <!-- Result animation -->
+        <div class="opacity" id="result_timer" style="display:none;">
+            <div class="result">
+                <div class="result-animation-frame">
+                    <div class="result-img-animation" style="display:none;" id="timer1"><img  id="timer_frame" class="img-responsive" src="images/Frame_1.png" />
+                        <div id="main-wrapper_result">
+                            <div class="result_container">
+                                <div class="div1"><img class="img-responsive" src="images/0.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/1.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/2.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/3.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/4.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/5.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/6.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/7.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/8.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/9.png" /></div>
+                            </div>
 
+                        </div>
+                        <div id="main-wrapper1_result">
+                            <div class="result_container">
+                                <div class="div1"><img class="img-responsive" src="images/0.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/1.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/2.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/3.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/4.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/5.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/6.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/7.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/8.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/9.png" /></div>
+                            </div>
+
+                        </div>
+                        <div id="main-wrapper2_result">
+                            <div class="result_container">
+                                <div class="div1"><img class="img-responsive" src="images/0.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/1.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/2.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/3.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/4.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/5.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/6.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/7.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/8.png" /></div>
+                                <div class="div1"><img class="img-responsive" src="images/9.png" /></div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div id="main-wrapper1_result">
-                        <div class="result_container">
-                            <div class="div1"><img class="img-responsive" src="images/0.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/1.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/2.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/3.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/4.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/5.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/6.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/7.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/8.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/9.png" /></div>
-                        </div>
+                    <div class="result-img-animation-stop" id="timer2" style="display:none;">
+                        <img class="img-responsive" src="images/Frame_5.png" />
+                        <div id="main-wrapper_result">
+                            <div class="result_container-stop">
+                                <div class="div1-stop" id="result_1"></div>
+                            </div>
 
-                    </div>
-                    <div id="main-wrapper2_result">
-                        <div class="result_container">
-                            <div class="div1"><img class="img-responsive" src="images/0.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/1.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/2.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/3.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/4.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/5.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/6.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/7.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/8.png" /></div>
-                            <div class="div1"><img class="img-responsive" src="images/9.png" /></div>
                         </div>
+                        <div id="main-wrapper1_result">
+                            <div class="result_container-stop">
+                                <div class="div1-stop" id="result_2"></div>
+                            </div>
 
-                    </div>
-                </div>
-                <div class="result-img-animation-stop" id="timer2" style="display:none;">
-                    <img class="img-responsive" src="images/Frame_5.png" />
-                    <div id="main-wrapper_result">
-                        <div class="result_container-stop">
-                            <div class="div1-stop" id="result_1"></div>
                         </div>
+                        <div id="main-wrapper2_result">
+                            <div class="result_container-stop">
+                                <div class="div1-stop" id="result_3"></div>
+                            </div>
 
-                    </div>
-                    <div id="main-wrapper1_result">
-                        <div class="result_container-stop">
-                            <div class="div1-stop" id="result_2"></div>
                         </div>
-
-                    </div>
-                    <div id="main-wrapper2_result">
-                        <div class="result_container-stop">
-                            <div class="div1-stop" id="result_3"></div>
-                        </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
-    <div class="wrapper" id="wrapper">
-   
+        <!-- Result animation -->
 
+        <div class="modal fade" id="confirmation" style="display:none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="confirm_1">
+                            <div>Disconnected to internet. Page reloads in <span id="timer"></span></div>
+                            <a id="disconnect_btn" class="btn btn-secondary">Reload</a>
+                            <div class="" style="width: 100%;text-align: center;"><img style="display: none;text-align: center;height: 26px;margin: 0 auto;" id="disconnect_loader" src="images/loader.gif"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- loading content -->
         <!--<div class="loading" id="load">
 			<div class="load">
@@ -3515,6 +3529,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
         setInterval("displaytime()", 1000);
     }
     /*** date and time display end** countdown timer start  */
+    
     var preloadeOnResize = function (e) {
         var elWidth = 1920;
         var elHeight = 1080;
@@ -3558,9 +3573,9 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
         <?php }?>
     });	
 
-        var container = $(".result_container"),
-        div1 = $(".div1"),
-        tweenForward, tweenBack;
+    var container = $(".result_container"),
+    div1 = $(".div1"),
+    tweenForward, tweenBack;
 
     TweenMax.set(container, {
         transformStyle: 'preserve-3d'
@@ -3646,6 +3661,12 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
             }
         });
         /** up, down,right and left key functionality end */
+        /** disconnection  */
+        $('#disconnect_btn').click(function(){
+            $('#disconnect_btn').hide();
+            $('#disconnect_loader').show();
+            window.location.href = "index.php";
+        });
     });
 </script>
 </body>

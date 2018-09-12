@@ -566,7 +566,7 @@ var connection = true;
 function networkConnection() {
 	if (connection == true) {
 		connection = false
-		$('#confirmation').show();
+		$('#confirmation').modal('show');
 		startCounting();
 	}
 }

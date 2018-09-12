@@ -428,7 +428,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                     <input type="text" maxlength="<?php echo $singleLength;?>" id="single_row_0" name="single[0]" class="single_input">
                                 </p>
                             </div>
-                            <div class="single_div single_active centerElem1">
+                            <div class="single_div centerElem1">
                                 <p class="single_div_p_num">1</p>
                                 <p class="single_div_p_input">
                                     <input type="text" maxlength="<?php echo $singleLength;?>" id="single_row_1" name="single[1]" class="single_input">
@@ -495,42 +495,42 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                 <span class="qty-text">qty:</span> 
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">2</span>
-                                <input type="radio" name="qty" value="2" checked="checked">
+                                <input type="radio" name="qty" id="qty_2" value="2" checked="checked">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">4</span>
-                                <input type="radio" name="qty" value="4">
+                                <input type="radio" name="qty" id="qty_4" value="4">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">5</span>
-                                <input type="radio" name="qty" value="5">
+                                <input type="radio" name="qty" id="qty_5" value="5">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">10</span>
-                                <input type="radio"  name="qty" value="10">
+                                <input type="radio"  name="qty" id="qty_10" value="10">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">20</span>
-                                <input type="radio" name="qty" value="20">
+                                <input type="radio" name="qty" id="qty_20" value="20">
                                 <span class="checkmark">
                                 </span>
                                 </label>
                                 </span>
                                 <span> 
                                 <label class="container_checkbox"><span class="checkbox-number">50</span>
-                                <input type="radio" name="qty" value="50" >
+                                <input type="radio" name="qty" id="qty_50" value="50" >
                                 <span class="checkmark">
                                 </span>
                                 </label>
@@ -784,7 +784,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="tab-content myTabContent triple_checkbox_line" id="myTabContent1">
+                                    <div class="tab-content myTabContent triple_checkbox_line" id="triple_tab">
                                         <div class="tab-pane fade show active" id="triple1" role="tabpanel" aria-labelledby="triple1-tab">
                                         <div class="double_checkbox_left">
                                             <div class="double_checkbox">

@@ -1,5 +1,11 @@
 var drawPrice = $('#drawPrice').val();
 $(document).ready(function() {
+    $('input[name=qty]').change(function() {
+        $qty_val = $(this).val()
+        $('.random_sel_blink').each(function(index) {
+            $(this).val($qty_val)
+        });
+    });
     /*  inspect and right click not working */
    document.addEventListener('contextmenu', event => event.preventDefault());
     $(document).keydown(function(event) {
@@ -521,7 +527,9 @@ function clearInput() {
 function clearInputValue() {
 	clearTripleRow();
 	clearDoubleRow();
-	clearSingleRow();
+    clearSingleRow();
+    $('#qty_2').prop('checked', true);
+    $('#double :checked, #triple_tab :checked').prop('checked', false);
 	$('#overall_total').html('');
 //	$("#bet_double,#frmClear,#clear,#buy").addClass('disabled').prop('disabled', true);
 }

@@ -621,7 +621,7 @@ function logout(user_id, session_id) {
 }
 
 
-var countTime =10;
+var countTime =3;
 var frameTime =6;
 var  interval;
 var  interval1;
@@ -638,32 +638,20 @@ function stopCountDown( ) {
 		$('#result_timer').hide();
 		$('#timer1').hide();
 		$('#timer2').hide();
-		countTime =10;
+		countTime =3;
 		clearInterval(interval);
 		return;
 	}
 }
 
 function startInterval(){
+	$('#timer_frame').attr('src','images/Frame_5.png');
 	$('#result_timer').show();
 	$('#timer1').show();
 	$('#timer2').hide();
-	interval1=	setInterval("frame_change()", 1000);
-	// setTimeout(function(){ 
-	// 	startTimeCounting(); 
-	// }, 3000);
+	//interval1=	setInterval("frame_change()", 1000);
+	 setTimeout(function(){ 
+	 	startTimeCounting(); 
+	 }, 2000);
 }
 
-function frame_change(){
-	frameTime=frameTime-1;
-	if (frameTime == 5) {
-		$('#timer_frame').attr('src','images/Frame_2.png');
-	}else if (frameTime == 3) {
-		$('#timer_frame').attr('src','images/Frame_3.png');
-	}else if (frameTime == 1) {
-		$('#timer_frame').attr('src','images/Frame_4.png');
-	}else{
-		clearInterval(interval1);
-		startTimeCounting(); 
-	}
-}

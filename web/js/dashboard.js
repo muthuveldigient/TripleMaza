@@ -1244,10 +1244,12 @@ function randomPickEndedNumberTwo(value, checkbox) {
             if (isEndsWithZero == value) {
 				if(i<=9){
 					$("#two_row_0" + i).val(tktQty);
-					$("#two_row_0" + i).addClass('random_sel_blink');
+                    $("#two_row_0" + i).addClass('random_sel_blink');
+                    $("#two_row_0" + i).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$("#two_row_" + i).val(tktQty);
-					$("#two_row_" + i).addClass('random_sel_blink');
+                    $("#two_row_" + i).addClass('random_sel_blink');
+                    $("#two_row_" + i).parents('.double_sub_li_div').addClass('selected');
 				}
             }
         }
@@ -1257,10 +1259,12 @@ function randomPickEndedNumberTwo(value, checkbox) {
             if (isEndsWithZero == value) {
 				if(i<=9){
 					$("#two_row_0" + i).val('');
-					$("#two_row_0" + i).removeClass('random_sel_blink');
+                    $("#two_row_0" + i).removeClass('random_sel_blink');
+                    $("#two_row_0" + i).parents('.double_sub_li_div').removeClass('selected');
 				}else{
 					$("#two_row_" + i).val('');
-					$("#two_row_" + i).removeClass('random_sel_blink');
+                    $("#two_row_" + i).removeClass('random_sel_blink');
+                    $("#two_row_" + i).parents('.double_sub_li_div').removeClass('selected');
 				}
             }
         }
@@ -1294,24 +1298,28 @@ function randomPickRowNumberTwo(start, end, checkbox) {
              return false;
         }
         var tktQty = Number($('input[name=qty]:checked').val());
-        //$("#two_default :input").removeClass('random_sel_blink');
+        $("#two_default :input").removeClass('random_sel_blink');
 		if(start==0 && end==9){
 			for (var i = start; i <= end; i++) {
             $("#two_row_0" + i).addClass('random_sel_blink').val(tktQty);
+            $("#two_row_0" + i).parents('.double_sub_li_div').addClass('selected');
 			}
 		}else{
 			for (var i = start; i <= end; i++) {
-				$("#two_row_" + i).addClass('random_sel_blink').val(tktQty);
+                $("#two_row_" + i).addClass('random_sel_blink').val(tktQty);
+                $("#two_row_" + i).parents('.double_sub_li_div').addClass('selected');
 			}
 		}
     } else if ($(checkbox).is(":checked")==false) {
 		if(start==0 && end==9){
 			for (var i = start; i <= end; i++) {
-				$("#two_row_0" + i).removeClass('random_sel_blink').val('');
+                $("#two_row_0" + i).removeClass('random_sel_blink').val('');
+                $("#two_row_0" + i).parents('.double_sub_li_div').removeClass('selected');
 			}
 		}else{
 			for (var i = start; i <= end; i++) {
-				$("#two_row_" + i).removeClass('random_sel_blink').val('');
+                $("#two_row_" + i).removeClass('random_sel_blink').val('');
+                $("#two_row_" + i).parents('.double_sub_li_div').removeClass('selected');
 			}
 		}
     }

@@ -2819,7 +2819,21 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                             <p class="footer_win">double up</p>
                         </div>
                         </div>
-                                                
+                        <!-- Report Modal -->
+                        <div class="modal" id="myModal" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-dialog1" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header popup_head">
+                                        <button type="button" class="close close_btn mfp-close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        Report
+                                    </div>
+                                    <div class="modal-body">
+                                        <iframe id="cartoonVideo" width="100%" height="75%" src="<?php echo TM_SITE_URL; ?>gamehistory.php" frameborder="0" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                         <!-- Report Modal -->               
                         <script type="text/javascript">
                             $(document).ready(function () {
                                 $('#report_modal').click(function () {
@@ -2883,6 +2897,104 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                             <p class="footer_win">double up</p>
                         </div>
                         </div>
+                            <!-- Claim modal -->
+                            <div class="modal fade" id="small-dialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">CLAIM</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table style="width: 100%;">
+                                            <tbody>
+                                                <tr>
+                                                <td style="position: relative;">
+                                                    <label>Game No:</label>
+                                                    <input name="chkResult" id="chkResult" class="InputDraw" value="" onchange="chkTicketResult(this.value)" onkeypress="myFunction(this.value)" tabindex="2" maxlength="12">
+                                                </td></tr><tr>
+                                                <td> 
+                                                    <label>Game No: </label>
+                                                    <span class="game_no_1" id="game_no"></span> 
+                                                    
+                                                    <label>Win No: </label>
+                                                    <span class="game_no_1" id="winNumber"></span>
+                                                    
+                                                    <label>Game Status: </label>
+                                                    <span class="game_no_1" id="drawStatus"></span> 
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                <td>
+                                                    <table class="win_no" id="win_no" style="display: none;">
+                                                    </table>
+                                                </td>
+                                                </tr>
+                                                <tr>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Claim modal -->
+
+                            <!-- Reprint modal -->
+                            <div class="modal fade" id="fp-dialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display:none">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">TERMINAL PASSWORD</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="alert alert-danger" style="display: none" id="tp-msg"></div>
+                                        <form action="#" id="tp_pwd">
+                                            <div class="modal-body">
+                                                <input type="password" name="userTranspass" id="userTranspass" placeholder="password" required tabindex="6">
+                                                <input type="hidden" name="action" value="reprint">
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <input type="button" value="SUBMIT" id="tp_btn" class="btn btn-primary" onClick="updateTicketREPRINTStatus()">
+                                                <img style="display: none; text-align: center; height: 26px"id="loader" src="images/loader.gif" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <!-- Reprint modal -->
+                        <!-- Cancel modal -->
+                        <div class="modal fade" id="fp-dialog1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="display:none">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">TERMINAL PASSWORD</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="alert alert-danger" style="display: none" id="tp-msg1"></div>
+                                    <form action="#" id="tp_pwd1">
+                                        <div class="modal-body">
+                                            <input type="password" name="userTranspassCancel" id="userTranspassCancel" placeholder="password" class="InputDrawPopup" value="" required>
+                                            <input type="hidden" name="action" value="cancel">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <input type="button" value="SUBMIT" id="tp_btn1" class="btn btn-primary" onClick="updateTicketCANCELStatus()">
+                                            <img style="display: none; text-align: center; height: 26px"id="loader" src="images/loader.gif" />
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cancel modal -->
                         <?php } ?>
                     </div>
                 </div>
@@ -3348,20 +3460,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
     </div>
 
     
-<!-- Modal -->
-    <div class="modal" id="myModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog1" role="document">
-            <div class="modal-content">
-                <div class="modal-header popup_head">
-                    <button type="button" class="close close_btn mfp-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    Report
-                </div>
-                <div class="modal-body">
-                    <iframe id="cartoonVideo" width="100%" height="75%" src="<?php echo TM_SITE_URL; ?>gamehistory.php" frameborder="0" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- privious result Modal -->
     <div class="modal" tabindex="-1" role="dialog" id="small-dialog3">
         <div class="modal-dialog modal-dialog1" role="document">
             <div class="modal-content">
@@ -3372,11 +3471,11 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                 </button>
             </div>
             <div class="modal-body previous_body" id="modal_body">
-          
             </div>
             </div>
         </div>
-        </div>
+    </div>
+    <!--privious result -->
 </div>
 </div>
 <script src="js/bootstrap.min.js"></script>

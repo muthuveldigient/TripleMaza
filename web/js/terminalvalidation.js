@@ -115,15 +115,7 @@ function sendDataToFlash(){
 					$("#tp_btn1").show();
 					$("#userBalance").html(status.balance);
 					setTimeout(function() {
-						var el = $('#fp-dialog1');
-						if (el.length) {
-						    $.magnificPopup.close({
-						        items: {
-						            src: el
-						        },
-						        type: 'inline'
-						    });
-						}
+						$('#fp-dialog1').modal('hide');
 						$("#tp-msg1").fadeOut();
 					}, 4000);
 					
@@ -160,15 +152,7 @@ function sendDataToFlash(){
 					$("#loader").hide();
 					$("#tp_btn").show();
 					setTimeout(function() {
-						var el = $('#fp-dialog');
-						if (el.length) {
-						    $.magnificPopup.close({
-						        items: {
-						            src: el
-						        },
-						        type: 'inline'
-						    });
-						}
+						$('#fp-dialog').modal('hide');
 					}, 4000);
 					
 					var url = SITE_URL+'/print.php?action=reprint';
@@ -260,28 +244,11 @@ $(document).ready(function () {
 	$('#frmReprintTicket').click(function() {
 		$('#userTranspass').val('');				
 		$('#userTranspass').focus();	
-		
-		var el = $('#fp-dialog');
-		if (el.length) {
-		    $.magnificPopup.open({
-		        items: {
-		            src: el
-		        },
-		        type: 'inline'
-		    });
-		}
+		$('#fp-dialog').modal('show');
 	});
 
 	$('#frmCancelTicket').click(function() {
-		var el = $('#fp-dialog1');
-		if (el.length) {
-		    $.magnificPopup.open({
-		        items: {
-		            src: el
-		        },
-		        type: 'inline'
-		    });
-		}
+		$('#fp-dialog1').modal('show');
 		$('#userTranspassCancel').val('');				
 		$('#userTranspassCancel').focus();
 		return false;
@@ -318,15 +285,7 @@ $(document).ready(function(){
 		}
 		if(keycode==119) { //F8 Cancel
 			if( !$('#frmCancelTicket').hasClass('disabled')){
-				var el = $('#fp-dialog1');
-				if (el.length) {
-					$.magnificPopup.open({
-						items: {
-							src: el
-						},
-						type: 'inline'
-					});
-				}
+				$('#fp-dialog1').modal('show');
 				$('#userTranspassCancel').val('');				
 				$('#userTranspassCancel').focus();
 				return false;			
@@ -335,15 +294,7 @@ $(document).ready(function(){
 		}
 		if(keycode==120) { //F9 Reprint
 			if( !$('#frmCancelTicket').hasClass('disabled')){
-				var el = $('#fp-dialog');
-				if (el.length) {
-					$.magnificPopup.open({
-						items: {
-							src: el
-						},
-						type: 'inline'
-					});
-				}
+				$('#fp-dialog').modal('show');
 				$('#userTranspass').val('');				
 				$('#userTranspass').focus();
 				
@@ -354,15 +305,7 @@ $(document).ready(function(){
 		}
 		if(keycode==121) { //F10 Claim
 			resetValidation();
-			var el = $('#small-dialog');
-			if (el.length) {
-			    $.magnificPopup.open({
-			        items: {
-			            src: el
-			        },
-			        type: 'inline'
-			    });
-			}
+			$('#small-dialog').modal('show');
 		}
 		
 		if(keycode==123) { //F12 Result
@@ -391,15 +334,7 @@ $(document).ready(function(){
 	
 	$("#frmResult").bind('click touchstart', function() {
 		resetValidation();
-		var el = $('#small-dialog');
-		if (el.length) {
-		    $.magnificPopup.open({
-		        items: {
-		            src: el
-		        },
-		        type: 'inline'
-		    });
-		}
+		$('#small-dialog').modal('show');
 	});
 
 	$('#frmWinResults').bind('click touchstart', function() {

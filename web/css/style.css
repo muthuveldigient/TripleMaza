@@ -849,7 +849,7 @@ span.combo_text {
 	border-top: none;
 	border-radius: 0 0 10px 10px;
 	    overflow: auto;
-    height: 270px;
+    max-height: 270px;
 }
 
 .triple_ticket_info .ticket_info {

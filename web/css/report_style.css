@@ -16,6 +16,9 @@
     text-transform:uppercase;
     color:#000;
 }
+ .error{color: red;
+    font-weight: bold;
+ font-size: 18px;}
 .myacc_section .tablinks.active{
     background-color:#e37a40!important;
 }
@@ -143,6 +146,7 @@ ul.myacc_list li{
     background:-moz-linear-gradient(#222,#151515);
     background:linear-gradient(#222,#151515) */
 	background:#f0ca4d;
+	    border-radius: 15px 0px 0px 0px;
 }
 .gamehis_table tbody{
     color:#1c1c1c;
@@ -173,10 +177,19 @@ ul.myacc_list li{
     margin:10px
 }
 .formTxtfield{
-    padding:6px;
-    width:350px;
-    border:1px solid #226300;
-    box-shadow:0 0 2px rgba(50,142,0,0.72) inset
+    text-transform: initial;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin: 14px auto 0;
+    padding: 0rem 0.75rem;
+    width: 100%;
+    font-size: 30px;
+    font-family: arial;
+	height:40px;
 }
 .form_btn{
     padding:10px;
@@ -262,19 +275,20 @@ tr.eventable{
     word-wrap:break-word;
     vertical-align:middle;
     line-height:1;
-    font-size:20px;
+    font-size:17px;
 	    font-weight: bold;    padding: 19px 0;
 }
 .gamehis_table>thead>tr>th{
-    text-transform:uppercase;
-    border:1px solid #5d5d5d;
+    text-transform:uppercase;/* 
+    border:1px solid #5d5d5d; */
     vertical-align:middle;
     word-wrap:break-word;
     line-height:1;
     letter-spacing:0;
     font-weight: bold;
-        font-size: 25px;
+        font-size: 22px;
     padding: 17px 0 !important;
+	    border-left: 2px solid #fff;
 }
 .logo_report img{
     width:80%

@@ -67,7 +67,7 @@
                     </div></div>';
 			}
 			
-	$result = '<div class="time_result_p time_to_result_bg_1"><p class="time_result_text">TIME</p><p class="time_result_text">Result</p></div>';
+	$result = '<div class="time_result_p time_to_result_bg_1"><p class="time_result_text time_border">TIME</p><p class="time_result_text time_border">Result</p></div>';
 				if(!empty($getExtDrawResults)) {
 					for($l=0;$l<5;$l++) {
 					if($l==0){

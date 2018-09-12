@@ -97,7 +97,7 @@ function sendDataToFlash(){
 
 	function updateTicketCANCELStatus() {
 		$("#tp_btn1").hide();
-		$("#loader").show();
+		$("#loader1").show();
 		$.ajax({
 			type:"POST",
 			url:"cancelReprintTicket.php",
@@ -111,7 +111,7 @@ function sendDataToFlash(){
 					//$('#tp-msg1').html("Coupon cancelled successfully").fadeIn();
 					$("#tp-msg1").show().html("Coupon cancelled successfully").removeClass('alert-danger').addClass('alert-success');
 					$('#userTranspassCancel').val('');
-					$("#loader").hide();
+					$("#loader1").hide();
 					$("#tp_btn1").show();
 					$("#userBalance").html(status.balance);
 					setTimeout(function() {
@@ -121,7 +121,7 @@ function sendDataToFlash(){
 					
 				}else{
 					$('#userTranspassCancel').val('');
-					$("#loader").hide();
+					$("#loader1").hide();
 					$("#tp_btn1").show();
 					$("#tp-msg1").show().html(status.msg).removeClass('alert-success').addClass('alert-danger');
 					//$('#tp-msg1').html(status.msg).fadeIn();

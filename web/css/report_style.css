@@ -3,8 +3,8 @@
     width:20%;
     text-align:center;
     cursor:pointer;
-    color:#fff;
-    background-color:#1c1c1c
+    color:#000;
+    background-color:#f0ca4d;
 }
 .myacc_sec_head{
     height:60px;
@@ -14,10 +14,10 @@
      font-size: 22px;
      font-weight: bold;
     text-transform:uppercase;
-    color:#fff
+    color:#000;
 }
 .myacc_section .tablinks.active{
-    background-color:#c62525!important
+    background-color:#e37a40!important;
 }
 .myacc_section .tab{
     height:60px
@@ -108,7 +108,7 @@ ul.myacc_list{
     text-align:center
 }
 .gamehis_table{
-    border:1px solid #000;
+    /* border:1px solid #000; */
     margin-bottom:0;
     border-radius:8px;
     min-width:650px
@@ -137,11 +137,12 @@ ul.myacc_list li{
     text-transform:uppercase
 }
 .gamehis_table thead{
-    color:#fff;
-    background:-webkit-linear-gradient(#222,#151515);
+    color:#000;
+  /*   background:-webkit-linear-gradient(#222,#151515);
     background:-o-linear-gradient(#222,#151515);
     background:-moz-linear-gradient(#222,#151515);
-    background:linear-gradient(#222,#151515)
+    background:linear-gradient(#222,#151515) */
+	background:#f0ca4d;
 }
 .gamehis_table tbody{
     color:#1c1c1c;
@@ -160,11 +161,12 @@ ul.myacc_list li{
 }
 .chg_pwd{
     border:1px solid rgba(0,0,0,0.4);
-    width:320px;
+    width:400px;
     background-color:white;
     border-radius:10px;
-    font-size:16px;
+    font-size:21px;
     margin:0 auto;
+	    padding-bottom: 10px;
     text-align:center
 }
 .form_input_sec{
@@ -172,7 +174,7 @@ ul.myacc_list li{
 }
 .formTxtfield{
     padding:6px;
-    width:280px;
+    width:350px;
     border:1px solid #226300;
     box-shadow:0 0 2px rgba(50,142,0,0.72) inset
 }
@@ -180,7 +182,8 @@ ul.myacc_list li{
     padding:10px;
     width:280px;
     color:#000;
-    font-size:16px;
+	font-weight: bold;
+    font-size:20px;
     text-transform:uppercase;
     border:1px solid #000;
     background:-webkit-linear-gradient(#9ae770 52%,#51b31e 56%);
@@ -247,22 +250,22 @@ button.search_btn{
     text-transform:uppercase
 }
 tr.oddtable{
-    background-color:#fef;
-    border:2px solid #fff
+    background-color: #f0ece1;
+    border: 2px solid #efe5c2;
 }
 tr.eventable{
-    background-color:#ffe5ff;
-    border:2px solid #fff
+    background-color: #f0ece1;
+    border: 2px solid #efe5c2;
 }
 .gamehis_table>tbody>tr>td{
     border:2px solid #fff;
     word-wrap:break-word;
     vertical-align:middle;
     line-height:1;
-    font-size:14px;
+    font-size:20px;
+	    font-weight: bold;    padding: 19px 0;
 }
 .gamehis_table>thead>tr>th{
-    text-shadow:0 0 5px #000;
     text-transform:uppercase;
     border:1px solid #5d5d5d;
     vertical-align:middle;
@@ -270,7 +273,8 @@ tr.eventable{
     line-height:1;
     letter-spacing:0;
     font-weight: bold;
-     font-size: 13px;
+        font-size: 25px;
+    padding: 17px 0 !important;
 }
 .logo_report img{
     width:80%
@@ -293,7 +297,7 @@ tr.eventable{
     border-radius:10px;
     width:100%;
     overflow:auto;
-    height: calc(100% - 135px);
+    height: calc(100% - 169px);
 }
 .myacc_section {
     overflow: hidden;
@@ -334,6 +338,13 @@ a {
     display:table;
     table-layout:fixed;
     width:100%
+}
+.gamehis_table tbody tr{background-color: #f0ece1;
+border: 2px solid #efe5c2;}
+.close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover{
+	    color: #fff;
+    text-decoration: none;
+    opacity: 1;
 }
 @media only screen and (max-device-width:1199px){
     .myacc_logout{
@@ -968,17 +979,21 @@ button.select_drop:focus{
  .tbl_search {
      margin: 1% 0 2%;
 }
+a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
  .date_button_1 {
      background-color: #1c1c1c;
-     padding: 5px 0;
+     padding: 10px 0;
      color: #fff;
      cursor: pointer;
-     width: 138px;
+     width: 160px;
      text-align: center;
-     font-size: 18px;
+     font-size: 21px;
 }
  .week-date li.active .date_button_1 {
-     background-color: #c62525;
+     background-color: #e37a40;
 }
 /* td.bet_no{
     max-height:99px;

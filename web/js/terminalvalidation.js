@@ -25,7 +25,7 @@ function sendDataToFlash(){
 		
 	if(flag==1){
 		//$('#ticketForm').submit();return false;
-		$("#loading").addClass('overlay');
+		//$("#loading").addClass('overlay');
 		$("#loading-img").show();
 		$('#msg').html('');
 		$("#buy").addClass('disabled').prop('disabled', true);
@@ -53,7 +53,7 @@ function sendDataToFlash(){
 						$('#rm_error2').html(res.double);
 						$('#rm_error3').html(res.triple);
 						$('#rm_alert_popup').modal('show');
-						$("#loading").removeClass('overlay');
+					//	$("#loading").removeClass('overlay');
 						$("#loading-img").hide();
 						
 					}else{
@@ -61,7 +61,7 @@ function sendDataToFlash(){
 						clearInputValue();
 						$('#msg').html(res.msg).fadeIn();
 						setTimeout( function() {
-							$("#loading").removeClass('overlay');
+						//	$("#loading").removeClass('overlay');
 							$("#loading-img").hide();
 							$("#msg").fadeOut();
 						}, 4000 );

@@ -377,6 +377,7 @@ $(document).ready(function() {
 		var single = data;
 		$.each( single, function( key, value ) {
 			$('#single_row_'+key).val(value);
+			$('#single_row_'+key).parents('.double_sub_li_div').addClass('selected');
 		}); 
 		singleCalculation();
 	}
@@ -386,6 +387,7 @@ $(document).ready(function() {
 		var doublebet = data;
 		$.each( doublebet, function( key, value ) {
 			$('#two_row_'+key).val(value);
+			$('#two_row_'+key).parents('.double_sub_li_div').addClass('selected');
 		}); 
 		doubleCalculation();
 	}
@@ -397,39 +399,49 @@ $(document).ready(function() {
 			if(key<=099){
 				if( key <= 9 ){
 					$('#sangam_'+key.slice(2)).val(value);
+					$('#sangam_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#sangam_'+key.slice(1)).val(value);
+					$('#sangam_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 			}
 			if(key>=100 && key<=199){
 				if(key<=109){
 					$('#chetak_'+key.slice(2)).val(value);
+					$('#chetak_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#chetak_'+key.slice(1)).val(value);
+					$('#chetak_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 			}
 			
 			if(key>=200 && key<=299){
 				if(key<=209){
 					$('#super_'+key.slice(2)).val(value);
+					$('#super_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#super_'+key.slice(1)).val(value);
+					$('#super_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 			}
 			
 			if(key>=300 && key<=399){
 				if(key<=309){
 					$('#deluxe_'+key.slice(2)).val(value);
+					$('#deluxe_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#deluxe_'+key.slice(1)).val(value);
+					$('#deluxe_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 				
 			}
 			if(key>=400 && key<=499){
 				if(key<=409){
 					$('#bhagya_'+key.slice(2)).val(value);
+					$('#bhagya_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#bhagya_'+key.slice(1)).val(value);
+					$('#bhagya_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 				
 			}
@@ -437,8 +449,10 @@ $(document).ready(function() {
 			if(key>=500 && key<=599){
 				if(key<=509){
 					$('#diamond_'+key.slice(2)).val(value);
+					$('#diamond_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#diamond_'+key.slice(1)).val(value);
+					$('#diamond_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 				
 			}
@@ -446,32 +460,40 @@ $(document).ready(function() {
 			if(key>=600 && key<=699){
 				if(key<=609){
 					$('#lucky_'+key.slice(2)).val(value);
+					$('#lucky_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#lucky_'+key.slice(1)).val(value);
+					$('#lucky_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 				
 			}
 			if(key>=700 && key<=799){
 				if(key<=709){
 					$('#new1_'+key.slice(2)).val(value);
+					$('#new1_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#new1_'+key.slice(1)).val(value);
+					$('#new1_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 				
 			}
 			if(key>=800 && key<=899){
 				if(key<=809){
 					$('#new2_'+key.slice(2)).val(value);
+					$('#new1_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#new2_'+key.slice(1)).val(value);
+					$('#new2_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 				
 			}
 			if(key>=900 && key<=999){
 				if(key<=909){
 					$('#new3_'+key.slice(2)).val(value);
+					$('#new3_'+key.slice(2)).parents('.double_sub_li_div').addClass('selected');
 				}else{
 					$('#new3_'+key.slice(1)).val(value);
+					$('#new3_'+key.slice(1)).parents('.double_sub_li_div').addClass('selected');
 				}
 			}
 			tripleBetCalculation();
@@ -529,6 +551,7 @@ function clearInputValue() {
 	clearDoubleRow();
     clearSingleRow();
     $('#qty_2').prop('checked', true);
+	 $('.double_sub_li_div').removeClass('selected');
     $('#double :checked, #triple_tab :checked').prop('checked', false);
 	$('#overall_total').html('');
 //	$("#bet_double,#frmClear,#clear,#buy").addClass('disabled').prop('disabled', true);

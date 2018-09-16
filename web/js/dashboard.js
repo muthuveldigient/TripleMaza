@@ -2,9 +2,24 @@ var drawPrice = $('#drawPrice').val();
 $(document).ready(function() {
     $('input[name=qty]').change(function() {
         $qty_val = $(this).val()
-        $('.random_sel_blink').each(function(index) {
-            $(this).val($qty_val)
-        });
+        if($("#double-tab").hasClass('active')){
+            $('.random_sel_blink').each(function(index) {
+                if($(this).hasClass('two-chance')){
+                    $(this).val($qty_val);
+                }
+            });
+            updateTwoRowTotalQty();
+        }else if($("#triple-tab").hasClass('active')){
+            var activeId = $('#activeClass').val();
+            var id = activeId.split("_");
+            $('.random_sel_blink').each(function(index) {
+                if($(this).hasClass(id[0])){
+                    $(this).val($qty_val);
+                }
+            });
+            updateDoubleRowTotalQty(id[0]);
+        }
+        
     });
     /*  inspect and right click not working */
    document.addEventListener('contextmenu', event => event.preventDefault());
@@ -982,7 +997,7 @@ function randomPickRowNumber(start, end, checkbox) {
         var tktQty = Number($('input[name=qty]:checked').val());
         var activeId = $('#activeClass').val();
         var id = activeId.split("_");
-
+        
         $("#" + activeId + " input").removeClass('random_sel_blink');
 
         if (id[0] != "") {

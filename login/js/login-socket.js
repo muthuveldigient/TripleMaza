@@ -29,6 +29,7 @@ function onMessage(evt)  {
 	if(json.action=="LoginResponse"){
 		if(json.errorCode ==100){
 			console.log(json.userData);
+			json.userData['exe']=EXE;
 			$.post("processlogin.php", json.userData, function (response) {
 				if (response == 1) {
 					//doSend(response.message);

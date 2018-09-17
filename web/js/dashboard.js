@@ -41,7 +41,7 @@ $(document).ready(function() {
 
     var drawID = $('#drawID').val();
     if (drawID == '') {
-        $('#lock').addClass('game_start');
+        //$('#lock').addClass('game_start');
         $("#disable_inputs :input, #buy,#frmCancelTicket,#frmReprintTicket,#frmResult,#frmWinResults,#repeat,#bet_double,#frmClear,#clear ").prop("disabled", true);
     }
 	//$("#bet_double").addClass('disabled').prop('disabled', true); //bet double disabled

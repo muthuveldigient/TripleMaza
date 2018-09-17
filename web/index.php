@@ -60,7 +60,7 @@ if (!empty($preDrawInfo )){
 }
 
 $upcomingDraw= $objLotto->getUpcomingDrawData($drawID,$drawType,$arrGameIDs[0]);
- //echo '<pre>';print_r($upcomingDraw);exit;
+
 if(!empty($upcomingDraw)) {
 	$drawPrice=	(!empty($upcomingDraw[0]->DRAW_PRICE)?explode(",",$upcomingDraw[0]->DRAW_PRICE):0);
 	
@@ -262,7 +262,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
             </div>
         </div>
         <!-- loading content -->
-        <!--<div class="loading" id="load">
+        <div class="loading" id="load">
 			<div class="load">
 			  <div class="loader animation-5">
 				<div class="shape shape1"></div>
@@ -271,7 +271,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
 				<div class="shape shape4"></div>
 			  </div>
 			</div>
-		</div>-->
+		</div>
         <!-- loading content -->
         <!-- success and error msg -->
         <div class='notification_success alert alert-danger' style="display: none;" id="msg"></div>

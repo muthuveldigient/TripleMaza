@@ -10,6 +10,7 @@
 		$_SESSION[SESSION_PRINTER_OPTION]= $_POST['printer'];
 		$_SESSION[SESSION_PARTNERNAME] 	= $_POST['partner_name'];
 		$_SESSION[SESSIONID] 			= $_POST['sessionId'];
+		$_SESSION[SESSION_EXE] 			= $_POST['exe'];
 		echo '1';exit;
 	}
 			

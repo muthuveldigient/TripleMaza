@@ -26,10 +26,11 @@ define('SESSION_USEREMAIL', 'lucky_email');
 define('SESSION_USERCONTACT', 'lucky_contact');
 define('SESSION_USER_TYPE', 'lucky_user_type');
 define('SESSION_PRINTER_OPTION', 'lucky_printer_option');
+define('SESSION_EXE', 'exe');
 
 /** triple maza game details */
 define('GAME_ID', '1');
-define('GAME_REF_NO', 'AAA');
+define('GAME_REF_NO', 'AAE');
 define('GAME_NAME', 'triplemaza');
 
 
@@ -42,7 +43,7 @@ if($_SERVER['HTTP_HOST']=='localhost' || $_SERVER['HTTP_HOST']=='10.0.0.65'){
 define('LOGIN_URL', $url.'/login.php');
 //define('LOGIN_LANDING_URL', $url.'/home.php');
 define('TM_SITE_URL', $url.'/web/');
-define('TM_WEB_SOCKET_URL', "ws://35.154.86.183:5862/?encoding=text");//Local Vinoth
+define('TM_WEB_SOCKET_URL', "ws://35.154.202.222:5862/?encoding=text");//Local Vinoth
 //define('TM_WEB_SOCKET_URL', "ws://54.254.155.69:8899/?encoding=text");
 
 ?>

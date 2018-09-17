@@ -45,7 +45,7 @@
 						"`PARTNER_ID`)VALUES('".$lottoUserID."','$balanceTypeId','$transactionStatusId','$transactionTypeId','$userWinAmount',".
 						"NOW(),'".$getTicketInfo[0]->INTERNAL_REFERENCE_NO."','$newusertotbal','$newusertotclosebal','".$getTicketInfo[0]->PARTNER_ID."')");
 				
-				$rsResult  = $conn1->exec("UPDATE tc_lotto_tickets SET IS_PAID=1,IS_CANCEL=1 WHERE PLAY_GROUP_ID='".$getTicketInfo[0]->PLAY_GROUP_ID."'");
+				$rsResult  = $conn1->exec("UPDATE tc_maza_tickets SET IS_PAID=1,IS_CANCEL=1 WHERE PLAY_GROUP_ID='".$getTicketInfo[0]->PLAY_GROUP_ID."'");
 				
 				if($query_pt!='' && $query_pt2!='' && $rsResult!='') {
 					$conn1->commit();
@@ -70,7 +70,7 @@
 	}
 	if($_REQUEST["action"]=="reprint") {
 		if(md5($_REQUEST["userTranspass"])==$userPwd[0]->PASSWORD) {
-	
+			
 			if(!empty($lPlayGroupID) && $getLastTicketInfo[0]->IS_CANCEL==0 && $drawStatus==1 && $getLastTicketInfo[0]->IS_PENDING_STATUS==0) {
 				$getPlayGroupData=$objLotto->getPlayGroupData($lPlayGroupID);	
 			
@@ -112,8 +112,9 @@
 																				);
 				}
 				
-				$objectToFlash=arrayToObject($printData);
-				echo stripcslashes(json_encode(array('msg'=>'valid','result'=>$objectToFlash),JSON_UNESCAPED_SLASHES));exit;
+				//$objectToFlash=arrayToObject($printData);
+				//echo '<pre>';print_r($objectToFlash);exit;
+				echo stripcslashes(json_encode(array('msg'=>'valid','result'=>$printData),JSON_UNESCAPED_SLASHES));exit;
 	
 			} else {
 				$res= array('msg'=>'There is no coupon');

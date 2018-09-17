@@ -26,7 +26,7 @@ define('SESSION_USEREMAIL', 'lucky_email');
 define('SESSION_USERCONTACT', 'lucky_contact');
 define('SESSION_USER_TYPE', 'lucky_user_type');
 define('SESSION_PRINTER_OPTION', 'lucky_printer_option');
-define('SESSION_EXE', 'exe');
+define('SESSION_MODE', 'mode');
 
 /** triple maza game details */
 define('GAME_ID', '1');

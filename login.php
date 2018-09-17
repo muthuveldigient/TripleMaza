@@ -4,9 +4,9 @@
   header('Location: web/index.php');
   }
   error_reporting(0); */
-  $exe = 0;
-if(isset($_GET['mode']) && $_GET['mode']=='exe'){
-  $exe = 1;
+  $mode = 0;
+if(isset($_GET['mode']) && $_GET['mode']==1){
+  $mode = 1;
 }
   include_once("include/DbConnect.php");
 ?>
@@ -54,7 +54,7 @@ if(isset($_GET['mode']) && $_GET['mode']=='exe'){
 <script src="login/js/TweenMax.min.js"></script>
 <script type="text/javascript">
 var WEB_SOCKET_URL = '<?= TM_WEB_SOCKET_URL;?>';
-var EXE = <?= $exe;?>;
+var MODE = <?= $mode;?>;
 var preloadeOnResize = function(e) {
 	//alert("dsfds");
 	var elWidth = 1920;

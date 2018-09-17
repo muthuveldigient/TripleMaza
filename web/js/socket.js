@@ -67,7 +67,7 @@ function onMessage(evt) {
 	}
 	
 	if (json.action == "claimResponse") {
-		//console.log("claimResponse:"+json.balance);
+		console.log("claimResponse:"+JSON.stringify(json));
 		$('#userBalance').html(json.balance);
 		var paidTxt = "-";
 		if (json.paid == 1)
@@ -454,6 +454,7 @@ function onMessage(evt) {
 		if (json.errorCode == 100) {
 			window.location.href = "logout.php";
 		}else{
+			window.location.href = "logout.php";
 			$("#msg").show().html(json.msg).removeClass('alert-success').addClass('alert-danger');
 		}
 	}

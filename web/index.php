@@ -126,7 +126,7 @@ $remainingSingleQty =$remainingDoubleQty =$remainingTripleQty =0;
 $vTime = strtotime(date('Y-m-d H:i:s'));
 $row=recordSet("SELECT NOW()");
 $dbTime = (!empty($row[0])?date("F d, Y H:i:s", strtotime($row[0])):date("F d, Y H:i:s", time()));
-$version = 0.3  ;// for cache clear
+$version = 0.4  ;// for cache clear
 $singleLength =strlen((string)SINGLE_BET_QTY_LIMIT);
 $doubleLength =strlen((string)DOUBLE_BET_QTY_LIMIT);
 $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
@@ -144,7 +144,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
     <link rel="stylesheet" href="css/style.css?v=<?php echo $version ;?>" />
 </head>
 <script type="text/javascript">
-    var SITE_URL = '<?= TC_SITE_URL;?>';
+    var SITE_URL = '<?= TM_SITE_URL;?>';
     var WEB_SOCKET_URL = '<?= TM_WEB_SOCKET_URL;?>';
     var SINGLE_BET_QTY_LIMIT = '<?= SINGLE_BET_QTY_LIMIT;?>';
     var DOUBLE_BET_QTY_LIMIT = '<?= DOUBLE_BET_QTY_LIMIT;?>';
@@ -1077,19 +1077,19 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                                     <div class="double_sub_li_div">
                                                         <div>
                                                             <?php if ($i>=10) {?>
-                                                            <p class="double_sub_li_p">
-                                                                <?= '0'.$i; ?>
-                                                            </p>
-                                                            <p class="double_sub_li_input">
-                                                                <input type="text" maxlength="<?php echo $tripleLength;?>" id="chetak_<?= $i; ?>" name="che[1<?= $i; ?>]" class="chetak">
-                                                            </p>
+																<p class="double_sub_li_p">
+																	<?= '1'.$i; ?>
+																</p>
+																<p class="double_sub_li_input">
+																	<input type="text" maxlength="<?php echo $tripleLength;?>" id="chetak_<?= $i; ?>" name="che[1<?= $i; ?>]" class="chetak">
+																</p>
                                                             <?php }else{ ?>
-                                                            <p class="double_sub_li_p">
-                                                                <?= '10'.$i; ?>
-                                                            </p>
-                                                            <p class="double_sub_li_input">
-                                                                <input type="text" maxlength="<?php echo $tripleLength;?>" id="chetak_<?= $i; ?>" name="che[10<?= $i; ?>]" class="chetak">
-                                                            </p>
+																	<p class="double_sub_li_p">
+																		<?= '10'.$i; ?>
+																	</p>
+																	<p class="double_sub_li_input">
+																		<input type="text" maxlength="<?php echo $tripleLength;?>" id="chetak_<?= $i; ?>" name="che[10<?= $i; ?>]" class="chetak">
+																	</p>
                                                             <?php }?>
                                                         </div>
                                                     </div>
@@ -3379,49 +3379,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
         </div>
     </div>
 	
-	<div class="modal" id="small-dialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-			<div class="modal-dialog2 modal-dialog-centered" role="document">
-				<div class="modal-content">
-				<div class="modal-header popup_head">
-					
-					<button type="button" class="close close_btn mfp-close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-					</button>CLAIM
-				</div>
-				<div class="modal-body">
-					<table class="claim_table" style="width: 100%;">
-						<tbody>
-							<tr>
-							<td style="position: relative;">
-								<label>Game No:</label>
-								<input name="chkResult" id="chkResult" class="InputDraw terminal_input" value="" onchange="chkTicketResult(this.value)" onkeypress="myFunction(this.value)" tabindex="2" maxlength="12">
-							</td></tr><tr>
-							<td> 
-								<label>Game No: </label>
-								<span class="game_no_1" id="game_no"></span> 
-								
-								<label>Win No: </label>
-								<span class="game_no_1" id="winNumber"></span>
-								
-								<label>Game Status: </label>
-								<span class="game_no_1" id="drawStatus"></span> 
-							</td>
-							</tr>
-							<tr>
-							<td>
-								<table class="win_no" id="win_no" style="display: none;">
-								</table>
-							</td>
-							</tr>
-							<tr>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				</div>
-			</div>
-		</div>
-
+	
 		<?php if( $_SESSION[SESSION_PRINTER_OPTION]==1){ ?> 
 		<!-- Claim modal -->
 		<div class="modal" id="small-dialog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -3439,7 +3397,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
 							<tr>
 							<td style="position: relative;">
 								<label>Game No:</label>
-								<input name="chkResult" id="chkResult" class="InputDraw terminal_input" value="" onchange="chkTicketResult(this.value)" onkeypress="myFunction(this.value)" tabindex="2" maxlength="12">
+								<input name="chkResult" id="chkResult" class="InputDraw terminal_input" value="" onchange="chkTicketResult(this.value)" tabindex="2" maxlength="12">
 							</td></tr><tr>
 							<td> 
 								<label>Game No: </label>

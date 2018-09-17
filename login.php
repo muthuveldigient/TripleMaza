@@ -103,7 +103,7 @@ TweenLite.delayedCall(0.25, createNumTween);
 
 $(document).ready(function () {
 	/**  inspect and right click not working */
-	document.addEventListener('contextmenu', event => event.preventDefault());
+	/* document.addEventListener('contextmenu', event => event.preventDefault());
 	$(document).keydown(function (event) {
 		var keycode = (event.keyCode ? event.keyCode : event.which);
 		//$("#keydownCode").val(keycode);
@@ -115,7 +115,7 @@ $(document).ready(function () {
 			return false;
         }
         
-	});
+	}); */
 
 
 	$('#frmLogin').validate({

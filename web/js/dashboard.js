@@ -568,7 +568,7 @@ function clearInputValue() {
     $('#qty_2').prop('checked', true);
 	 $('.double_sub_li_div').removeClass('selected');
     $('#double :checked, #triple_tab :checked').prop('checked', false);
-	$('#overall_total').html('');
+	$('#overall_total').html('0');
 //	$("#bet_double,#frmClear,#clear,#buy").addClass('disabled').prop('disabled', true);
 }
 function clearSingleRow(){

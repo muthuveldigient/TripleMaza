@@ -2851,12 +2851,14 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                         <script type="text/javascript">
                             $(document).ready(function () {
                                 $('#report_modal').click(function () {
+                                    $("#loading-img").show();
                                     $.ajax({
                                         type: "POST",
                                         url: "authentication_ajax.php",
                                         data: { 'authentication': 'authentication' },
                                         cache: false,
                                         success: function (result) {
+                                            $("#loading-img").hide();
                                             if (result == 1) {
                                                 window.location.href = '<?php echo LOGIN_URL;?>';
                                             } else {
@@ -3306,11 +3308,11 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                     </div>
                                 </div>
                                 <div class="quantity_btn">
-                                    <p class="quantity_btn_points">Quantity :<span id="overall_qty"></span> </p>
+                                    <p class="quantity_btn_points">Quantity :<span id="overall_qty">0</span> </p>
                                 </div>
                                 <div class="total-points">
                                     <p class="total-points-btn">Total points</p>
-                                    <p class="total-points-btn-value" id="overall_total"></p>
+                                    <p class="total-points-btn-value" id="overall_total">0</p>
                                 </div>
                             </div>
                             <?php if( $_SESSION[SESSION_PRINTER_OPTION]==1){ ?>  

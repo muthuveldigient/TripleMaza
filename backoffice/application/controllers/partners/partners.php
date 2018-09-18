@@ -200,7 +200,7 @@ class Partners extends CI_Controller {
 			if($current_user_session_id!=$session_data['session_id']) {		
 				$arrTraking["CUSTOM1"]      =json_encode(array('formData'=>$_REQUEST,'message'=>'Please try again.'));
 				$this->db->insert("tracking",$arrTraking);			
-				$this->session->set_flashdata('message', 'Please try again.');
+				$this->session->set_flashdata('err_msg', 'Please try again.');
 				redirect("partners/addpartner?rid=$rid");				
 			}
 			
@@ -246,13 +246,27 @@ class Partners extends CI_Controller {
 				$partner =  $res->row();
 				$partner_current_bal = $partner->AMOUNT;
 
-				if($partnerTypeID !=0 ){
+				//if($partnerTypeID !=0 ){#except admin
 					if($partner_current_bal < $amOUnt){
 						$arrTraking["CUSTOM1"]      =json_encode(array('formData'=>$_REQUEST,'message'=>'Insufficient Partner Balance'));
 						$this->db->insert("tracking",$arrTraking);
-						//$this->session->set_flashdata('message', 'Insufficient Partner Balance!');
-						redirect ("partners/addpartner?rid=$rid&msg=1");
+						$this->session->set_flashdata('err_msg', 'Insufficient Partner Balance!');
+						redirect ("partners/addpartner?rid=$rid");
 					}
+				//}
+			}
+
+
+			$p_username = $this->input->post('p_username');
+			if($p_username!=''){
+				$res = $this->db->query('SELECT PARTNER_ID FROM partner WHERE PARTNER_USERNAME="'.mysql_real_escape_string($p_username ).'"');
+				$partnerInfo =  $res->row();
+
+				if(!empty($partnerInfo)){
+						$arrTraking["CUSTOM1"]      =json_encode(array('formData'=>$_REQUEST,'message'=>'Username already exists'));
+						$this->db->insert("tracking",$arrTraking);
+						$this->session->set_flashdata('err_msg', 'Username already exists');
+						redirect ("partners/addpartner?rid=$rid");
 				}
 			}
 
@@ -278,8 +292,8 @@ class Partners extends CI_Controller {
 						} else {
 							$arrTraking["CUSTOM1"]      =json_encode(array('formData'=>$_REQUEST,'message'=>'Percentage(%) not more then your immediate parent'));
 							$this->db->insert("tracking",$arrTraking);
-							$this->session->set_flashdata('message', 'Percentage(%) not more then your immediate parent');
-							redirect ("partners/addpartner?rid=$rid&msg=1");
+							$this->session->set_flashdata('err_msg', 'Percentage(%) not more then your immediate parent');
+							redirect ("partners/addpartner?rid=$rid");
 						}
 					} 
 				}
@@ -392,7 +406,7 @@ class Partners extends CI_Controller {
 			}else{
 				$arrTraking["CUSTOM1"]      =json_encode(array('formData'=>$_REQUEST,'message'=>'Agent not created'));
 				$this->db->insert("tracking",$arrTraking);
-				$this->session->set_flashdata('message', 'Agent not created');
+				$this->session->set_flashdata('err_msg', 'Agent not created');
 				redirect("partners/addpartner?rid=$rid");
 			}
 		} else {

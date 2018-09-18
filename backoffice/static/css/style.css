@@ -1344,3 +1344,10 @@ input.search { background:url(../images/search.png) left no-repeat; padding: 1px
 }
 .change_password{    margin-bottom: 3% !important;}
 .change_password_login{color: #000;}
+.disabled{
+    pointer-events: none;
+    opacity: 0.7;
+    cursor: not-allowed;
+	    background: #d1d1d1;
+    color: #969696;
+}

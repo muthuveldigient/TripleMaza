@@ -479,7 +479,7 @@ function onMessage(evt) {
 		shortly1 = new Date(year, month, date, hour, min, sec);
 		$('#ndrawLeftTime').countdown('option', { until: shortly1, serverSync: setDateTime, timezone: +5.5, format: 'HMS', padZeroes: true, compact: true });
 		serverdate = new Date(servetDateTime);
-		updateUserBalance();
+	//	updateUserBalance();
 		//console.log("serverdate=>"+serverdate);
 	}
 

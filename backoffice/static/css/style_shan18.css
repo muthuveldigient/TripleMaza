@@ -1469,3 +1469,10 @@ div .showStatusMessage {
 }
 .radio_partnertype{margin: 8px 2px 0 2px;}
 /* End of Khelo game Details */
+.disabled{
+    pointer-events: none;
+    opacity: 0.7;
+    cursor: not-allowed;
+	    background: #d1d1d1;
+    color: #969696;
+}

@@ -495,7 +495,14 @@ $(document).ready(function(){
   	success: function(element) {
     	element
     	.text('OK!').addClass('valid')
-    	.closest('.control-group').removeClass('error').addClass('success');
+		.closest('.control-group').removeClass('error').addClass('success');
+		$('#frmSubmit').addClass('vaild');
+  	},showErrors: function(errorMap, errorList) {
+		$('#frmSubmit').removeClass('vaild');
+		$("#summary").html("Your form contains "
+      + this.numberOfInvalids()
+      + " errors, see details below.");
+    this.defaultShowErrors();
   	},
  });
  
@@ -548,6 +555,11 @@ $(document).ready(function() {
 	
 	$("#frmSubmit").click(function() {
 		$("#agentgames option").prop("selected", "selected");
+		if($('#frmSubmit').hasClass('vaild')){
+			$('#frmSubmit').addClass('disabled').removeClass('vaild');
+		}else{
+			$('#frmSubmit').removeClass('disabled');
+		}
         //$('#agentgames select option').prop('selected', true);
     });
 });
@@ -580,6 +592,15 @@ $(document).ready(function() {
           		   </tr>
         		  </tbody>
                  </table>
+            <?php }elseif($this->session->flashdata('err_msg')) { ?>
+				<table width="100%" class="ErrorMsg">
+		          <tbody>
+                  <tr>
+            		<td width="45"><img width="45" height="34" alt="" src="<?php echo base_url();?>static/images/icon-error.png"></td>
+            		<td width="95%"><?php echo $this->session->flashdata('err_msg');?></td>
+          		   </tr>
+        		  </tbody>
+                 </table>
             <?php }elseif($_REQUEST['msg']=="1"){ ?>
             <div class="UpdateMsgWrap">
               <table width="100%" class="ErrorMsg">
@@ -591,7 +612,8 @@ $(document).ready(function() {
                 </tr>
               </table>
             </div>
-            <?php } ?>                        
+            <?php } ?>   
+			<div id="summary" style="display:none"></div>
 			<table width="100%" class="searchWrap" bgcolor="#993366">
             	<tr>
                 	<td colspan="3">
@@ -879,7 +901,7 @@ $(document).ready(function() {
                 <tr>
                 	<td colspan="3">
 						<?php
-                            echo form_submit('frmSubmit', 'Create',' id="frmSubmit"')."&nbsp;";
+                            echo form_submit('frmSubmit', 'Create',' id="frmSubmit"' )."&nbsp;";
                             echo form_button('frmClear', 'Clear', "onclick='javascript:clearFrmValues();'");
                         ?>                    	
                     </td>

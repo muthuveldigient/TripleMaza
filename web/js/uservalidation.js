@@ -88,10 +88,12 @@ $(document).ready(function(){
 	});
 
 	$('#resultchat').bind('click touchstart', function() {
+		$("#loading-img").show();
 		$.ajax({
 			type: "GET",
 			url: "previousResult.php",
 			success: function(status) {
+				$("#loading-img").hide();
 				$('#modal_body').html(status);
 				$('#small-dialog3').modal('show');
 			}

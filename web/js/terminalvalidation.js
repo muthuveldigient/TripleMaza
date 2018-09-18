@@ -309,10 +309,12 @@ $(document).ready(function(){
 		}
 		
 		if(keycode==123) { //F12 Result
+			$("#loading-img").show();
 			$.ajax({
 				type: "GET",
 				url: "previousResult.php",
 				success: function(status) {
+					$("#loading-img").hide();
 					$('#modal_body').html(status);
 					$('#small-dialog3').modal('show');
 				}
@@ -338,10 +340,12 @@ $(document).ready(function(){
 	});
 
 	$('#frmWinResults').bind('click touchstart', function() {
+		$("#loading-img").show();
 		$.ajax({
 			type: "GET",
 			url: "previousResult.php",
 			success: function(status) {
+				$("#loading-img").hide();
 				$('#modal_body').html(status);
 				$('#small-dialog3').modal('show');
 			}

@@ -491,14 +491,17 @@ $(document).ready(function(){
     },
 	highlight: function(element) {
     	$(element).closest('.control-group').removeClass('success').addClass('error');
-  	},
+	  },
+	  submitHandler: function (form) {
+					$('#frmSubmit').hide().addClass('disabled');
+					$('#submit_loader').show();
+					form.submit();
+	},
   	success: function(element) {
     	element
     	.text('OK!').addClass('valid')
 		.closest('.control-group').removeClass('error').addClass('success');
-		$('#frmSubmit').addClass('vaild');
   	},showErrors: function(errorMap, errorList) {
-		$('#frmSubmit').removeClass('vaild');
 		$("#summary").html("Your form contains "
       + this.numberOfInvalids()
       + " errors, see details below.");
@@ -555,11 +558,7 @@ $(document).ready(function() {
 	
 	$("#frmSubmit").click(function() {
 		$("#agentgames option").prop("selected", "selected");
-		if($('#frmSubmit').hasClass('vaild')){
-			$('#frmSubmit').addClass('disabled').removeClass('vaild');
-		}else{
-			$('#frmSubmit').removeClass('disabled');
-		}
+		
         //$('#agentgames select option').prop('selected', true);
     });
 });
@@ -900,6 +899,7 @@ $(document).ready(function() {
                               
                 <tr>
                 	<td colspan="3">
+						<img  style="display:none;text-align: center;width: 25px;height: auto;margin-right: 20px;margin-left: 14px;" id="submit_loader" src="<?php echo base_url(); ?>images/loader.gif">
 						<?php
                             echo form_submit('frmSubmit', 'Create',' id="frmSubmit"' )."&nbsp;";
                             echo form_button('frmClear', 'Clear', "onclick='javascript:clearFrmValues();'");

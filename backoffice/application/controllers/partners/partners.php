@@ -245,15 +245,14 @@ class Partners extends CI_Controller {
 				$res = $this->db->query('SELECT AMOUNT FROM partners_balance WHERE PARTNER_ID='.mysql_real_escape_string($data["FK_PARTNER_ID"] ).'');
 				$partner =  $res->row();
 				$partner_current_bal = $partner->AMOUNT;
-
-				//if($partnerTypeID !=0 ){#except admin
+				if($data["FK_PARTNER_TYPE_ID"] !=11 ){#except main agent
 					if($partner_current_bal < $amOUnt){
 						$arrTraking["CUSTOM1"]      =json_encode(array('formData'=>$_REQUEST,'message'=>'Insufficient Partner Balance'));
 						$this->db->insert("tracking",$arrTraking);
 						$this->session->set_flashdata('err_msg', 'Insufficient Partner Balance!');
 						redirect ("partners/addpartner?rid=$rid");
 					}
-				//}
+				}
 			}
 
 

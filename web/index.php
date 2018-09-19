@@ -3264,8 +3264,8 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                         </div>
                                         <div class="ticket_info" id="bhagya_row" style="display:none">
                                             <p class="number">400-499</p>
-                                            <p class="number triple_qty_div">0</p>
-                                            <p class="number triple_amt_div">0</p>
+                                            <p class="number triple_qty_div" id="bhagya_qty">0</p>
+                                            <p class="number triple_amt_div" id="bhagya_amt">0</p>
                                             <!--<i class="fa fa-times-circle" aria-hidden="true"></i>-->
                                         </div>
                                         <div class="ticket_info" id="diamond_row" style="display:none">

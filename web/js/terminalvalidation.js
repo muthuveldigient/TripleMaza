@@ -1,10 +1,4 @@
-function sendDataToFlash(){
-	/* var me2 = $(this);
-	if(me2.data('requestRunning')) {
-		return;
-	}
-	me2.data('requestRunning', true); */
-
+/* function sendDataToFlash(){
 	$('.random_num').removeClass('active');
 	$('.random_number').val('');
 	var flag =0;
@@ -42,9 +36,7 @@ function sendDataToFlash(){
 				}else if(res.msg=="expired") {
 					window.location.href = "index.php";
 				}else if(res.msg=="STREAMING_DISABLED") {//streaming disabled.
-					/* $("#loading").removeClass('overlay');
-					$("#buy").addClass('disabled').prop('disabled', true);
-					$('#lock').addClass('game_start'); */
+				
 					//streamingOFF();
 					//clearInputValue();
 				}else{
@@ -93,7 +85,7 @@ function sendDataToFlash(){
 		});
 		return false;
 	}
-}
+} */
 
 	function updateTicketCANCELStatus() {
 		$("#tp_btn1").hide();

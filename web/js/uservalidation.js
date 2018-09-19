@@ -1,4 +1,4 @@
-function submitData(){
+/* function submitData(){
 	   $('.random_num').removeClass('active');
 	   $('.random_number').val('');
 		var flag =0;
@@ -80,7 +80,7 @@ function submitData(){
 			});
 			return false;
 		 }
-	}
+	} */
 
 $(document).ready(function(){
 	$("#clear").bind('click touchstart', function() {

@@ -209,6 +209,11 @@ $(document).ready(function(){
 	highlight: function(element) {
     	$(element).closest('.control-group').removeClass('success').addClass('error');
   	},
+	  submitHandler: function (form) {
+					$('#frmSubmit').hide().addClass('disabled');
+					$('#submit_loader').show();
+					form.submit();
+		},
   	success: function(element) {
     	element
     	.text('OK!').addClass('valid')
@@ -533,8 +538,10 @@ $(document).ready(function() {
               </table></td>
           </tr>
           <tr>
-            <td colspan="3"><?php
-                            echo form_submit('frmSubmit', 'Create')."&nbsp;";
+            <td colspan="3">
+							<img  style="display:none;text-align: center;width: 25px;height: auto;margin-right: 20px;margin-left: 14px;" id="submit_loader" src="<?php echo base_url(); ?>images/loader.gif">
+								<?php
+                            echo form_submit('frmSubmit', 'Create','id="frmSubmit"')."&nbsp;";
                             echo form_button('frmClear', 'Clear', "onclick='javascript:clearFrmValues();'");
                         ?>
             </td>

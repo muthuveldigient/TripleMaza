@@ -1,20 +1,41 @@
 var drawPrice = $('#drawPrice').val();
 $(document).ready(function() {
     $('input[name=qty]').change(function() {
-        $qty_val = $(this).val()
+        qty_val = Number($(this).val())
         if($("#double-tab").hasClass('active')){
+            if(qty_val > DOUBLE_BET_QTY_LIMIT){
+                $('#msg').html("Maximum of only- "+DOUBLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
+                setTimeout( function() {
+                    $('#msg').css({ 'display': "none" });
+                }, 3000 );
+                $(this).prop('checked', false);
+                $('#qty_2').prop('checked', true);
+                return false;
+            }
+
             $('.random_sel_blink').each(function(index) {
                 if($(this).hasClass('two-chance')){
-                    $(this).val($qty_val);
+                    console.log('qty_val'+qty_val+' QTY '+DOUBLE_BET_QTY_LIMIT);
+                    $(this).val(qty_val);
                 }
             });
             updateTwoRowTotalQty();
         }else if($("#triple-tab").hasClass('active')){
+            if(qty_val > TRIPLE_BET_QTY_LIMIT){
+                $('#msg').html("Maximum of only "+TRIPLE_BET_QTY_LIMIT+" per coupon is allowed to buy").css({ 'display': "block" });
+                setTimeout( function() {
+                    $('#msg').css({ 'display': "none" });
+                }, 3000 );
+                $(this).prop('checked', false);
+                $('#qty_2').prop('checked', true);
+                return false;
+            }
+
             var activeId = $('#activeClass').val();
             var id = activeId.split("_");
             $('.random_sel_blink').each(function(index) {
                 if($(this).hasClass(id[0])){
-                    $(this).val($qty_val);
+                    $(this).val(qty_val);
                 }
             });
             updateDoubleRowTotalQty(id[0]);
@@ -1376,3 +1397,184 @@ function randomPickRowNumberTwo(start, end, checkbox) {
     updateTwoRowTotalQty();
 }
 /****** TWO end ****/
+
+
+/** BUY OPTION PRINTER(TERMIANL) AND BUY(USER) */
+
+/** Terminal print option based on sumit data */
+function sendDataToFlash(){
+
+	/* $('.random_num').removeClass('active');
+	$('.random_number').val(''); */
+	var flag =0;
+	var res = '';
+		$('#triple_default input, #single_default input, #two_default input').each(function() {
+			var input =Number($(this).val());
+			if(input !='' && input !=0){
+				flag = 1;
+			}
+		})
+		if(flag==0){
+			$('#msg').html('Please select coupon').css({ 'display': "block" });
+			setTimeout( function() {
+				$("#msg").css({ 'display': "none" });
+			}, 2000 );
+			return false;
+		}
+		
+	if(flag==1){
+		//$('#ticketForm').submit();return false;
+		//$("#loading").addClass('overlay');
+		$("#loading-img").show();
+		$('#msg').html('');
+		$("#buy").addClass('disabled').prop('disabled', true);
+		var pdata2 = $('#ticketForm').serialize();
+		$.ajax({
+			type: "POST",
+			url: "ticketprocess.php",
+			data: pdata2,
+			dataType: "json",
+			success: function(res) {
+				if(res.msg == "valid"){
+					var inputResponse =jQuery.parseJSON(JSON.stringify(res.response));
+					inputSent(JSON.stringify(inputResponse));
+				}else if(res.msg=="expired") {
+					window.location.href = "index.php";
+				}else if(res.msg=="STREAMING_DISABLED") {//streaming disabled.
+					/* $("#loading").removeClass('overlay');
+					$("#buy").addClass('disabled').prop('disabled', true);
+					$('#lock').addClass('game_start'); */
+					//streamingOFF();
+					//clearInputValue();
+				}else{
+					if(res.msg=="error"){//Risk management error display 
+						$('#rm_error1').html(res.single);
+						$('#rm_error2').html(res.double);
+						$('#rm_error3').html(res.triple);
+						$('#rm_alert_popup').modal('show');
+					//	$("#loading").removeClass('overlay');
+						$("#loading-img").hide();
+						
+					}else{
+						$("#buy").removeClass('disabled').prop('disabled', false);
+						clearInputValue();
+						$('#msg').html(res.msg).css({ 'display': "block" });
+						setTimeout( function() {
+						//	$("#loading").removeClass('overlay');
+							$("#loading-img").hide();
+							$("#msg").css({ 'display': "none" });
+						}, 4000 );
+					}
+					
+				}
+					
+			},
+			error: function(XMLHttpRequest, textStatus, errorThrown) {
+				if (XMLHttpRequest.readyState == 4) {
+					// HTTP error (can be checked by XMLHttpRequest.status and XMLHttpRequest.statusText)
+					$("#msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
+					location.reload();
+				}
+				else if (XMLHttpRequest.readyState == 0) {
+					// Network error (i.e. connection refused, access denied due to CORS, etc.)
+					$("#msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
+					location.reload();
+					
+				}
+				else {
+					$("#msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
+					location.reload();
+				}
+			},
+			complete: function() {
+				//me2.data('requestRunning', false);
+			}
+		});
+		return false;
+	}
+}
+
+/** user buy option based on sumit value*/
+function submitData(){
+    $('.random_num').removeClass('active');
+    $('.random_number').val('');
+     var flag =0;
+     //var res = '';
+         $('#triple_default input, #single_default input, #two_default input').each(function() {
+             var input =Number($(this).val());
+             if(input !='' && input !=0){
+                 flag = 1;
+             }
+         })
+         if(flag==0){
+             $('#msg').html('Please select coupon').css({ 'display': "block" });
+             setTimeout( function() {
+                 $("#msg").css({ 'display': "none" });
+             }, 2000 );
+             return false;
+         }
+     
+      if(flag==1){
+          //$('#ticketForm').submit();return false;
+          $("#loading").addClass('overlay');
+          $("#loading-img").show();
+          $('#msg').html('');
+          $("#buy").addClass('disabled').prop('disabled', true);
+         var pdata2 = $('#ticketForm').serialize();
+         $.ajax({
+             type: "POST",
+             url: "ticketprocess.php",
+             data: pdata2,
+             dataType: "json",
+             success: function(res) {
+                 $("#loading-img").hide();
+                 $("#buy").removeClass('disabled').prop('disabled', false);
+                 if(res.msg == "valid"){
+                     var inputResponse =jQuery.parseJSON(JSON.stringify(res.response));
+                     inputSent(JSON.stringify(inputResponse));
+                 }else if(res.msg=="expired") {
+                     location.reload();
+                 }else{
+                     if(res.msg=="error"){//Risk management error display 
+                         $('#rm_error1').html(res.single);
+                         $('#rm_error2').html(res.double);
+                         $('#rm_error3').html(res.triple);
+                         $('#rm_alert_popup').modal('show');
+                         $("#loading").removeClass('overlay');
+                         $("#loading-img").hide();
+                     }else{
+                         $("#buy").removeClass('disabled').prop('disabled', false);
+                         clearInputValue();
+                         $('#msg').html(res.msg).css({ 'display': "block" });
+                         setTimeout( function() {
+                             $("#loading").removeClass('overlay');
+                             $("#msg").css({ 'display': "none" });
+                         }, 4000 );
+                     }
+                 }
+                     
+             },
+             error: function(XMLHttpRequest, textStatus, errorThrown) {
+                 if (XMLHttpRequest.readyState == 4) {
+                     // HTTP error (can be checked by XMLHttpRequest.status and XMLHttpRequest.statusText)
+                     $("#msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
+                     location.reload();
+                 }
+                 else if (XMLHttpRequest.readyState == 0) {
+                     // Network error (i.e. connection refused, access denied due to CORS, etc.)
+                     $("#msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
+                     location.reload();
+                     
+                 }
+                 else {
+                     $("#msg").show().html('Trying to connect to network.Please wait').removeClass('alert-success').addClass('alert-danger');
+                     location.reload();
+                 }
+             },
+             complete: function() {
+                 //me2.data('requestRunning', false);
+             }
+         });
+         return false;
+      }
+ }

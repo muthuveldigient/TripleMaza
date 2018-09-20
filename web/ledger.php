@@ -119,20 +119,20 @@ $(document).ready(function(){
 					$in = '---';
 					$out = '---';
 					//11 bet
-					/* if (in_array($view->TRANSACTION_TYPE_ID,array(10,11))) {
+					 if (in_array($view->TRANSACTION_TYPE_ID,array(10,11))) {
 						$out = $view->TRANSACTION_AMOUNT;
 					}
 					//12 - win
-					if (in_array($view->TRANSACTION_TYPE_ID,array(8,9,12))) {
+					if (in_array($view->TRANSACTION_TYPE_ID,array(8,9,12,13,21,22))) {
 						$in = $view->TRANSACTION_AMOUNT;
-					} */
-						
+					} 
+					/*	
 						if ( $view->CURRENT_TOT_BALANCE < $view->CLOSING_TOT_BALANCE ) {
 							$in = $view->TRANSACTION_AMOUNT;
 						}else{
 							$out = $view->TRANSACTION_AMOUNT;
 						}
-					
+					*/
 						?>
 					  <tr class="<?= $class ?>">
 						<td><?= $view->INTERNAL_REFERENCE_NO; ?></td>

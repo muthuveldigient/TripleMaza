@@ -443,16 +443,26 @@ class Partners extends CI_Controller {
 				$i=0;
 				$menuArr['maxChild'] = 0;
 				foreach($getMainRoles as $mainRole) {
-					$menuArr[$i]['ROLE_ID'] = $mainRole->ROLE_ID;
-					$menuArr[$i]['ROLE_NAME'] = $mainRole->ROLE_NAME;
-					$getChildRoles = $this->partner_model->getChildRoles($mainRole->ROLE_ID,$partnerMenu);
-					$menuArr[$i]['ROLE_CHILD'] = $getChildRoles;
-					$menuArr[$i]['ROLE_CHILD_CNT'] = count($getChildRoles);
-					if($menuArr[$i]['ROLE_CHILD_CNT'] > $menuArr['maxChild'])
-						$menuArr['maxChild'] = $menuArr[$i]['ROLE_CHILD_CNT'];
+					if($mainRole->ROLE_ID != 73){
+						$menuArr[$i]['ROLE_ID'] = $mainRole->ROLE_ID;
+						$menuArr[$i]['ROLE_NAME'] = $mainRole->ROLE_NAME;
+						$getChildRoles = $this->partner_model->getChildRoles($mainRole->ROLE_ID,$partnerMenu);
+						$menuArr[$i]['ROLE_CHILD'] = $getChildRoles;
+						$menuArr[$i]['ROLE_CHILD_CNT'] = count($getChildRoles);
+						if($menuArr[$i]['ROLE_CHILD_CNT'] > $menuArr['maxChild'])
+							$menuArr['maxChild'] = $menuArr[$i]['ROLE_CHILD_CNT'];
+					}
+					if($mainRole->ROLE_ID == 73 && $this->session->userdata('adminuserid')==ADMIN_ID) {
+						$menuArr[$i]['ROLE_ID'] = $mainRole->ROLE_ID;
+						$menuArr[$i]['ROLE_NAME'] = $mainRole->ROLE_NAME;
+						$getChildRoles = $this->partner_model->getChildRoles($mainRole->ROLE_ID,$partnerMenu);
+						$menuArr[$i]['ROLE_CHILD'] = $getChildRoles;
+						$menuArr[$i]['ROLE_CHILD_CNT'] = count($getChildRoles);
+						if($menuArr[$i]['ROLE_CHILD_CNT'] > $menuArr['maxChild'])
+							$menuArr['maxChild'] = $menuArr[$i]['ROLE_CHILD_CNT'];
+					}
 					$i++;
 				}
-
 			}
 			//echo '<pre>';print_r($menuArr);exit;
 			//GET POKER_GAME PERCENTAGE
@@ -465,7 +475,6 @@ class Partners extends CI_Controller {
 					$data["pokerShare"]   = 1;
 				}
 			} */
-			
 			
 			$data["menuList"]	 = $menuArr;
 			$data['rid']	= $rid;
@@ -791,13 +800,24 @@ class Partners extends CI_Controller {
 				$i=0;
 				$menuArr['maxChild'] = 0;
 				foreach($getMainRoles as $mainRole) {
-					$menuArr[$i]['ROLE_ID'] = $mainRole->ROLE_ID;
-					$menuArr[$i]['ROLE_NAME'] = $mainRole->ROLE_NAME;
-					$getChildRoles = $this->partner_model->getChildRoles($mainRole->ROLE_ID);
-					$menuArr[$i]['ROLE_CHILD'] = $getChildRoles;
-					$menuArr[$i]['ROLE_CHILD_CNT'] = count($getChildRoles);
-					if($menuArr[$i]['ROLE_CHILD_CNT'] > $menuArr['maxChild'])
-						$menuArr['maxChild'] = $menuArr[$i]['ROLE_CHILD_CNT'];
+					if($mainRole->ROLE_ID != 73){
+						$menuArr[$i]['ROLE_ID'] = $mainRole->ROLE_ID;
+						$menuArr[$i]['ROLE_NAME'] = $mainRole->ROLE_NAME;
+						$getChildRoles = $this->partner_model->getChildRoles($mainRole->ROLE_ID,$partnerMenu);
+						$menuArr[$i]['ROLE_CHILD'] = $getChildRoles;
+						$menuArr[$i]['ROLE_CHILD_CNT'] = count($getChildRoles);
+						if($menuArr[$i]['ROLE_CHILD_CNT'] > $menuArr['maxChild'])
+							$menuArr['maxChild'] = $menuArr[$i]['ROLE_CHILD_CNT'];
+					}
+					if($mainRole->ROLE_ID == 73 && $this->session->userdata('adminuserid')==ADMIN_ID) {
+						$menuArr[$i]['ROLE_ID'] = $mainRole->ROLE_ID;
+						$menuArr[$i]['ROLE_NAME'] = $mainRole->ROLE_NAME;
+						$getChildRoles = $this->partner_model->getChildRoles($mainRole->ROLE_ID,$partnerMenu);
+						$menuArr[$i]['ROLE_CHILD'] = $getChildRoles;
+						$menuArr[$i]['ROLE_CHILD_CNT'] = count($getChildRoles);
+						if($menuArr[$i]['ROLE_CHILD_CNT'] > $menuArr['maxChild'])
+							$menuArr['maxChild'] = $menuArr[$i]['ROLE_CHILD_CNT'];
+					}
 					$i++;
 				}
 

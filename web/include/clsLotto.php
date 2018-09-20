@@ -572,9 +572,9 @@ class clsLotto {
 		if (!empty($start) && !empty($end)){
 			$startDate = date('Y-m-d',strtotime($start));
 			$endDate = date('Y-m-d',strtotime($end));
-			$browseSQL .=" AND  DATE_FORMAT(DRAW_STARTTIME,'%Y-%m-%d') BETWEEN '".$startDate."' AND '".$endDate."' ORDER BY DRAW_ID DESC";
+			$browseSQL .=" AND DRAW_WINNUMBER!='' AND DATE_FORMAT(DRAW_STARTTIME,'%Y-%m-%d') BETWEEN '".$startDate."' AND '".$endDate."' ORDER BY DRAW_ID DESC";
 		}else{
-			$browseSQL .=" AND DRAW_STARTTIME <= NOW() ORDER BY DRAW_ID DESC limit 50";
+			$browseSQL .=" AND DRAW_WINNUMBER!='' AND DRAW_STARTTIME <= NOW() ORDER BY DRAW_ID DESC limit 50";
 		}
 		$rsResult  = $this->fetchArrayObject($browseSQL);
 		return $rsResult;

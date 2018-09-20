@@ -15,7 +15,6 @@ $(document).ready(function() {
 
             $('.random_sel_blink').each(function(index) {
                 if($(this).hasClass('two-chance')){
-                    console.log('qty_val'+qty_val+' QTY '+DOUBLE_BET_QTY_LIMIT);
                     $(this).val(qty_val);
                 }
             });
@@ -40,7 +39,6 @@ $(document).ready(function() {
             });
             updateDoubleRowTotalQty(id[0]);
         }
-        
     });
     /*  inspect and right click not working */
    document.addEventListener('contextmenu', event => event.preventDefault());
@@ -806,7 +804,6 @@ function ticketQty() {
 
 function ticket_qty_info() {
     var tktQty = Number($('input[name=qty]:checked').val());
-    console.log(tktQty);
     if (tktQty == '' || tktQty == 0 || isNaN(tktQty)) {
 		var msg= "Please select quantity";
         $('#msg').html(msg).css({ 'display': "block" });

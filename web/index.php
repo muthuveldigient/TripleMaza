@@ -126,7 +126,7 @@ $remainingSingleQty =$remainingDoubleQty =$remainingTripleQty =0;
 $vTime = strtotime(date('Y-m-d H:i:s'));
 $row=recordSet("SELECT NOW()");
 $dbTime = (!empty($row[0])?date("F d, Y H:i:s", strtotime($row[0])):date("F d, Y H:i:s", time()));
-$version = 0.4  ;// for cache clear
+$version = 0.7  ;// for cache clear
 $singleLength =strlen((string)SINGLE_BET_QTY_LIMIT);
 $doubleLength =strlen((string)DOUBLE_BET_QTY_LIMIT);
 $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);

@@ -359,11 +359,14 @@ $(document).ready(function() {
 	}
 
 	function repeatOverAll(){
-		$("#loading").addClass('overlay');
 		$("#loading-img").show();
 		$("#repeat").hide();
 		$("#repeat_loader").show();
-		
+		setTimeout( function() {
+			repeat_all_input();
+		}, 1000 );
+	}
+	function repeat_all_input(){
 		if(lastTicket==''){
 			$('#msg').html('No coupon available').css({ 'display': "block" });
 			setTimeout( function() {

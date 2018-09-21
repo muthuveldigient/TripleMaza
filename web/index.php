@@ -5,7 +5,15 @@ include_once("include/DbConnect.php");
 include_once("include/clsLotto.php");
 include("include/functions.php");
 $objLotto =  new clsLotto();
-
+?>
+<script type="text/javascript">
+	/* var session_mode = '<?php echo $_SESSION[SESSION_MODE];?>';
+	var mode_url ='';
+	if(session_mode == 1){
+		mode_url ='?mode=1';
+	} */
+</script>
+<?php
 $session = $objLotto->userAuthendication();
 if (!empty( $session)) { ?>
 <script type="text/javascript">
@@ -152,7 +160,7 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
     var lastTicket = '<?php echo $lastTicket;?>'
     var userID = <?php echo $_SESSION[SESSION_USERID];?>;
     var TERMINAL = 0;
-  <?php if ( $_SESSION[SESSION_PRINTER_OPTION] == 1 && $_SESSION[SESSION_MODE]==1) { ?>
+  <?php if ( $_SESSION[SESSION_PRINTER_OPTION] == 1 ) { ?>
         TERMINAL = 1;
   <?php } ?>
         $(document).ready(function () {
@@ -2875,13 +2883,13 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
 
                 <?php }elseif( $_SESSION[SESSION_PRINTER_OPTION]==1){ ?>
                     <div class="footer_left">
-                    <?php if( $_SESSION[SESSION_MODE]==1){ ?>
+                    <?php //if( $_SESSION[SESSION_MODE]==1){ ?>
                         <div class="footer_div" id="frmReprintTicket">
                             <p class="footer_win">
                                 Reprint(F9)
                             </p>
                         </div>
-                    <?php } ?>
+                    <?php //} ?>
                         <div class="footer_div" id="frmCancelTicket">
                             <p class="footer_win">
                                 Cancel(F8)
@@ -3182,15 +3190,15 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                 </label>
                             </div>
                         <?php if( $_SESSION[SESSION_PRINTER_OPTION]==1){ 
-                                    if( $_SESSION[SESSION_MODE]==1){ ?>  
+                                   // if( $_SESSION[SESSION_MODE]==1){ ?>  
                                         <div class="buy_btn" id="buy" onClick="sendDataToFlash()">
                                             <p class="buy_btn_confirm">Print(F6)</p>
                                         </div> 
-                                <?php }else { ?>
+                                <?php /* }else { ?>
                                     <div class="buy_btn" id="buy" onclick="submitData()">
                                         <p class="buy_btn_confirm">buy</p>
                                     </div>
-                                <?php } ?>
+                                <?php } */?>
                         <?php }else { ?>
                             <div class="buy_btn" id="buy" onclick="submitData()">
                                 <p class="buy_btn_confirm">buy</p>
@@ -3324,15 +3332,15 @@ $tripleLength =strlen((string)TRIPLE_BET_QTY_LIMIT);
                                 </div>
                             </div>
                             <?php if( $_SESSION[SESSION_PRINTER_OPTION]==1){ 
-                                        if( $_SESSION[SESSION_MODE]==1){ ?>  
+                                        //if( $_SESSION[SESSION_MODE]==1){ ?>  
                                             <div class="buy_btn" id="buy" onClick="sendDataToFlash()">
                                                 <p class="buy_btn_confirm">Print(F6)</p>
                                             </div> 
-                                    <?php }else { ?>
+                                    <?php /*}else { ?>
                                         <div class="buy_btn" id="buy" onclick="submitData()">
                                             <p class="buy_btn_confirm">buy</p>
                                         </div>
-                                    <?php } 
+                                    <?php } */
                             }else { ?>
                             <div class="buy_btn" id="buy" onclick="submitData()">
                                 <p class="buy_btn_confirm">buy</p>

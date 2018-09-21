@@ -1492,17 +1492,25 @@ height: 100%;}
     word-break: break-all;
     overflow: auto;
     max-height: 59px;
-    color: #51b31e;
-    margin-top: 0px;
+    color: #324e5c;
+    margin-top: 8px;
     margin-bottom: 2px;
 }
 .rem_bal {
     word-break: break-all;
     overflow: auto;
     max-height: 59px;
-    color: #c7080e;
-    margin-top: 0px;
+    color: #324e5c;
+    margin-top: 8px;
     margin-bottom: 2px;
+}
+.rem_bal p,.rem_bal1 p {
+    display: inline-block;
+    margin-right: 13px;
+    border: 2px solid;
+    margin-bottom: 6px;
+    padding: 3px;
+    font-size: 16px;
 }
 .popup_cls_btn button {
     color: #fff;

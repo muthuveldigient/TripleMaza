@@ -71,7 +71,7 @@ class Partners extends CI_Controller {
 		if($this->uri->uri_string() !== 'login' && !$adminusername) {
 			$this->session->set_flashdata('message', 'Please login to access the page.');
         	redirect('login');
-    	}
+			}
 	}
 
 	public function index() {
@@ -647,7 +647,7 @@ class Partners extends CI_Controller {
 			
 			if($this->input->post('password')!="digient"){
 				$partnerTable["PARTNER_PASSWORD"]  = md5($this->input->post('password'));
-				$partnerTable["PASSWORD_RESET_STATUS"]  = 1;
+				//$partnerTable["PASSWORD_RESET_STATUS"]  = 1;
 			}
 			if($this->input->post('transactionpassword')!="digient"){
 				$partnerTable["PARTNER_TRANSACTION_PASSWORD"] = md5($this->input->post('transactionpassword'));

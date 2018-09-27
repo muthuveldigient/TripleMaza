@@ -2014,17 +2014,7 @@ input::placeholder {
     background-color: #ebe9fd;
 }
 .chart_cont_2 {
-    /* border: 1px solid #000; */
-    height: 100%;
-    width: 33.3%;
-    float: left;
-    display: grid;
-	align-items: center;
-	font-size: 20px;
-	justify-content: center;
-	padding: 10px 0;
-	    border-bottom: 2px solid #efe5c2;
-    height: 100%;
+    border-bottom: 2px solid #efe5c2;
     width: 33.3%;
     float: left;
     display: grid;

@@ -222,7 +222,7 @@ function onMessage(evt) {
 
 				if (TERMINAL == 1) {
 					if (nw != undefined) {
-						var url = SITE_URL + '/print.php?pid=' + json.pGroupID + '&action=print';
+						var url = SITE_URL + 'print.php?pid=' + json.pGroupID + '&action=print';
 						nw.Window.open(url, { show: false }, function (win) {
 							win.on('loaded', function () {
 								win.print({

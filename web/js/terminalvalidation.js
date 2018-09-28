@@ -147,7 +147,7 @@
 						$('#fp-dialog').modal('hide');
 					}, 4000);
 					
-					var url = SITE_URL+'/print.php?action=reprint';
+					var url = SITE_URL+'print.php?action=reprint';
 				            nw.Window.open(url, {show: false}, function (win) {
 				                win.on('loaded', function () {
 				                   win.print({
